@@ -12,7 +12,7 @@ public class Categoria {
 	private @Id @GeneratedValue (strategy = GenerationType.IDENTITY) Long idCategoria;
 	private @NotBlank String casaEConstrucao;
 	private @NotBlank String paraLevar;
-	private @NotBlank String Jardinagem;
+	private @NotBlank String jardinagem;
 	private @NotBlank String higieneECosmeticos;
 	public Long getIdCategoria() {
 		return idCategoria;
@@ -22,9 +22,6 @@ public class Categoria {
 	}
 	public String getParaLevar() {
 		return paraLevar;
-	}
-	public String getJardinagem() {
-		return Jardinagem;
 	}
 	public String getHigieneECosmeticos() {
 		return higieneECosmeticos;
@@ -38,11 +35,14 @@ public class Categoria {
 	public void setParaLevar(String paraLevar) {
 		this.paraLevar = paraLevar;
 	}
-	public void setJardinagem(String jardinagem) {
-		Jardinagem = jardinagem;
-	}
 	public void setHigieneECosmeticos(String higieneECosmeticos) {
 		this.higieneECosmeticos = higieneECosmeticos;
+	}
+	public String getJardinagem() {
+		return jardinagem;
+	}
+	public void setJardinagem(String jardinagem) {
+		this.jardinagem = jardinagem;
 	} 
 	
 	
