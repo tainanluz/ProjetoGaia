@@ -1,0 +1,27 @@
+[
+    {
+        "idCategoria": 1,
+        "nomeDaCategoria": "Jardinagem",
+        "descricaoDaCategoria": "Produtos/Ferramentas para jardinagem e quintal."
+    },
+    {
+        "idCategoria": 2,
+        "nomeDaCategoria": "Casa e Construcao",
+        "descricaoDaCategoria": "Produtos para economia doméstica, e reaproveitamento de recursos em gerais."
+    },
+    {
+        "idCategoria": 4,
+        "nomeDaCategoria": "Higiene e cosméticos",
+        "descricaoDaCategoria": "Produtos de limpeza, menos agressivos ao meio ambiente"
+    },
+    {
+        "idCategoria": 5,
+        "nomeDaCategoria": "Para Levar",
+        "descricaoDaCategoria": "Produtos para se levar em uma caminhada, ou viagem."
+    },
+    {
+        "idCategoria": 6,
+        "nomeDaCategoria": "Culinaria",
+        "descricaoDaCategoria": "Utensilhos de cozinha sustentaveis e menos agressivos ao meio ambiente."
+    }
+]
