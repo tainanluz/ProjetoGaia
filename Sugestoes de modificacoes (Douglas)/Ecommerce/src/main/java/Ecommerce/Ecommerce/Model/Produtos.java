@@ -1,12 +1,16 @@
 package Ecommerce.Ecommerce.Model;
 
 import javax.persistence.Entity;
+
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
 @Table(name = "Produtos")
@@ -14,51 +18,87 @@ public class Produtos
 {
 	
 	private @Id @GeneratedValue(strategy = GenerationType.IDENTITY) Long idProduto;
-	private @NotBlank String Nome;
-	private @NotBlank String Marca;
+	private @NotBlank String nome;
+	private @NotBlank String marca;
 	private @NotBlank Float preco;
 	private @NotBlank String descricao;
-	private @NotBlank Float Tamanho;
+	private @NotBlank Float tamanho;
 	
+	@ManyToOne
+	@JoinColumn(name = "criador_id")
+	@JsonIgnoreProperties({"produto"})
+	private Usuario criador;
 	
-	 
-	public String getNome() {
-		return Nome;
-	}
-	public void setNome(String nome) {
-		Nome = nome;
-	}
-	public float getPreco() {
-		return preco;
-	}
-	public void setPreco(Float preco) {
-		this.preco = preco;
-	}
-	public String getdescricao() {
-		return descricao;
-	}
-	public void setdescricao(String descricao) {
-		this.descricao = descricao;
-	}
-	public String getMarca() {
-		return Marca;
-	}
-	public void setMarca(String marca) {
-		Marca = marca;
-	}
-	public float getTamanho() {
-		return Tamanho;
-	}
-	public void setTamanho(Float tamanho) {
-		Tamanho = tamanho;
-	}
+	@ManyToOne
+	@JoinColumn(name = "categoria_id")
+	@JsonIgnoreProperties({"produto"})
+	private Categorias categoriaRelacionada;
+
 	public Long getIdProduto() {
 		return idProduto;
 	}
+
+	public String getNome() {
+		return nome;
+	}
+
+	public String getMarca() {
+		return marca;
+	}
+
+	public Float getPreco() {
+		return preco;
+	}
+
+	public String getDescricao() {
+		return descricao;
+	}
+
+	public Float getTamanho() {
+		return tamanho;
+	}
+
+	public Usuario getCriador() {
+		return criador;
+	}
+
+	public Categorias getCategoriaRelacionada() {
+		return categoriaRelacionada;
+	}
+
 	public void setIdProduto(Long idProduto) {
 		this.idProduto = idProduto;
 	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	public void setMarca(String marca) {
+		this.marca = marca;
+	}
+
+	public void setPreco(Float preco) {
+		this.preco = preco;
+	}
+
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
+	}
+
+	public void setTamanho(Float tamanho) {
+		this.tamanho = tamanho;
+	}
+
+	public void setCriador(Usuario criador) {
+		this.criador = criador;
+	}
+
+	public void setCategoriaRelacionada(Categorias categoriaRelacionada) {
+		this.categoriaRelacionada = categoriaRelacionada;
+	}
+
 	
-	
+
 	
 }
