@@ -33,13 +33,13 @@ public class ProdutoController
 		@PostMapping("/Salvar")
 		public ResponseEntity<@Valid Produtos> saveProduto (@Valid @RequestBody Produtos BodyProdutos)
 		{
-			return ResponseEntity.status(203).body(repositorio.save(BodyProdutos));
+			return ResponseEntity.status(201).body(repositorio.save(BodyProdutos));
 		}
 		
 		@GetMapping("/PegarTodos")
 		public ResponseEntity<List<Produtos>> pegarTodos()
 		{
-			return ResponseEntity.status(203).body(repositorio.findAll());
+			return ResponseEntity.status(200).body(repositorio.findAll());
 		}
 
 		@GetMapping("/Busca/ID/{BuscaID}")
@@ -69,5 +69,5 @@ public class ProdutoController
 		public ResponseEntity<List<Produtos>> encontraDescricao (@Valid @PathVariable(value = "PesquisaDesc")String PesquisaDesc)
 		{
 			return ResponseEntity.status(200).body(repositorio.findAllByDescricaoContainingIgnoreCase(PesquisaDesc));
-		}
+		} 
 }

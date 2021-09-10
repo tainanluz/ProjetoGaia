@@ -11,6 +11,7 @@ import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.sun.istack.NotNull;
 
 @Entity
 @Table(name = "Produtos")
@@ -20,9 +21,9 @@ public class Produtos
 	private @Id @GeneratedValue(strategy = GenerationType.IDENTITY) Long idProduto;
 	private @NotBlank String nome;
 	private @NotBlank String marca;
-	private @NotBlank Float preco;
+	private @NotNull Float preco;
 	private @NotBlank String descricao;
-	private @NotBlank Float tamanho;
+	private @NotNull Float tamanho;
 	
 	@ManyToOne
 	@JoinColumn(name = "criador_id")

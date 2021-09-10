@@ -29,8 +29,8 @@ public class BasicSecurity extends WebSecurityConfigurerAdapter{
 	
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
-		http.authorizeRequests().antMatchers(HttpMethod.POST, "/usuario/Salvar").permitAll()
-				.antMatchers(HttpMethod.POST, "/usuario/Credenciais").permitAll()
+		http.authorizeRequests().antMatchers(HttpMethod.POST, "/Usuario/Salvar").permitAll()
+				.antMatchers(HttpMethod.PUT, "/Usuario/Credenciais").permitAll()
 				.anyRequest().authenticated().and()
 				.httpBasic().and().sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()
 				.cors().and().csrf().disable();

@@ -14,8 +14,6 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.Size;
-
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
@@ -29,28 +27,21 @@ public class Usuario {
 	private String nome;
 	@NotBlank
 	@Email
-	private String email;
-	@NotBlank @Size (min = 6, max = 8)
+	private String email; 
+	@NotBlank 
 	private String senha;
 	
 	@OneToMany(mappedBy = "criador", cascade = CascadeType.REMOVE)
 	@JsonIgnoreProperties({"criador"})
 	private List<Produtos> produtos = new ArrayList<>();
 	
+
 	public List<Produtos> getProdutos() {
 		return produtos;
 	}
 	public void setProdutos(List<Produtos> produtos) {
 		this.produtos = produtos;
 	}
-	/*
-	public List<Produtos> getProdutos() {
-		return produtos;
-	}
-	public void setProdutos(List<Produtos> produtos) {
-		this.produtos = produtos;
-	}
-	*/
 	public Long getIdUsuario() {
 		return idUsuario;
 	}

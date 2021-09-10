@@ -18,7 +18,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import Ecommerce.Ecommerce.Model.Usuario;
+import Ecommerce.Ecommerce.Model.Util.UsuarioDTO;
 import Ecommerce.Ecommerce.Repository.UsuarioRepository;
+import Ecommerce.Ecommerce.Servicos.UsuarioServicos;
 
 @RestController
 @RequestMapping("/Usuario")
@@ -26,11 +28,28 @@ import Ecommerce.Ecommerce.Repository.UsuarioRepository;
 public class UsuarioController {
 	
 	private @Autowired UsuarioRepository repositorio;
+	private @Autowired UsuarioServicos servicos;
 	
 	@PostMapping("/Salvar")
-	public ResponseEntity<@Valid Usuario> salvarUsuario (@Valid @RequestBody Usuario BodyUsuario)
-	{
-		return ResponseEntity.status(203).body(repositorio.save(BodyUsuario));
+	public ResponseEntity<Object> salvar(@Valid @RequestBody Usuario novoUsuario) {
+		Optional<Object> objetoOptional = servicos.cadastrarUsuario(novoUsuario);
+
+		if (objetoOptional.isEmpty()) {
+			return ResponseEntity.status(400).build();
+		} else {
+			return ResponseEntity.status(201).body(objetoOptional.get());
+		}
+	}
+	
+	@PutMapping("/Alterar")
+	public ResponseEntity<Object> alterarUsuario(@Valid @RequestBody UsuarioDTO usuarioParaAlterar) {
+		Optional<?> objetoAlterado = servicos.alterarUsuario(usuarioParaAlterar);
+
+		if (objetoAlterado.isPresent()) {
+			return ResponseEntity.status(201).body(objetoAlterado.get());
+		} else {
+			return ResponseEntity.status(400).build();
+		}
 	}
 	
 	@GetMapping("/Pesquisa/Todos")
@@ -61,7 +80,7 @@ public class UsuarioController {
 			return ResponseEntity.status(203).build();		
 			}
 	}
-	/*
+	
 	@PutMapping("/Credenciais")
 	public ResponseEntity<Object> credenciais(@Valid @RequestBody UsuarioDTO usuarioParaAutenticar){
 		Optional<?> objetoOptional = servicos.pegarCredenciais(usuarioParaAutenticar);
@@ -72,8 +91,7 @@ public class UsuarioController {
 			return ResponseEntity.status(201).body(objetoOptional.get());
 		}
 	}
-	*/
-	
+
 	@GetMapping("/Pesquisa/Descricao/{PesquisaDesc}")
 	public ResponseEntity<List<Usuario>> encontraDescricao (@Valid @PathVariable(value = "PesquisaDesc")String PesquisaDesc)
 	{
