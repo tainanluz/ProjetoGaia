@@ -1,6 +1,7 @@
 package Ecommerce.Ecommerce.Controller;
 
 import java.util.List;
+
 import java.util.Optional;
 
 import javax.validation.Valid;
@@ -16,7 +17,6 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
 import Ecommerce.Ecommerce.Model.Usuario;
 import Ecommerce.Ecommerce.Repository.UsuarioRepository;
 
@@ -33,19 +33,19 @@ public class UsuarioController {
 		return ResponseEntity.status(203).body(repositorio.save(BodyUsuario));
 	}
 	
-	@GetMapping("/PegarTodos")
+	@GetMapping("/Pesquisa/Todos")
 	public ResponseEntity<List<Usuario>> getAll()
 	{
 		return ResponseEntity.status(203).body(repositorio.findAll());
 	}
 
-	@GetMapping("/Busca/ID/{BuscaID}")
+	@GetMapping("/Pesquisa/Id/{BuscaID}")
 	public ResponseEntity<Optional<Usuario>> pegarPorID(@Valid @PathVariable(value = "BuscaID") Long BuscaID )
 	{
 		return ResponseEntity.status(200).body(repositorio.findById(BuscaID));
 	}
 	
-	@DeleteMapping("/DELETE/ID/{DeletarPorID}")
+	@DeleteMapping("/Delete/Id/{DeletarPorID}")
 	public void deletarPorID(@Valid @PathVariable(value = "DeletarPorID")Long DeletarPorID)
 	{
 		repositorio.deleteById(DeletarPorID);
@@ -61,6 +61,18 @@ public class UsuarioController {
 			return ResponseEntity.status(203).build();		
 			}
 	}
+	/*
+	@PutMapping("/Credenciais")
+	public ResponseEntity<Object> credenciais(@Valid @RequestBody UsuarioDTO usuarioParaAutenticar){
+		Optional<?> objetoOptional = servicos.pegarCredenciais(usuarioParaAutenticar);
+		
+		if (objetoOptional.isEmpty()) {
+			return ResponseEntity.status(400).build();
+		} else {
+			return ResponseEntity.status(201).body(objetoOptional.get());
+		}
+	}
+	*/
 	
 	@GetMapping("/Pesquisa/Descricao/{PesquisaDesc}")
 	public ResponseEntity<List<Usuario>> encontraDescricao (@Valid @PathVariable(value = "PesquisaDesc")String PesquisaDesc)

@@ -25,3 +25,11 @@
         "descricaoDaCategoria": "Utensilhos de cozinha sustentaveis e menos agressivos ao meio ambiente."
     }
 ]
+
+{
+    "idUsuario": 1,
+    "nome": "Samantha Birururu",
+    "email": "samanthabiru@gmail.com",
+    "senha": "123456",
+    "produtos": []
+}

@@ -43,6 +43,14 @@ public class Usuario {
 	public void setProdutos(List<Produtos> produtos) {
 		this.produtos = produtos;
 	}
+	/*
+	public List<Produtos> getProdutos() {
+		return produtos;
+	}
+	public void setProdutos(List<Produtos> produtos) {
+		this.produtos = produtos;
+	}
+	*/
 	public Long getIdUsuario() {
 		return idUsuario;
 	}
