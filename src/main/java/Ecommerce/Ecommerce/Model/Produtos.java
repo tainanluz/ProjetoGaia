@@ -23,7 +23,7 @@ public class Produtos
 	private @NotBlank String marca;
 	private @NotNull Float preco;
 	private @NotBlank String descricao;
-	private @NotNull Float tamanho;
+	private @NotNull String tamanho;
 	
 	@ManyToOne
 	@JoinColumn(name = "criador_id")
@@ -55,7 +55,7 @@ public class Produtos
 		return descricao;
 	}
 
-	public Float getTamanho() {
+	public String getTamanho() {
 		return tamanho;
 	}
 
@@ -87,7 +87,7 @@ public class Produtos
 		this.descricao = descricao;
 	}
 
-	public void setTamanho(Float tamanho) {
+	public void setTamanho(String tamanho) {
 		this.tamanho = tamanho;
 	}
 
