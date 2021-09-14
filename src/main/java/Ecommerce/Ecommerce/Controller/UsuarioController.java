@@ -51,6 +51,11 @@ public class UsuarioController {
 			return ResponseEntity.status(400).build();
 		}
 	}
+	/*
+	 * Metodo para pesquisar todos os usuarios
+	 * @since 1.0
+	 * @author grupo 3
+	 */
 	
 	@GetMapping("/Pesquisa/Todos")
 	public ResponseEntity<List<Usuario>> getAll()
