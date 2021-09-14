@@ -23,7 +23,7 @@ import Ecommerce.Ecommerce.Repository.UsuarioRepository;
 import Ecommerce.Ecommerce.Servicos.UsuarioServicos;
 
 @RestController
-@RequestMapping("/Usuario")
+@RequestMapping("/Usuario") 
 @CrossOrigin("*")
 public class UsuarioController {
 	
