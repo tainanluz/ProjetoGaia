@@ -1,15 +1,15 @@
 /*Exemplo só pra não deixar em branco*/
 
 body {
-    background-color: rgb(172, 87, 31);
+    background-color: rgb(178, 238, 191);
   }
   
   h1 {
-    color: white;
+    color: rgba(4, 3, 22, 0.856);
     text-align: center;
   }
   
   p {
-    font-family: verdana;
+    font-family: 'Poppins'; /*escolher fonte depois*/
     font-size: 20px;
   }
