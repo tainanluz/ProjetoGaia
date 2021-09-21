@@ -1,0 +1,15 @@
+/*Exemplo só pra não deixar em branco*/
+
+body {
+    background-color: rgb(172, 87, 31);
+  }
+  
+  h1 {
+    color: white;
+    text-align: center;
+  }
+  
+  p {
+    font-family: verdana;
+    font-size: 20px;
+  }
