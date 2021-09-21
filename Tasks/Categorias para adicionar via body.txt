@@ -1,0 +1,683 @@
+Cadastro Categoria
+[
+    {
+        "idCategoria": 1,
+        "nomeDaCategoria": "Jardinagem",
+        "descricaoDaCategoria": "Produtos/Ferramentas para jardinagem e quintal."
+    }
+    {
+        "idCategoria": 2,
+        "nomeDaCategoria": "Casa e Construcao",
+        "descricaoDaCategoria": "Produtos para economia doméstica, e reaproveitamento de recursos em gerais."
+    }
+    {
+        "idCategoria": 4,
+        "nomeDaCategoria": "Higiene e cosméticos",
+        "descricaoDaCategoria": "Produtos de limpeza, menos agressivos ao meio ambiente"
+    }
+    {
+        "idCategoria": 5,
+        "nomeDaCategoria": "Para Levar",
+        "descricaoDaCategoria": "Produtos para se levar em uma caminhada, ou viagem."
+    }
+    {
+        "idCategoria": 6,
+        "nomeDaCategoria": "Culinaria",
+        "descricaoDaCategoria": "Utensilhos de cozinha sustentaveis e menos agressivos ao meio ambiente."
+    }
+]
+
+Cadastro Usuario
+{
+    "nome": "Douglas",
+    "email": "douglas@gmail.com",
+    "senha": "123456"
+}
+{
+    "nome": "Julianna",
+    "email": "julianna@gmail.com",
+    "senha": "234567"
+}
+{
+    "nome": "Leonardo",
+    "email": "leonardo@gmail.com",
+    "senha": "345678"
+}
+{
+    "nome": "Tainan",
+    "email": "tainan@gmail.com",
+    "senha": "456789"
+}
+
+Cadastro Produtos
+{
+    "nome": "Painel Solar",
+    "marca": "Resun Solar",
+    "preco": 633.75,
+    "descricao": "Painel solar fotovoltaico Resun Solar Energy de 280W",
+    "tamanho": "1640 x 992 x40 mm"
+}
+
+//CODIGO HTML SWAGGER
+
+swagger: '2.0'
+info:
+  description: Projeto API Spring - Blog Pessoal
+  version: 1.0.0
+  title: API - Blog Pessoal
+  contact:
+    name: Rafael Queiróz
+    url: https://github.com/rafaelq80
+    email: rafaelproinfo@gmail.com
+  license:
+    name: Apache License Version 2.0
+    url: http://localhost:8080/swagger-ui/
+host: localhost:8080
+basePath: /
+tags:
+  - name: categoria-controller
+    description: Categoria Controller
+  - name: produto-controller
+    description: Produto Controller
+  - name: usuario-controller
+    description: Usuario Controller
+paths:
+  /Categorias/Atualiza/{AtualizaCat}:
+    put:
+      tags:
+        - categoria-controller
+      summary: atualizaCategoria
+      operationId: atualizaCategoriaUsingPUT
+      consumes:
+        - application/json
+      produces:
+        - '*/*'
+      parameters:
+        - in: body
+          name: AtualizaBody
+          description: AtualizaBody
+          required: true
+          schema:
+            $ref: '#/definitions/Categorias'
+        - name: AtualizaCat
+          in: path
+          description: AtualizaCat
+          required: true
+          type: integer
+          format: int64
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/Categorias'
+  /Categorias/Busca/ID/{BuscaID}:
+    get:
+      tags:
+        - categoria-controller
+      summary: pegarPorID
+      operationId: pegarPorIDUsingGET
+      produces:
+        - '*/*'
+      parameters:
+        - name: BuscaID
+          in: path
+          description: BuscaID
+          required: true
+          type: integer
+          format: int64
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/Produtos'
+        '201':
+          description: Objeto Criado!
+        '401':
+          description: Não Autorizado!
+        '403':
+          description: Proibido!
+        '404':
+          description: Não Encontrado!
+        '500':
+          description: Erro!
+  /Categorias/DELETE/ID/{DeletarPorID}:
+    delete:
+      tags:
+        - categoria-controller
+      summary: deletarPorID
+      operationId: deletarPorIDUsingDELETE
+      produces:
+        - '*/*'
+      parameters:
+        - name: DeletarPorID
+          in: path
+          description: DeletarPorID
+          required: true
+          type: integer
+          format: int64
+      responses:
+        '200':
+          description: OK
+  /Categorias/PegarTodos:
+    get:
+      tags:
+        - categoria-controller
+      summary: pegarTodos
+      operationId: pegarTodosUsingGET
+      produces:
+        - '*/*'
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Categorias'
+        '201':
+          description: Objeto Criado!
+        '401':
+          description: Não Autorizado!
+        '403':
+          description: Proibido!
+        '404':
+          description: Não Encontrado!
+        '500':
+          description: Erro!
+  /Categorias/Pesquisa/Nome/{PegaNome}:
+    get:
+      tags:
+        - categoria-controller
+      summary: PesquisaNome
+      operationId: PesquisaNomeUsingGET
+      produces:
+        - '*/*'
+      parameters:
+        - name: PegaNome
+          in: path
+          description: PegaNome
+          required: true
+          type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Categorias'
+        '201':
+          description: Objeto Criado!
+        '401':
+          description: Não Autorizado!
+        '403':
+          description: Proibido!
+        '404':
+          description: Não Encontrado!
+        '500':
+          description: Erro!
+  /Categorias/Salvar:
+    post:
+      tags:
+        - categoria-controller
+      summary: saveCategoria
+      operationId: saveCategoriaUsingPOST
+      consumes:
+        - application/json
+      produces:
+        - '*/*'
+      parameters:
+        - in: body
+          name: BodyCategorias
+          description: BodyCategorias
+          required: true
+          schema:
+            $ref: '#/definitions/Categorias'
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/Categorias'
+  /Produtos/Atualiza/{AtualizaProd}:
+    put:
+      tags:
+        - produto-controller
+      summary: atualizaProduto
+      operationId: atualizaProdutoUsingPUT
+      consumes:
+        - application/json
+      produces:
+        - '*/*'
+      parameters:
+        - in: body
+          name: AtualizaBody
+          description: AtualizaBody
+          required: true
+          schema:
+            $ref: '#/definitions/Produtos'
+        - name: AtualizaProd
+          in: path
+          description: AtualizaProd
+          required: true
+          type: integer
+          format: int64
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/Produtos'
+  /Produtos/Busca/ID/{BuscaID}:
+    get:
+      tags:
+        - produto-controller
+      summary: pegarPorID
+      operationId: pegarPorIDUsingGET_1
+      produces:
+        - '*/*'
+      parameters:
+        - name: BuscaID
+          in: path
+          description: BuscaID
+          required: true
+          type: integer
+          format: int64
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/Produtos'
+        '201':
+          description: Objeto Criado!
+        '401':
+          description: Não Autorizado!
+        '403':
+          description: Proibido!
+        '404':
+          description: Não Encontrado!
+        '500':
+          description: Erro!
+  /Produtos/DELETE/ID/{DeletarPorID}:
+    delete:
+      tags:
+        - produto-controller
+      summary: deletarPorID
+      operationId: deletarPorIDUsingDELETE_1
+      produces:
+        - '*/*'
+      parameters:
+        - name: DeletarPorID
+          in: path
+          description: DeletarPorID
+          required: true
+          type: integer
+          format: int64
+      responses:
+        '200':
+          description: OK
+  /Produtos/PegarTodos:
+    get:
+      tags:
+        - produto-controller
+      summary: pegarTodos
+      operationId: pegarTodosUsingGET_1
+      produces:
+        - '*/*'
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Produtos'
+        '201':
+          description: Objeto Criado!
+        '401':
+          description: Não Autorizado!
+        '403':
+          description: Proibido!
+        '404':
+          description: Não Encontrado!
+        '500':
+          description: Erro!
+  /Produtos/Pesquisa/Descricao/{PesquisaDesc}:
+    get:
+      tags:
+        - produto-controller
+      summary: encontraDescricao
+      operationId: encontraDescricaoUsingGET
+      produces:
+        - '*/*'
+      parameters:
+        - name: PesquisaDesc
+          in: path
+          description: PesquisaDesc
+          required: true
+          type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Produtos'
+        '201':
+          description: Objeto Criado!
+        '401':
+          description: Não Autorizado!
+        '403':
+          description: Proibido!
+        '404':
+          description: Não Encontrado!
+        '500':
+          description: Erro!
+  /Produtos/Salvar:
+    post:
+      tags:
+        - produto-controller
+      summary: saveProduto
+      operationId: saveProdutoUsingPOST
+      consumes:
+        - application/json
+      produces:
+        - '*/*'
+      parameters:
+        - in: body
+          name: BodyProdutos
+          description: BodyProdutos
+          required: true
+          schema:
+            $ref: '#/definitions/Produtos'
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/Produtos'
+  /Usuario/Alterar:
+    put:
+      tags:
+        - usuario-controller
+      summary: alterarUsuario
+      operationId: alterarUsuarioUsingPUT
+      consumes:
+        - application/json
+      produces:
+        - '*/*'
+      parameters:
+        - in: body
+          name: usuarioParaAlterar
+          description: usuarioParaAlterar
+          required: true
+          schema:
+            $ref: '#/definitions/UsuarioDTO'
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: object
+  /Usuario/Atualiza/{AtualizaProd}:
+    put:
+      tags:
+        - usuario-controller
+      summary: atualizaUsuario
+      operationId: atualizaUsuarioUsingPUT
+      consumes:
+        - application/json
+      produces:
+        - '*/*'
+      parameters:
+        - in: body
+          name: AtualizaBody
+          description: AtualizaBody
+          required: true
+          schema:
+            $ref: '#/definitions/Usuario'
+        - name: AtualizaProd
+          in: path
+          description: AtualizaProd
+          required: true
+          type: integer
+          format: int64
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/Usuario'
+  /Usuario/Credenciais:
+    put:
+      tags:
+        - usuario-controller
+      summary: credenciais
+      operationId: credenciaisUsingPUT
+      consumes:
+        - application/json
+      produces:
+        - '*/*'
+      parameters:
+        - in: body
+          name: usuarioParaAutenticar
+          description: usuarioParaAutenticar
+          required: true
+          schema:
+            $ref: '#/definitions/UsuarioDTO'
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: object
+  /Usuario/Delete/Id/{DeletarPorID}:
+    delete:
+      tags:
+        - usuario-controller
+      summary: deletarPorID
+      operationId: deletarPorIDUsingDELETE_2
+      produces:
+        - '*/*'
+      parameters:
+        - name: DeletarPorID
+          in: path
+          description: DeletarPorID
+          required: true
+          type: integer
+          format: int64
+      responses:
+        '200':
+          description: OK
+  /Usuario/Pesquisa/Descricao/{PesquisaDesc}:
+    get:
+      tags:
+        - usuario-controller
+      summary: encontraDescricao
+      operationId: encontraDescricaoUsingGET_1
+      produces:
+        - '*/*'
+      parameters:
+        - name: PesquisaDesc
+          in: path
+          description: PesquisaDesc
+          required: true
+          type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Usuario'
+        '201':
+          description: Objeto Criado!
+        '401':
+          description: Não Autorizado!
+        '403':
+          description: Proibido!
+        '404':
+          description: Não Encontrado!
+        '500':
+          description: Erro!
+  /Usuario/Pesquisa/Id/{BuscaID}:
+    get:
+      tags:
+        - usuario-controller
+      summary: pegarPorID
+      operationId: pegarPorIDUsingGET_2
+      produces:
+        - '*/*'
+      parameters:
+        - name: BuscaID
+          in: path
+          description: BuscaID
+          required: true
+          type: integer
+          format: int64
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/Usuario'
+        '201':
+          description: Objeto Criado!
+        '401':
+          description: Não Autorizado!
+        '403':
+          description: Proibido!
+        '404':
+          description: Não Encontrado!
+        '500':
+          description: Erro!
+  /Usuario/Pesquisa/Todos:
+    get:
+      tags:
+        - usuario-controller
+      summary: getAll
+      operationId: getAllUsingGET
+      produces:
+        - '*/*'
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Usuario'
+        '201':
+          description: Objeto Criado!
+        '401':
+          description: Não Autorizado!
+        '403':
+          description: Proibido!
+        '404':
+          description: Não Encontrado!
+        '500':
+          description: Erro!
+  /Usuario/Salvar:
+    post:
+      tags:
+        - usuario-controller
+      summary: salvar
+      operationId: salvarUsingPOST
+      consumes:
+        - application/json
+      produces:
+        - '*/*'
+      parameters:
+        - in: body
+          name: novoUsuario
+          description: novoUsuario
+          required: true
+          schema:
+            $ref: '#/definitions/Usuario'
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: object
+definitions:
+  Categorias:
+    type: object
+    required:
+      - descricaoDaCategoria
+      - nomeDaCategoria
+    properties:
+      descricaoDaCategoria:
+        type: string
+      idCategoria:
+        type: integer
+        format: int64
+      nomeDaCategoria:
+        type: string
+      produtos:
+        type: array
+        items:
+          $ref: '#/definitions/Produtos'
+    title: Categorias
+  Produtos:
+    type: object
+    required:
+      - descricao
+      - marca
+      - nome
+    properties:
+      categoriaRelacionada:
+        $ref: '#/definitions/Categorias'
+      criador:
+        $ref: '#/definitions/Usuario'
+      descricao:
+        type: string
+      idProduto:
+        type: integer
+        format: int64
+      marca:
+        type: string
+      nome:
+        type: string
+      preco:
+        type: number
+        format: float
+      tamanho:
+        type: string
+    title: Produtos
+  Usuario:
+    type: object
+    required:
+      - email
+      - nome
+      - senha
+    properties:
+      email:
+        type: string
+      idUsuario:
+        type: integer
+        format: int64
+      nome:
+        type: string
+      produtos:
+        type: array
+        items:
+          $ref: '#/definitions/Produtos'
+      senha:
+        type: string
+    title: Usuario
+  UsuarioDTO:
+    type: object
+    required:
+      - email
+      - senha
+    properties:
+      email:
+        type: string
+      id:
+        type: integer
+        format: int64
+      nome:
+        type: string
+      senha:
+        type: string
+      token:
+        type: string
+    title: UsuarioDTO
+    
+ //CONFIGURAÇÕES APLICATION PROPERTIES MYSQL 
+ /*
+spring.jpa.hibernate.ddl-auto=update
+spring.datasource.url=jdbc:mysql://${MYSQL_HOST:localhost}:3306/db_Ecommerce?createDatabaseIfNotExist=true
+spring.datasource.username=root
+spring.datasource.password=root
+spring.jpa.show-sql=true
+*/
