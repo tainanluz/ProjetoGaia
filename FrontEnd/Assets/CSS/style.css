@@ -1,7 +1,7 @@
 /*Exemplo só pra não deixar em branco*/
 
 body {
-    background-color: rgb(178, 238, 191);
+    background-color: rgb(126, 207, 187);
   }
   
   h1 {
@@ -12,4 +12,8 @@ body {
   p {
     font-family: 'Poppins'; /*escolher fonte depois*/
     font-size: 20px;
+  }
+
+  .teste{
+    margin-top: 70px;
   }
