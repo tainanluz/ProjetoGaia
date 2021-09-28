@@ -9,11 +9,11 @@
 		<version>2.5.4</version>
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>Ecommerce</groupId>
-	<artifactId>Ecommerce</artifactId>
+	<groupId>Gaia</groupId>
+	<artifactId>Gaia</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>Ecommerce</name>
-	<description>Demo project for Spring Boot</description>
+	<name>Gaia</name>
+	<description>Projeto de conclusão do curso Generation</description>
 	<properties>
 		<java.version>11</java.version>
 	</properties>
