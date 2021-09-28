@@ -26,8 +26,7 @@ public class Categorias
 	@OneToMany(mappedBy = "categoriaRelacionada", cascade = CascadeType.REMOVE)
 	@JsonIgnoreProperties({"categoriaRelacionada"})
 	private List<Produtos> produtos = new ArrayList<>();
-	
-	
+
 	
 	public List<Produtos> getProdutos() {
 		return produtos;

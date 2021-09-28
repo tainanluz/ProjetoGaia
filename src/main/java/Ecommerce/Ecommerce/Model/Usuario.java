@@ -31,8 +31,8 @@ public class Usuario {
 	@NotBlank 
 	private String senha;
 	
-	@OneToMany(mappedBy = "criador", cascade = CascadeType.REMOVE)
-	@JsonIgnoreProperties({"criador"})
+	@OneToMany(mappedBy = "categoriaRelacionada", cascade = CascadeType.REMOVE)
+	@JsonIgnoreProperties({"categoriaRelacionada"})
 	private List<Produtos> produtos = new ArrayList<>();
 	
 
