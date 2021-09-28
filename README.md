@@ -1,4 +1,4 @@
-# ECOmmerce-
+# ProjetoGaia
 Projeto de conclusão do curso Generation
 
 Sobre: E-comerce de produtos de energia limpa e gestão de energia e resíduos.
