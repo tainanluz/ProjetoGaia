@@ -1,0 +1,90 @@
+* {
+    background-color: #F2F7F2;
+    font-family: 'Poppins', sans-serif;
+}
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+.type{
+    font-family: 'Montserrat', sans-serif;
+    color: #555555;
+    background-color: transparent;
+}
+
+.limiter {
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+}
+
+.container-cad {
+    width: 100%;
+    min-height: 100vh;
+    flex-wrap: wrap;
+}
+
+.planta {
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    z-index: 1;
+}
+
+.formulario {
+    width: auto;
+    min-height: 100vh;
+    display: block;
+    padding: 120px 55px 55px 55px;
+    margin-left: 12px;
+}
+
+.form-control {
+    background: transparent;
+}
+
+.wrap {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+}
+
+.form-label {
+    color: #333333;
+    font-weight: 300;
+}
+
+.title {
+    color: #222222;
+    text-align: center;
+    padding-bottom: 43px;
+    display: block;
+    line-height: 1.2;
+}
+
+
+.cadastro {
+    width: 100%;
+    height: 50px;
+    border-radius: 10px;
+    background-color: #429E69;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+    border-style: none;
+    font-size: 14px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    color: #dce6e5;
+    line-height: 1.2;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+.bt {
+
+    justify-content: center;
+    align-items: center;
+
+} 
