@@ -1,1 +1,46 @@
-<p>cadastro works!</p>
+<div class="container-fluid">
+    <div class="row d-flex align-items-center">
+        <div class="col-md-6" id="img-bg">
+
+        </div>
+
+        <div class="col-md-6 mb-5 mt-5">
+            <div class="row d-flex justify-content-center">
+                <div class="col-md-8">
+                    <h1 class="text-center mb-3">Cadastro</h1>
+
+                    <div class="form-groug mt-3">
+                        <label for="nome">Nome</label>
+                        <input [(ngModel)]='usuario.nome' class="form-control mt-3" type="text" name="nome" id="nome"
+                            placeholder="Seu nome">
+                    </div>
+
+                    <div class="form-groug mt-3">
+                        <label for="email">Email</label>
+                        <input [(ngModel)]='usuario.email' class="form-control mt-3" type="email" name="email"
+                            id="email" placeholder="Seu email">
+                    </div>
+
+                    <div class="form-groug mt-3">
+                        <label for="senha">Senha</label>
+                        <input (input)='confirmarSenha($event)' class="form-control mt-3" type="password" name="senha"
+                            id="senha" placeholder="Sua senha">
+                    </div>
+
+                    <div class="form-groug mt-3">
+                        <label for="confirmarSenha">Confirmar Senha</label>
+                        <input [(ngModel)]='usuario.senha' class="form-control mt-3" type="password"
+                            name="confirmarSenha" id="confirmarSenha" placeholder="Sua senha novamente">
+                    </div>
+
+                    <div class="d-flex justify-content-center mt-3">
+                        <button type="submit" class="btn btn-danger mt-3 me-5" routerLink='/login'>Cancelar</button>
+                        <button type="submit" class="btn btn-success mt-3 ms-5" (click)='cadastrar()'>Confirmar</button>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>
