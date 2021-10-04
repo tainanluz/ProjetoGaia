@@ -14,10 +14,10 @@ export class AuthService {
   ) { }
 
   login(usuarioLogin: UsuarioLogin): Observable<UsuarioLogin>{
-    return this.http.put<UsuarioLogin>('https://gaiaecommerce.herokuapp.com/Usuario/Credenciais', usuarioLogin)
+    return this.http.put<UsuarioLogin>('http://deploygaia.herokuapp.com/Usuario/credenciais', usuarioLogin)
   }
 
   cadastrar(usuario: Usuario): Observable<Usuario> {
-    return this.http.post<Usuario>('https://gaiaecommerce.herokuapp.com/Usuario/Salvar', usuario)
+    return this.http.post<Usuario>('http://deploygaia.herokuapp.com/Usuario/salvar', usuario)
   }
 }
