@@ -1,7 +1,6 @@
 package Ecommerce.Ecommerce.Security;
 
 import org.springframework.beans.factory.annotation.Autowired;
-
 import org.springframework.context.annotation.Bean;
 import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
@@ -33,8 +32,8 @@ public class BasicSecurity extends WebSecurityConfigurerAdapter {
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 	http.authorizeRequests()
-	.antMatchers("/usuarios/cadastrar").permitAll()
-	.antMatchers("/usuarios/logar").permitAll()
+	.antMatchers(HttpMethod.POST,"/Usuario/salvar").permitAll()
+	.antMatchers(HttpMethod.PUT,"/Usuario/credenciais").permitAll()
 	.antMatchers(HttpMethod.OPTIONS).permitAll()
 	.anyRequest().authenticated()
 	.and().httpBasic()

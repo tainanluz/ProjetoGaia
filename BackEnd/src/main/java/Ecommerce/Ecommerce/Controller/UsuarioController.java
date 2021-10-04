@@ -30,7 +30,7 @@ public class UsuarioController {
 	private @Autowired UsuarioRepository repositorio;
 	private @Autowired UsuarioServicos servicos;
 	
-	@PostMapping("/Salvar")
+	@PostMapping("/salvar")
 	public ResponseEntity<Object> salvar(@Valid @RequestBody Usuario novoUsuario) {
 		Optional<Object> objetoOptional = servicos.cadastrarUsuario(novoUsuario);
 
@@ -86,7 +86,7 @@ public class UsuarioController {
 			}
 	}
 	
-	@PutMapping("/Credenciais")
+	@PutMapping("/credenciais")
 	public ResponseEntity<Object> credenciais(@Valid @RequestBody UsuarioDTO usuarioParaAutenticar){
 		Optional<?> objetoOptional = servicos.pegarCredenciais(usuarioParaAutenticar);
 		
