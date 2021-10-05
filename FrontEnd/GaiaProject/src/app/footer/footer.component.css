@@ -1,13 +1,29 @@
 .color{
-    background: rgb(63,94,251);
-    background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%)
+    /* background-color: rgb(242, 120, 11); */
+    background: linear-gradient(rgb(242, 120, 11),rgb(202, 100, 10));
+    /* background: rgb(63,94,251);
+    background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%) */
 }
 
-.colortext{
-    color: rgb(8, 27, 27);
-}
+
 
 .tm-social {
     width: 50px;
     height: 50px;
+}
+
+
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+.tbolder {
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 700;
+}
+
+.tbold {
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 600;
+    color: #fff;
+    font-size: 20px;
 }
