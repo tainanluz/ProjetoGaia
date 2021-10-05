@@ -5,6 +5,44 @@
 
 .bg-teste
 {
-    background: rgb(63,94,251);
+    background: rgb(63, 94, 251);
 background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%);
+}
+
+.bg{
+    background-image: url(https://cdn.discordapp.com/attachments/892048100582109274/894645545132519454/img3.jpg);
+}
+
+.nav-link{
+    font-size: 26px;
+}
+
+#teste:hover {
+    background-color: #777;
+}
+
+.navbar{
+    display: flex !important; 
+    justify-content: center !important;
+}
+
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+.tbolder {
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 700;
+}
+
+.tbold {
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 600;
+    color: #fff;
+    font-size: 26px;
+}
+
+.btnuser{
+    border: solid;
+    border-color: rgb(221, 137, 73);
+    border-radius: 20px;
 }
