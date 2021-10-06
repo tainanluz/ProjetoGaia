@@ -1,6 +1,6 @@
 .color{
     /* background-color: rgb(242, 120, 11); */
-    background: linear-gradient(rgb(242, 120, 11),rgb(202, 100, 10));
+    background: linear-gradient(rgba(216, 107, 11, 0.616),rgb(129, 57, 8));
     /* background: rgb(63,94,251);
     background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%) */
 }
@@ -27,3 +27,13 @@
     color: #fff;
     font-size: 20px;
 }
+.center {
+    margin: auto;
+    width: 100%;
+    padding: 20px;
+  }
+  .center2 {
+    margin: auto;
+    width: 100%;
+    padding: 10px;
+  }
