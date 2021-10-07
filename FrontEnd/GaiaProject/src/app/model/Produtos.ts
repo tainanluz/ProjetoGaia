@@ -1,4 +1,4 @@
-import { Categoria } from "./Categorias"
+import { Categorias } from "./Categorias"
 
 export class Produtos{
     public idProduto: number
@@ -7,5 +7,5 @@ export class Produtos{
     public preco: number
     public descricao: string
     public tamanho: string
-    public categoria: Categoria
+    public categorias: Categorias
 }

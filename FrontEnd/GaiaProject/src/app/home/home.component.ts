@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { environment } from 'src/environments/environment.prod';
+import { Categorias } from '../model/Categorias';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +10,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  listaCategorias: Categorias[]
+  categorias: Categorias = new Categorias
+  idCategoria: number
+  constructor(
+   private router: Router
+  ) { }
 
-  ngOnInit(): void {
-  }
-
+  ngOnInit(){
+  if (environment.token == ''){
+  this.router.navigate([])
+}
+}
 }
