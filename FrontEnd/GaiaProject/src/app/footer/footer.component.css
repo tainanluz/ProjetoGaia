@@ -5,13 +5,11 @@
     background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%) */
 }
 
-
-
 .tm-social {
     width: 50px;
     height: 50px;
+    margin-right: 15px; 
 }
-
 
 /* You can add global styles to this file, and also import other style files */
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
@@ -33,7 +31,6 @@
     padding: 20px;
   }
   .center2 {
-    margin: auto;
-    width: 100%;
-    padding: 10px;
+    text-align: center;
+    padding: 5px;
   }

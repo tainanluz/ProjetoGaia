@@ -1,62 +1,68 @@
 <div class="bg-secondary bg-geral container-fluid p-0">
     <app-menu></app-menu>
 
+     <!--Off Canvas-->
+    <div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1"
+        id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasScrollingLabel">Categorias de produtos:</h5>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
 
-<div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
-  <div class="offcanvas-header">
-    <h5 class="offcanvas-title" id="offcanvasScrollingLabel">Categorias de produtos:</h5>
-    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-  </div>
-  <div class="offcanvas-body">
-    <select name="categoria" id="categorias" class="form-control">
-        <option *ngFor="let categorias of listaCategorias" value="{{categorias.idCategoria}}">{{categorias.nomeDaCategoria}}</option>
-    </select>
-  </div>
-</div> 
-<div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasWithBackdrop" aria-labelledby="offcanvasWithBackdropLabel">
-  <div class="offcanvas-header">
-    <h5 class="offcanvas-title" id="offcanvasWithBackdropLabel">Offcanvas with backdrop</h5>
-    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-  </div>
-  <div class="offcanvas-body">
-    <p>.....</p>
-  </div>
-</div> 
-<div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
-  <div class="offcanvas-header">
-    <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Backdrop with scrolling</h5>
-    <button type="button" class="btn-close color-white text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-  </div>
-  <div class="offcanvas-body">
-    <p>Try scrolling the rest of the page to see this option in action.</p>
-  </div>
-</div>
+        <div class="offcanvas-body">
+            <div class="form-group">
+                <label class="btn" routerLink="/reaproveitamento" class="form-control mt-2">
+                    <p class="text-center align-text-center">Reaproveitamento de agua</p>
+                </label>
+                <label class="btn" routerLink="/paraLevar" class="form-control mt-2">
+                    <p class="text-center align-text-center">Para levar</p>
+                </label>
+                <label class="btn" routerLink="/coletaSeletiva" class="form-control mt-2">
+                    <p class="text-center align-text-center">Coleta seletiva</p>
+                </label>
+                <label class="btn" routerLink="/energiaSolar" class="form-control mt-2">
+                    <p class="text-center align-text-center">Energia solar</p>
+                </label>
+            </div>
+            <div class="mt-20">
+                <p class="btn" routerLink="/adicionarCategoria">Adicionar nova categoria</p>
+            </div>
+           
+        </div>
+    </div>
+    <!--Off Canvas-->
+
     <div class="row d-flex justify-content-center shadow">
 
         <div class="col-9 bg-teste ">
 
-            <div class = "row p-0">
-                <div class = "col-12 d-flex justify-content-center">
+            <div class="row p-0">
+                <div class="col-12 d-flex justify-content-center">
                     <!--Carrosel-->
-                    <div id="carouselExampleInterval" class="p-md-3 m-0 carousel slide container" data-bs-ride="carousel">
+                    <div id="carouselExampleInterval" class="p-md-3 m-0 carousel slide container"
+                        data-bs-ride="carousel">
                         <div class="carousel-inner">
                             <div class="carousel-item active" data-bs-interval="10000">
                                 <img src="https://cdn.discordapp.com/attachments/892048100582109274/892518731299848232/Img1_1280x628px.jpg"
                                     class="d-block " alt="...">
-                                   
+
                             </div>
                             <div class="carousel-item" data-bs-interval="2000">
-                                <img src="http://nacionalsol.com.br/wp-content/uploads/2021/05/como-e-feito-energia-solar.png" class="d-block" alt="...">
+                                <img src="http://nacionalsol.com.br/wp-content/uploads/2021/05/como-e-feito-energia-solar.png"
+                                    class="d-block" alt="...">
                             </div>
                             <div class="carousel-item">
-                                <img src="assets/imgs/INFOGRAFICO_REAPROVEITAMENTO_DA_AGUA_Prancheta_1.jpg" class="d-block" alt="...">
+                                <img src="assets/imgs/INFOGRAFICO_REAPROVEITAMENTO_DA_AGUA_Prancheta_1.jpg"
+                                    class="d-block" alt="...">
                             </div>
                         </div>
-                        <a class="carousel-control-prev" href="#carouselExampleInterval" role="button" data-slide="prev">
+                        <a class="carousel-control-prev" href="#carouselExampleInterval" role="button"
+                            data-slide="prev">
                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                             <span class="sr-only">Anterior</span>
                         </a>
-                        <a class="carousel-control-next" href="#carouselExampleInterval" role="button" data-slide="next">
+                        <a class="carousel-control-next" href="#carouselExampleInterval" role="button"
+                            data-slide="next">
                             <span class="carousel-control-next-icon" aria-hidden="true"></span>
                             <span class="sr-only">Próximo</span>
                         </a>
@@ -64,9 +70,9 @@
                     <!--Carrosel-->
                 </div>
             </div>
-        
+
             <!--Ofertas!!!-->
-        
+
             <div class="row p-md-3 justify-content-center">
                 <div class="col-sm-3 p-md-2">
                     <div class="card">
@@ -90,7 +96,7 @@
                         </div>
                     </div>
                 </div>
-        
+
                 <div class="col-sm-3 p-md-2">
                     <div class="card">
                         <div class="card-body">
@@ -103,11 +109,11 @@
                     </div>
                 </div>
             </div>
-        
-        
-        
+
+
+
             <!--Ofertas!!!-->
-        
+
             <!--Recurso de navegação entre pag's-->
             <nav aria-label="Page navigation example">
                 <ul class="pagination justify-content-center p-md-3">
@@ -123,7 +129,7 @@
                 </ul>
             </nav>
             <!--Recurso de navegação entre pag's-->
-            
+
         </div>
     </div>
     <app-footer></app-footer>

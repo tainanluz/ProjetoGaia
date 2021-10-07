@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AboutUsComponent } from './about-us/about-us.component';
+import { AdicionarCategoriaComponent } from './adicionar-categoria/adicionar-categoria.component';
 import { CadastroComponent } from './cadastro/cadastro.component';
 import { ContactComponent } from './contact/contact.component';
 import { FooterComponent } from './footer/footer.component';
@@ -17,7 +18,8 @@ const routes: Routes = [
   {path: 'footer', component:FooterComponent},
   {path: 'menu', component:MenuComponent},
   {path: 'login', component:LoginComponent},
-  {path: 'cadastro', component:CadastroComponent}
+  {path: 'cadastro', component:CadastroComponent},
+  {path: 'adicionarCategoria', component:AdicionarCategoriaComponent}
 ];
 
 @NgModule({
