@@ -13,6 +13,7 @@ import { FooterComponent } from './footer/footer.component';
 import { LoginComponent } from './login/login.component';
 import { CadastroComponent } from './cadastro/cadastro.component';
 import { AdicionarCategoriaComponent } from './adicionar-categoria/adicionar-categoria.component';
+import { CategoriaDeleteComponent } from './delete/categoria-delete/categoria-delete.component';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { AdicionarCategoriaComponent } from './adicionar-categoria/adicionar-cat
     FooterComponent,
     LoginComponent,
     CadastroComponent,
-    AdicionarCategoriaComponent
+    AdicionarCategoriaComponent,
+    CategoriaDeleteComponent,
   ],
   imports: [
     BrowserModule,

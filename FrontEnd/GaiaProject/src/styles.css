@@ -26,3 +26,8 @@
     font-family: 'Quicksand', sans-serif;
     font-weight: 300;
 }
+
+.mrButton{
+    margin-right: 5px;
+    margin-top: 5px;
+}
