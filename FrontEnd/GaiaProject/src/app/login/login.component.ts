@@ -20,6 +20,7 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
     window.scroll(0,0)
     environment.token=''
+    var ultimoLogin= environment.token
   }
 
   login() {
@@ -29,7 +30,7 @@ export class LoginComponent implements OnInit {
       environment.token = this.usuarioLogin.token
       environment.nome = this.usuarioLogin.nome
       environment.idUsuario = this.usuarioLogin.idUsuario
-
+      
       // console.log(environment.token)
       // console.log(environment.name)
       // console.log(environment.photo)

@@ -5,6 +5,7 @@ import { AdicionarCategoriaComponent } from './adicionar-categoria/adicionar-cat
 import { CadastroComponent } from './cadastro/cadastro.component';
 import { ContactComponent } from './contact/contact.component';
 import { CategoriaDeleteComponent } from './delete/categoria-delete/categoria-delete.component';
+import { CategoriaPutComponent } from './edit/categoria-put/categoria-put.component';
 import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
@@ -21,7 +22,8 @@ const routes: Routes = [
   {path: 'login', component:LoginComponent},
   {path: 'cadastro', component:CadastroComponent},
   {path: 'adicionarCategoria', component:AdicionarCategoriaComponent},
-  {path: 'categoria-delete/:id', component:CategoriaDeleteComponent}
+  {path: 'categoria-delete/:id', component:CategoriaDeleteComponent},
+  {path: 'categoria-put/:id', component:CategoriaPutComponent},
 ];
 
 @NgModule({

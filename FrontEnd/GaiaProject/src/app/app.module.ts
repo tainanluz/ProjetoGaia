@@ -14,6 +14,7 @@ import { LoginComponent } from './login/login.component';
 import { CadastroComponent } from './cadastro/cadastro.component';
 import { AdicionarCategoriaComponent } from './adicionar-categoria/adicionar-categoria.component';
 import { CategoriaDeleteComponent } from './delete/categoria-delete/categoria-delete.component';
+import { CategoriaPutComponent } from './edit/categoria-put/categoria-put.component';
 
 
 @NgModule({
@@ -28,6 +29,7 @@ import { CategoriaDeleteComponent } from './delete/categoria-delete/categoria-de
     CadastroComponent,
     AdicionarCategoriaComponent,
     CategoriaDeleteComponent,
+    CategoriaPutComponent,
   ],
   imports: [
     BrowserModule,

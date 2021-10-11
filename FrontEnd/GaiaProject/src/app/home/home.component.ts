@@ -12,23 +12,28 @@ import { CategoriasService } from '../service/categorias.service';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-
   listaCategorias: Categorias[]
   categorias: Categorias = new Categorias
   idCategoria: number
   idProduto: number
   usuario: Usuario = new Usuario()
   produtos: Produtos = new Produtos()
+  
+
 
   constructor(
    private router: Router,
-   private categoriaService: CategoriasService
-  ) { }
+   private categoriaService: CategoriasService,
+
+   ) {
+    
+   }
 
   ngOnInit(){
-  if (environment.token == ''){
+  if (environment.token == '')
+  { 
   this.router.navigate(['/login'])
-}
+  }
 this.findAllCategorias()
 } 
  

@@ -38,7 +38,7 @@
                         <th>{{categorias.idCategoria}}</th>
                         <td>{{categorias.nomeDaCategoria}}</td>
                         <td class="d-flex justify-content-end">
-                            <button class="btn btn-info mrButton" >Editar</button>
+                            <button class="btn btn-info mrButton"  [routerLink]="['/categoria-put', categorias.idCategoria]">Editar</button>
                             <Button class="btn btn-danger mrButton"[routerLink]="['/categoria-delete', categorias.idCategoria]">Apagar</Button>
                         </td>
                     </tr>
