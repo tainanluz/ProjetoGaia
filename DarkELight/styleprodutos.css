@@ -1,0 +1,213 @@
+/*Importar fontes daqui: https://fonts.google.com/specimen/Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+/*Estilos CSS*/
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+section{
+    position: relative;
+    background: rgb(61, 221, 194); /*Cor do fundo geral*/
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    transition: background 0.5s; /*Tempo de mudança da cor do fundo*/
+}
+
+section.dark{ /*Cor do fundo geral no modo dark*/
+    background: rgb(49, 45, 45);
+}
+
+section .card{
+    position: relative;
+    margin: 5px;
+    margin-top: 10px;
+    width: 300px;
+    height: 380px;
+    background: rgb(228, 93, 53); /*Cor do fundo do card*/
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.25);
+    border-radius: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+section .card:hover{
+    background: burlywood;
+}
+
+section.dark .card:hover{
+    background: rgb(197, 85, 41);
+}
+
+section.dark .card{
+    background: firebrick;/*Cor do fundo do card no modo dark*/
+}
+
+section .card .content,
+section .card .imgText{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+section .card .imgText .imgBx{
+    position: relative;
+    width: 120px;
+    height: 120px;
+    overflow: hidden;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+
+section .card:hover .imgText .imgBx{
+    position: relative;
+    width: 150px; /*Aumenta a imagem*/
+    height: 150px; /*Aumenta a imagem*/
+    overflow: hidden;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+
+section .card .imgText .imgBx img{ /*Alinhando a imagem*/
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+section .card .imgText h3{ /*Sobre o texto do h3*/
+    font-weight: 500;
+    font-size: 1.5em;
+    line-height: 1.2em;
+    text-align: center;
+    color: black;
+}
+
+section .card .imgText h3 span{ /*Sobre o texto do span do h3*/
+    font-weight: 400;
+    font-size: 0.9em;
+    color: black;
+}
+
+section.dark .card .imgText h3 span{ /*Sobre o texto do span do h3 no modo dark*/
+    color: rgb(58, 5, 25);
+}
+
+section .card h5{ /*Sobre o texto do span do h5*/
+    margin-top: 10px;
+    font-weight: 500;
+    font-size: 1.5em;
+    line-height: 1.2em;
+    text-align: left;
+    align-self: flex-start;
+    color: black;
+    background: lightseagreen;
+    border-radius: 15%;
+}
+section .card h4{ /*Sobre o texto do span do h5*/
+    margin-top: 5px;
+    font-weight: 500;
+    font-size: 1.5em;
+    line-height: 1.2em;
+    text-align: left;
+    align-self: flex-start;
+    color: black;
+    background: rgb(121, 19, 19);
+    border-radius: 15%;
+}
+
+section .card .sci{ /*Onde estão os ícones das redes sociais*/
+    display: flex;
+    margin-top: 15px;
+}
+
+section .card .sci li{ /*Onde estão os ícones das redes sociais*/
+    list-style: none;
+}
+
+section .card .sci li a{/*Exatamente a parte redonda dos ícones das redes sociais*/
+    position: relative;
+    width: 50px;
+    height: 50px;
+    background: burlywood; /*Cor x mencionada abaixo*/
+    color: black;
+    margin: 0 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    text-decoration: none;
+    font-size: 25px;
+    transition: 0.5s;
+}
+
+section.dark .card .sci li a{ /*Modo dark - Exatamente a parte redonda dos ícones das redes sociais*/
+    background: rgb(33, 97, 102);
+}/* Se quiser, fazer a hover do modo dark*/
+/*section.dark .card .sci li a:hover*/
+
+
+section .card .sci li a:hover{
+    color: rgb(207, 198, 174);/*Cor dos ícones quando faz o hover*/
+}
+
+section .card .sci li a .fa{/*Exatamente os ícones das redes sociais*/
+    position: relative;
+    z-index: 1000;
+}
+
+section .card .sci li a:before{/*Exatamente a parte redonda dos ícones das redes sociais*/
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(170, 106, 11); /*Esta cor sobrepõe a cor x na mudança de escala do hover(na bolinha)*/
+    border-radius: 50%;
+    transform: scale(0); /*Mudança de escala de preenchimento*/
+    transition: 0.5s; /*Tempo na mudança da transição*/
+}
+
+section .card .sci li a:hover:before{/*Hover nos círculos que contém os ítens*/
+    transform: scale(1); /*Mudança de escala de preenchimento*/
+}
+
+/*Botão de mudança Lua e Sol*/
+.toggle{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: darksalmon;/*Cor de fundo*/
+    width: 30px; /*Largura do fundo*/
+    height: 30px;/*Altura do fundo*/
+    border-radius: 50%; /*Suavização do quanto é quadrado*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+section.dark .toggle{ /*Cor de fundo do botão Sol*/
+    background: rgb(177, 114, 19);
+}
+
+.toggle:before{
+    content: '\f186'; /*Código da Lua*/
+    font-family: fontAwesome; /*Código da Lua pra chamar a fonte*/
+    color: rgb(71, 11, 43); /*Cor da Lua*/
+}
+
+section.dark .toggle:before{
+    content: '\f185'; /*Código do Sol*/
+    font-family: fontAwesome; /*Código do Sol pra chamar a fonte*/
+    color: rgb(61, 5, 19); /*Cor do Sol*/
+}
