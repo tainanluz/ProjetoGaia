@@ -29,10 +29,39 @@
     width: 100%;
 }
 
-.cards{
+.cards{ /*Parte onde contém os produtos*/
     display: flex;  
     flex-direction: row;
     flex-wrap: wrap;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.25);
+    border-radius: 16px;
+    align-content: center; /*alinhando os cards*/
+    justify-content: space-between; /*alinhando os cards - deixa justificado no card que eles estão*/
+}
+
+.card{ /*Produtos individualmente*/
+    background: rgba(233, 205, 163, 0.733);
+    display: flex;  
+    flex-direction: row;
+    flex-wrap: wrap;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.25);
+    border-radius: 16px;
+    align-content: center; /*alinhando os cards*/
+    justify-content: center;
+    margin: 15px; /*Margem para não colar os cards internos no card que os contém*/
+    transition: 0.5s;
+}
+
+.card:hover{ /*Produtos individualmente*/
+    background: rgba(233, 197, 163, 0.897);
+    display: flex;  
+    flex-direction: row;
+    flex-wrap: wrap;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.25);
+    border-radius: 16px;
+    align-content: center; /*alinhando os cards*/
+    justify-content: center;
+    margin: 15px; /*Margem para não colar os cards internos no card que os contém*/
 }
 
 .space-between{
@@ -40,11 +69,38 @@ align-content: space-between;
 }
 
 .EndButton{
-    align-content: flex-end;
-    justify-content: flex-end;
+    align-content: center; /*Alinhando o botão de preço*/
+    justify-content: center;
 }
 
+.btn{ /*Cores para o botão*/
+    background: rgb(20, 128, 92);
+    color: rgb(233, 239, 241);
+    transition: 0.5s;
+}
+
+.btn:hover{ /*hover para o botão*/
+    background: rgb(10, 66, 73);
+    color: rgb(233, 239, 241);
+}
 .tamanho{
     display: grid;
     grid-template-rows: 40px 100px;
+}
+
+.imgProd{
+    position: relative;
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 10%;
+    margin-bottom: 15px;
+}
+
+.p .card-text{ /*Não consegui alinhar o texto no card da composteira*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
 }
