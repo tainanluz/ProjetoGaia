@@ -15,6 +15,9 @@ import { CadastroComponent } from './cadastro/cadastro.component';
 import { AdicionarCategoriaComponent } from './adicionar-categoria/adicionar-categoria.component';
 import { CategoriaDeleteComponent } from './delete/categoria-delete/categoria-delete.component';
 import { CategoriaPutComponent } from './edit/categoria-put/categoria-put.component';
+import { AdicionarProdutoComponent } from './adicionar-produto/adicionar-produto.component';
+import { ProdutosDeleteComponent } from './delete/produtos-delete/produtos-delete.component';
+import { ProdutosPutComponent } from './edit/produtos-put/produtos-put.component';
 
 
 @NgModule({
@@ -30,6 +33,9 @@ import { CategoriaPutComponent } from './edit/categoria-put/categoria-put.compon
     AdicionarCategoriaComponent,
     CategoriaDeleteComponent,
     CategoriaPutComponent,
+    AdicionarProdutoComponent,
+    ProdutosDeleteComponent,
+    ProdutosPutComponent,
   ],
   imports: [
     BrowserModule,

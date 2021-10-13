@@ -7,11 +7,11 @@ import { ProdutosService } from 'src/app/service/produtos.service';
 import { environment } from 'src/environments/environment.prod';
 
 @Component({
-  selector: 'app-categoria-put',
-  templateUrl: './categoria-put.component.html',
-  styleUrls: ['./categoria-put.component.css']
+  selector: 'app-produtos-put',
+  templateUrl: './produtos-put.component.html',
+  styleUrls: ['./produtos-put.component.css']
 })
-export class CategoriaPutComponent implements OnInit {
+export class ProdutosPutComponent implements OnInit {
 
   listaProdutos: Produtos[]
   categorias: Categorias = new Categorias()
@@ -21,8 +21,8 @@ export class CategoriaPutComponent implements OnInit {
   produtos: Produtos = new Produtos()
 
   constructor(
+    private produtosService: ProdutosService,
     private router: Router,
-    private produtoService: ProdutosService,
     private route: ActivatedRoute
   ) { }
 
@@ -30,19 +30,20 @@ export class CategoriaPutComponent implements OnInit {
     if(environment.token =='')
     this.router.navigate(['/entrar'])
     let id = this.route.snapshot.params['id']
-    this.findByIdProduto(id)
+    this.findByIdCategoria(id)
   }
 
-  findByIdProduto(id: number){
-    this.produtoService.getByIdProduto(id).subscribe((resp: Produtos)=>{
+  findByIdCategoria(id: number){
+    this.produtosService.getByIdProduto(id).subscribe((resp: Produtos)=>{
       this.produtos = resp
     })
   }
 
   atualizar(){
-    this.produtoService.putProduto(this.produtos).subscribe((resp: Produtos)=>{this.produtos=resp
+    this.produtosService.putProduto(this.produtos).subscribe((resp: Produtos)=>{this.produtos=resp
     alert('Produto atualizado com sucesso!')
-    this.router.navigate(['adicionarProduto'])
+    console.log("Produto:"+JSON.stringify(this.produtos))
+    this.router.navigate(['adicionarCategoria'])
     })
   }
 
