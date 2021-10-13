@@ -64,9 +64,49 @@
               </div>
             <!--Carrosel-->
 
+            <div>
+                <button class="mr-3 btn bg-transparent tbold button1" data-bs-toggle="modal" data-bs-target="#newProduto">Adicionar novo Produto</button>
+            </div>
+
+            <div class="modal fade" id="newProduto" tabindex="-1" aria-labelledby="newProdutoLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="newProdutoLabel">Novo Produto</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+              
+                    <div class="modal-body">
+                      <div class="form-group">
+                        <label for="nome">Nome do Produto</label>
+                        <input [(ngModel)]='produto.nome' type="text" class="form-control" id="nome"
+                          placeholder="Digite o nome do produto">
+                      </div>
+                      <div class="form-group">
+                        <label for="descricao">Descrição do produto</label>
+                        <textarea [(ngModel)]='produto.descricao' class="form-control " name="descricao" id="descricao"
+                          rows="5"></textarea>
+                      </div>
+                      <div class="form-group">
+                        <label for="descricao">Escolha a categoria ou <a routerLink='/adicionarCategoria' data-bs-dismiss="modal">cadastre uma
+                            nova</a>: </label>
+                        <select name="categoria" id="categoria" class="form-select" [(ngModel)]='idCategoria' (change)='findByIdCategoria()'>
+                          <option *ngFor='let item of listaCategorias' value="{{item.idCategoria}}">{{item.nomeDaCategoria}}</option>
+                        </select>
+                      </div>
+                    </div>
+              
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
+                      <button type="button" class="btn btn-success" (click)='publicar()' data-bs-dismiss="modal">Publicar</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
             <!--Ofertas!!!-->
 
-            <div class="row p-md-3 justify-content-center">
+            <!-- <div class="row p-md-3 justify-content-center">
                 <div class="col-sm-3 p-md-2">
                     <div class="card">
                         <div class="card-body">
@@ -101,9 +141,75 @@
                         </div>
                     </div>
                 </div>
+            </div> -->
+
+            <div id="produtos" class="container mb-5 mt-5">
+                <div class="row d-flex justify-content-center">
+                    <nav>
+                        <div class="nav nav-tabs d-flex justify-content-center" id="nav-tab" role="tablist">
+            
+                            <button class="nav-link active text-secondary fw-bold" id="nav-todosProdutos-tab" data-bs-toggle="tab"
+                                data-bs-target="#todosProdutos" type="button" role="tab" aria-controls="nav-todosProdutos"
+                                aria-selected="true">Todos os Produtos</button>
+            
+                            <button class="nav-link text-secondary fw-bold" id="nav-categoriaProdutos-tab" data-bs-toggle="tab"
+                                data-bs-target="#categoriaProdutos" type="button" role="tab" aria-controls="nav-categoriaProdutos"
+                                aria-selected="false">Produtos por Categoria</button>
+            
+                        </div>
+                    </nav>
+            
+                    
+                    <div class="tab-content mt-5 d-flex justify-content-center" id="nav-tabContent">
+            
+                        <div class="tab-pane fade show active" id="allRecipes" role="tabpanel" aria-labelledby="nav-todosProdutos-tab">
+                            
+                            <div class="card-group">
+                                <div class="card" *ngFor='let item of listaProdutos' style="width: 18rem;">
+                                    <img src="../../assets/imgs/composteira_plastica_60l_89508741_0001_600x600.jpg" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                      <h5 class="card-title">
+                                          {{item.nome}}
+                                        </h5>
+                                      <p class="card-text">
+                                          {{item.descricao}}
+                                        </p>
+                                      <p class="card-text">
+                                          {{item.categorias.nomeDaCategoria}}
+                                        </p>
+                                      <a [routerLink]="['/produto-edit',item.idProduto]" class="text-primary">Editar</a>
+
+                                      <a [routerLink]="['/produto-delete',item.idProduto]" class="text-danger">Apagar</a>
+
+
+                                    </div>
+                                  </div>
+                            </div>
+            
+                        </div>
+            
+                        
+                        <div class="tab-pane fade" id="categoriaProdutos" role="tabpanel" aria-labelledby="nav-categoriaProdutos-tab">
+                            <div class="card-group" *ngFor='let categorias of listaCategorias'>
+                                <div class="card" *ngFor='let item of categorias.produtos' style="width: 18rem;">
+                                    <img src="../../assets/imgs/composteira_plastica_60l_89508741_0001_600x600.jpg" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                      <h5 class="card-title">
+                                          {{item.nome}}
+                                        </h5>
+                                      <p class="card-text">
+                                          {{item.descricao}}
+                                      </p>
+                                      <a href="#" class="btn btn-primary">Go somewhere</a>
+                                    </div>
+                                  </div>
+                            </div>
+
+                        </div>
+            
+                    </div>
+                </div>
             </div>
-
-
 
             <!--Ofertas!!!-->
 

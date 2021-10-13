@@ -5,7 +5,9 @@ import { AdicionarCategoriaComponent } from './adicionar-categoria/adicionar-cat
 import { CadastroComponent } from './cadastro/cadastro.component';
 import { ContactComponent } from './contact/contact.component';
 import { CategoriaDeleteComponent } from './delete/categoria-delete/categoria-delete.component';
+import { ProdutoDeleteComponent } from './delete/produto-delete/produto-delete.component';
 import { CategoriaPutComponent } from './edit/categoria-put/categoria-put.component';
+import { ProdutoEditComponent } from './edit/produto-edit/produto-edit.component';
 import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
@@ -24,6 +26,8 @@ const routes: Routes = [
   {path: 'adicionarCategoria', component:AdicionarCategoriaComponent},
   {path: 'categoria-delete/:id', component:CategoriaDeleteComponent},
   {path: 'categoria-put/:id', component:CategoriaPutComponent},
+  {path: 'produto-delete/:id', component:ProdutoDeleteComponent},
+  {path: 'produto-edit/:id', component:ProdutoEditComponent}
 ];
 
 @NgModule({
