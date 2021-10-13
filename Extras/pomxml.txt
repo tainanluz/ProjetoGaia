@@ -1,0 +1,6 @@
+<dependency>
+	<groupId>org.postgresql</groupId>
+	<artifactId>postgresql</artifactId>
+</dependency>
+
+^^^^ substituir na dependencia do sql ^^^^

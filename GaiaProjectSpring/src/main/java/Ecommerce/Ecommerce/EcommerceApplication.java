@@ -19,7 +19,7 @@ public class EcommerceApplication {
 	@RequestMapping 
 	public String BoasVindes()
 	{
-		return ("<h1>Bem vindes a loja Ecommerce!</h1>");
+		return ("<h1>Bem vindes a loja Gaia!</h1>");
 	}
 
 	public static void main(String[] args) {
