@@ -6,6 +6,6 @@ export class Produtos{
     public marca: string
     public preco: number
     public descricao: string
-    public tamanho: string
+    public link: string
     public categorias: Categorias
 }

@@ -16,22 +16,22 @@ export class CategoriasService {
   }
 
   getAllCategoria(): Observable<Categorias[]>{
-    return this.http.get<Categorias[]>('http://deploygaia.herokuapp.com/Categorias/PegarTodos', this.token)
+    return this.http.get<Categorias[]>('https://deploygaia.herokuapp.com/Categorias/PegarTodos', this.token)
   }
 
   getByIdCategoria(id: number): Observable<Categorias>{
-    return this.http.get<Categorias>(`http://deploygaia.herokuapp.com/Categorias/Busca/ID/${id}`, this.token)
+    return this.http.get<Categorias>(`https://deploygaia.herokuapp.com/Categorias/Busca/ID/${id}`, this.token)
   }
 
   postCategoria(categorias: Categorias): Observable<Categorias>{
-    return this.http.post<Categorias>('http://deploygaia.herokuapp.com/Categorias/Salvar', categorias, this.token)
+    return this.http.post<Categorias>('https://deploygaia.herokuapp.com/Categorias/Salvar', categorias, this.token)
   }
 
   putCategoria(categorias: Categorias): Observable<Categorias>{
-    return this.http.put<Categorias>('http://deploygaia.herokuapp.com/Categorias/Atualiza',categorias, this.token)
+    return this.http.put<Categorias>('https://deploygaia.herokuapp.com/Categorias/Atualiza',categorias, this.token)
   }
 
   deleteCategoria(id: number) {
-    return this.http.delete(`http://deploygaia.herokuapp.com/Categorias/DELETE/ID/${id}`,this.token)
+    return this.http.delete(`https://deploygaia.herokuapp.com/Categorias/DELETE/ID/${id}`,this.token)
   }
   }

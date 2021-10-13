@@ -53,6 +53,7 @@ export class AdicionarCategoriaComponent implements OnInit {
     console.log("produto "+JSON.stringify(this.categorias))
     this.categoriaService.postCategoria(this.categorias).subscribe((resp: Categorias) => {
     this.categorias = resp
+    this.router.navigate(['/home'])
     alert('Categoria adicionada com sucesso')
     })
   }

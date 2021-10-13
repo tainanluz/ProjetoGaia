@@ -43,7 +43,7 @@ export class ProdutosPutComponent implements OnInit {
     this.produtosService.putProduto(this.produtos).subscribe((resp: Produtos)=>{this.produtos=resp
     alert('Produto atualizado com sucesso!')
     console.log("Produto:"+JSON.stringify(this.produtos))
-    this.router.navigate(['adicionarCategoria'])
+    this.router.navigate(['adicionarProduto'])
     })
   }
 

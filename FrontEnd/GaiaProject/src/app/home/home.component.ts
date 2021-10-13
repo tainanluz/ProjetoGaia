@@ -5,6 +5,7 @@ import { Categorias } from '../model/Categorias';
 import { Produtos } from '../model/Produtos';
 import { Usuario } from '../model/Usuario';
 import { CategoriasService } from '../service/categorias.service';
+import { ProdutosService } from '../service/produtos.service';
 
 @Component({
   selector: 'app-home',
@@ -18,12 +19,14 @@ export class HomeComponent implements OnInit {
   idProduto: number
   usuario: Usuario = new Usuario()
   produtos: Produtos = new Produtos()
+  listaProdutos: Produtos[]
   
 
 
   constructor(
    private router: Router,
    private categoriaService: CategoriasService,
+   private produtosService: ProdutosService,
 
    ) {
     
@@ -32,9 +35,10 @@ export class HomeComponent implements OnInit {
   ngOnInit(){
   if (environment.token == '')
   { 
-  this.router.navigate(['/login'])
+   this.router.navigate(['/login'])
   }
-this.findAllCategorias()
+  this.findAllCategorias()
+  this.findAllProduto()
 } 
  
 
@@ -60,5 +64,11 @@ findByIdCategoria() {
     this.categorias = resp
   })
 }
+findAllProduto(){
+  this.produtosService.getAllProduto().subscribe((resp: Produtos[])=> {
+    this.listaProdutos = resp
+  })
+  }
+
 }
 

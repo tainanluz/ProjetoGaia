@@ -44,7 +44,7 @@ export class CategoriaDeleteComponent implements OnInit {
     apagar(){
       this.categoriaService.deleteCategoria(this.idCategoria).subscribe(()=>{ console.log("Categoria: "+JSON.stringify(this.categorias))
         alert('Tema apagado com sucesso!')
-        this.router.navigate(['/home'])
+        this.router.navigate(['/adicionarCategoria'])
       })
     }
 

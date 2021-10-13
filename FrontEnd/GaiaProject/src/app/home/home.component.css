@@ -28,3 +28,23 @@
     height: 100%;
     width: 100%;
 }
+
+.cards{
+    display: flex;  
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.space-between{
+align-content: space-between;
+}
+
+.EndButton{
+    align-content: flex-end;
+    justify-content: flex-end;
+}
+
+.tamanho{
+    display: grid;
+    grid-template-rows: 40px 100px;
+}
