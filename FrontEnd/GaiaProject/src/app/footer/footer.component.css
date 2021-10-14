@@ -2,13 +2,25 @@
     /* background-color: rgb(242, 120, 11); */
     background: linear-gradient(rgba(216, 107, 11, 0.616),rgb(129, 57, 8));
     /* background: rgb(63,94,251);
-    background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%) */
+    background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%)*/
+}
+
+.color:hover{
+    /* background-color: rgb(242, 120, 11); */
+    background: linear-gradient(rgba(216, 107, 11, 0.767),rgb(129, 57, 8));
+    /* background: rgb(63,94,251);
+    background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%)*/
 }
 
 .tm-social {
     width: 50px;
     height: 50px;
     margin-right: 15px; 
+}
+.tm-social:hover {
+    width: 52px;
+    height: 52px;
+    margin-right: 15px;
 }
 
 /* You can add global styles to this file, and also import other style files */
@@ -25,6 +37,7 @@
     color: #fff;
     font-size: 20px;
 }
+
 .center {
     margin: auto;
     width: 100%;
@@ -34,3 +47,17 @@
     text-align: center;
     padding: 5px;
   }
+
+  .row{
+    position: unset;
+    display: flow-root;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+  }
+
+  .aln{
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
