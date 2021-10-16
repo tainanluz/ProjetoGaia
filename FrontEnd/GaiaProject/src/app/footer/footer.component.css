@@ -61,3 +61,36 @@
     align-items: center;
     margin-top: 10px;
 }
+
+
+.sci{ /*Onde estão os ícones das redes sociais*/
+    display: flex;
+    margin-top: 15px;
+}
+
+.sci li{ /*Onde estão os ícones das redes sociais*/
+    list-style: none;
+}
+
+.sci li a{/*Exatamente a parte redonda dos ícones das redes sociais*/
+    position: relative;
+    width: 50px;
+    height: 50px;
+    background: burlywood; /*Cor x mencionada abaixo*/
+    color: black;
+    margin: 0 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    text-decoration: none;
+    font-size: 25px;
+    transition: 0.5s;
+}
+
+.sci li a:hover{
+    width: 55px;
+    height: 55px;
+    background: rgb(228, 166, 74); /*Cor x mencionada abaixo*/
+    color: rgb(240, 228, 219);
+}
