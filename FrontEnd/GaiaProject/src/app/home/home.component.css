@@ -104,3 +104,10 @@ align-content: space-between;
     flex-direction: column;
     position: relative;
 }
+
+
+.quebra{
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}

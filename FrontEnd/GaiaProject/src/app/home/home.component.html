@@ -41,15 +41,12 @@
             <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner">
                     <div class="carousel-item active" data-bs-interval="10000">
-                        <img src="https://cdn.discordapp.com/attachments/892048100582109274/892518731299848232/Img1_1280x628px.jpg"
-                            class="d-block esticar" alt="...">
+                        <a routerLink="/home"><img src="https://cdn.discordapp.com/attachments/892048100582109274/899039509654691900/Banner2.jpg"
+                            class="d-block esticar" alt="..."></a>
+                        
                     </div>
                     <div class="carousel-item" data-bs-interval="2000">
-                        <img src="http://nacionalsol.com.br/wp-content/uploads/2021/05/como-e-feito-energia-solar.png"
-                            class="d-block w-100" alt="...">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="assets/imgs/INFOGRAFICO_REAPROVEITAMENTO_DA_AGUA_Prancheta_1.jpg"
+                        <img src="https://cdn.discordapp.com/attachments/892048100582109274/899029701232832512/Banner.jpg"
                             class="d-block w-100" alt="...">
                     </div>
                 </div>
@@ -67,9 +64,8 @@
             <!--Carrosel-->
 
             <!--Ofertas!!!-->
-
-            <div class="cards">
-                <div class="card mt-5 mb-5 ms-2 me-2 d-block " style="width: 300px;"
+            <div class="cards quebra">
+                <div class="card mt-5 mb-5 ms-2 me-2" style="width: 300px;"
                     *ngFor='let produtos of listaProdutos'>
                     <div class="card-body text-center">
                         <div>
@@ -90,12 +86,9 @@
                     </div>
                 </div>
             </div>
-
-
-
             <!--Ofertas!!!-->
 
-            <!--Recurso de navegação entre pag's-->
+        <!--Recurso de navegação entre pag's-->
             <nav aria-label="Page navigation example">
                 <ul class="pagination justify-content-center p-md-3">
                     <li class="page-item disabled">
@@ -110,7 +103,6 @@
                 </ul>
             </nav>
             <!--Recurso de navegação entre pag's-->
-
         </div>
     </div>
     <app-footer></app-footer>
