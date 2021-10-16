@@ -15,7 +15,7 @@ import Ecommerce.Ecommerce.Repository.UsuarioRepository;
 public class UserDetailsServiceImplements implements UserDetailsService{
 	
 	private @Autowired UsuarioRepository repository;
-
+  
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 		Optional<Usuario> objetoOptional = repository.findByEmailIgnoreCase(username);

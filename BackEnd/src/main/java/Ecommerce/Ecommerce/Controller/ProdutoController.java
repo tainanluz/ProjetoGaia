@@ -54,10 +54,10 @@ public class ProdutoController
 			repositorio.deleteById(DeletarPorID);
 		}
 		
-		@PutMapping("/Atualiza/{AtualizaProd}")
-		public ResponseEntity<Produtos> atualizaProduto (@Valid @RequestBody Produtos AtualizaBody, @PathVariable(value = "AtualizaProd")Long AtualizaProd)
+		@PutMapping("/Atualiza")
+		public ResponseEntity<Produtos> atualizaProduto (@Valid @RequestBody Produtos AtualizaBody)
 		{		
-			if(repositorio.existsById(AtualizaProd)!=false && AtualizaProd==AtualizaBody.getIdProduto())
+			if(repositorio.existsById(AtualizaBody.getIdProduto()))
 			{
 			return ResponseEntity.status(200).body(repositorio.save(AtualizaBody));
 			}else {

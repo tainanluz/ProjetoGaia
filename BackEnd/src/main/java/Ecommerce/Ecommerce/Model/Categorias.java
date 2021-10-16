@@ -13,10 +13,13 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 
+import org.springframework.web.bind.annotation.CrossOrigin;
+
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
 @Table(name = "Categorias")
+@CrossOrigin("*")
 public class Categorias  
 {
 	private @Id @GeneratedValue(strategy = GenerationType.IDENTITY) Long idCategoria;

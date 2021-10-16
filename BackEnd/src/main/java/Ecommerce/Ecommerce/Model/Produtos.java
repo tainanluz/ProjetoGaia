@@ -10,11 +10,14 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 
+import org.springframework.web.bind.annotation.CrossOrigin;
+
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.sun.istack.NotNull;
 
 @Entity
 @Table(name = "Produtos")
+@CrossOrigin("*")
 public class Produtos 
 {
 	
@@ -23,7 +26,7 @@ public class Produtos
 	private @NotBlank String marca;
 	private @NotNull Float preco;
 	private @NotBlank String descricao;
-	private @NotNull String tamanho;
+	private @NotNull String link;
 	
 	@ManyToOne
 	@JoinColumn(name = "criador_id")
@@ -55,9 +58,6 @@ public class Produtos
 		return descricao;
 	}
 
-	public String getTamanho() {
-		return tamanho;
-	}
 
 	public Usuario getCriador() {
 		return criador;
@@ -87,16 +87,20 @@ public class Produtos
 		this.descricao = descricao;
 	}
 
-	public void setTamanho(String tamanho) {
-		this.tamanho = tamanho;
-	}
-
 	public void setCriador(Usuario criador) {
 		this.criador = criador;
 	}
 
 	public void setCategoriaRelacionada(Categorias categoriaRelacionada) {
 		this.categoriaRelacionada = categoriaRelacionada;
+	}
+
+	public String getLink() {
+		return link;
+	}
+
+	public void setLink(String link) {
+		this.link = link;
 	}
 
 	

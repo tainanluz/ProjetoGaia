@@ -30,6 +30,7 @@ public class CategoriaController
 	private @Autowired CategoryRepository repositorio;
 	
 	
+	
 	@PostMapping("/Salvar")
 	public ResponseEntity<Categorias> saveCategoria (@Valid @RequestBody Categorias BodyCategorias)
 	{
@@ -55,10 +56,10 @@ public class CategoriaController
 		repositorio.deleteById(DeletarPorID);
 	}
 	 
-	@PutMapping("/Atualiza/{AtualizaCat}")
-	public ResponseEntity<@Valid Categorias> atualizaCategoria (@Valid @RequestBody Categorias AtualizaBody, @PathVariable(value = "AtualizaCat")Long AtualizaCat)
+	@PutMapping("/Atualiza")
+	public ResponseEntity<Categorias> atualizaCategoria (@Valid @RequestBody Categorias AtualizaBody)
 	{		
-		if(repositorio.existsById(AtualizaCat)!=false && AtualizaCat==AtualizaBody.getIdCategoria())
+		if(repositorio.existsById(AtualizaBody.getIdCategoria()))
 		{
 		return ResponseEntity.status(200).body(repositorio.save(AtualizaBody));
 		}else {

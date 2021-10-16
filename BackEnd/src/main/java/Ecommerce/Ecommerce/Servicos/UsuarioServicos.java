@@ -16,7 +16,7 @@ import Ecommerce.Ecommerce.Repository.UsuarioRepository;
 public class UsuarioServicos 
 {
 	private @Autowired UsuarioRepository repositorio;
-	
+	 
 	public Optional<Object> cadastrarUsuario(Usuario novoUsuario){
 		return repositorio.findByEmailIgnoreCase(novoUsuario.getEmail()).map(usuarioExistente -> {
 			return Optional.empty();

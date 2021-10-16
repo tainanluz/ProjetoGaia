@@ -75,10 +75,10 @@ public class UsuarioController {
 		repositorio.deleteById(DeletarPorID);
 	}
 	
-	@PutMapping("/Atualiza/{AtualizaProd}")
-	public ResponseEntity<Usuario> atualizaUsuario (@Valid @RequestBody Usuario AtualizaBody, @PathVariable(value = "AtualizaProd")Long AtualizaProd)
+	@PutMapping("/Atualiza")
+	public ResponseEntity<Usuario> atualizaUsuario (@Valid @RequestBody Usuario AtualizaBody)
 	{		
-		if(repositorio.existsById(AtualizaProd)!=false && AtualizaProd==AtualizaBody.getIdUsuario())
+		if(repositorio.existsById(AtualizaBody.getIdUsuario()))
 		{
 		return ResponseEntity.status(200).body(repositorio.save(AtualizaBody));
 		}else {
