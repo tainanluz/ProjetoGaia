@@ -1,46 +1,135 @@
-<div class="container-fluid">
-    <div class="row d-flex align-items-center">
-        <div class="col-md-6" id="img-bg">
-
-        </div>
-
-        <div class="col-md-6 mb-5 mt-5">
-            <div class="row d-flex justify-content-center">
-                <div class="col-md-8">
-                    <h1 class="text-center mb-3">Cadastro</h1>
-
-                    <div class="form-groug mt-3">
-                        <label for="nome">Nome</label>
-                        <input [(ngModel)]='usuario.nome' class="form-control mt-3" type="text" name="nome" id="nome"
-                            placeholder="Seu nome">
-                    </div>
-
-                    <div class="form-groug mt-3">
-                        <label for="email">Email</label>
-                        <input [(ngModel)]='usuario.email' class="form-control mt-3" type="email" name="email"
-                            id="email" placeholder="Seu email">
-                    </div>
-
-                    <div class="form-groug mt-3">
-                        <label for="senha">Senha</label>
-                        <input (input)='confirmarSenha($event)' class="form-control mt-3" type="password" name="senha"
-                            id="senha" placeholder="Sua senha">
-                    </div>
-
-                    <div class="form-groug mt-3">
-                        <label for="confirmarSenha">Confirmar Senha</label>
-                        <input [(ngModel)]='usuario.senha' class="form-control mt-3" type="password"
-                            name="confirmarSenha" id="confirmarSenha" placeholder="Sua senha novamente">
-                    </div>
-
-                    <div class="d-flex justify-content-center mt-3">
-                        <button type="submit" class="btn btn-danger  mrButton" routerLink='/login'>Cancelar</button>
-                        <button type="submit" class="btn btn-success mrButton" (click)='cadastrar()'>Confirmar</button>
-                    </div>
-                </div>
-
+<div class="container-fluid container-create-account">
+    <div class="form-create-account">
+      <h1 class="page-title mb-5">{{ id ? 'Editar Conta' : 'Criar Conta'}}</h1>
+      <form class="row" [formGroup]="createAccount" (ngSubmit)="save()">
+          <div class="form-group col-12 col-md-6">
+            <label for="name">Nome *</label>
+            <input type="text" class="form-control"
+                   [ngClass]="{ 'is-invalid': validateFields.name.errors && validateFields.name.touched }"
+                   id="name" formControlName="name" aria-describedby="field-name">
+            <div id="field-name" class="invalid-feedback" *ngIf="validateFields.name?.errors?.required">
+              Por favor, insira seu nome.
             </div>
-
+          </div>
+          <div class="form-group col-12 col-md-6">
+            <label for="lastname">Sobrenome *</label>
+            <input type="text" class="form-control"
+                   [ngClass]="{ 'is-invalid': validateFields.lastName.errors && validateFields.lastName.touched }"
+                   id="lastname" formControlName="lastName" aria-describedby="field-lastname">
+            <div id="field-lastname" class="invalid-feedback" *ngIf="validateFields.lastName?.errors?.required">
+              Por favor, insira seu sobrenome.
+            </div>
+          </div>
+          <div class="form-group input-create-account col-12 col-md-12 col-lg-6">
+            <label for="email">E-mail *</label>
+            <input type="email" class="form-control"
+                   [ngClass]="{ 'is-invalid': validateFields.username.errors && validateFields.username.touched }"
+                   id="email" formControlName="username" aria-describedby="field-email">
+            <div id="field-email" class="invalid-feedback">
+              <span *ngIf="validateFields.email?.errors?.required">Por favor, insira seu e-mail.</span>
+              <span *ngIf="validateFields.email?.errors?.email">Por favor, insira um e-mail válido</span>
+            </div>
+            <i class="fas fa-envelope icon-input"></i>
+          </div>
+        <div class="form-group input-create-account password col-12 col-md-6 col-lg-3">
+          <label for="password">Senha *</label>
+          <input type="password" #password class="form-control"
+                 [ngClass]="{ 'is-invalid': validateFields.password.errors && validateFields.password.touched }"
+                 id="password" formControlName="password" aria-describedby="field-password">
+          <div id="field-password" class="invalid-feedback">
+            <span *ngIf="validateFields.password?.errors?.required">Por favor, insira uma senha.</span>
+            <span *ngIf="validateFields.password?.errors?.minlength">Senha deve conter no mínimo 8 caracteres</span>
+          </div>
+          <i class="fas fa-lock icon-input"></i>
+          <button type="button" class="btn btn-input" (click)="changePassword(password)" [disabled]="this.id">
+            <i [class]="password.type == 'password' ? 'fas fa-eye-slash' : 'fas fa-eye'"></i>
+          </button>
         </div>
+        <div class="form-group input-create-account password col-12 col-md-6 col-lg-3">
+          <label for="password-repeat">Repetir Senha *</label>
+          <input type="password" #passwordRepeat class="form-control"
+                 [ngClass]="{ 'is-invalid': validateFields.passwordRepeat.errors && validateFields.passwordRepeat.touched }"
+                 id="password-repeat" formControlName="passwordRepeat" aria-describedby="field-passwordRepeat">
+          <div id="field-passwordRepeat" class="invalid-feedback">
+            <span *ngIf="validateFields.passwordRepeat?.errors?.required">Por favor, insira uma senha.</span>
+            <span *ngIf="validateFields.passwordRepeat?.errors?.mustMatch">Senhas não coincidem.</span>
+          </div>
+          <i class="fas fa-lock icon-input"></i>
+          <button type="button" class="btn btn-input" (click)="changePassword(passwordRepeat)" [disabled]="this.id">
+            <i [class]="passwordRepeat.type == 'password' ? 'fas fa-eye-slash' : 'fas fa-eye'"></i>
+          </button>
+        </div>
+        <div class="col-12 text-left text-md-right mb-2">
+          <small>Sua senha deve ter no mínimo 8 caracteres, os quais devem ser letras e números.</small>
+        </div>
+        <div class="form-group col-12 col-md-6">
+          <label for="cpf">CPF *</label>
+          <input type="text" class="form-control"
+                 [ngClass]="{ 'is-invalid': validateFields.cpf.errors && validateFields.cpf.touched }"
+                 id="cpf" formControlName="cpf" aria-describedby="field-cpf"
+                 [showMaskTyped]="true"
+                 mask="000.000.000-00">
+          <div id="field-cpf" class="invalid-feedback">
+            <span *ngIf="validateFields.cpf?.errors?.required || validateFields.cpf?.errors?.mask">Por favor, insira seu CPF.</span>
+            <span *ngIf="validateFields.cpf?.errors?.validCpf">Por favor, insira um CPF válido.</span>
+          </div>
+        </div>
+        <div class="form-group input-create-account col-12 col-md-6">
+          <label for="instagram">Instagram</label>
+          <input type="text" class="form-control" id="instagram" formControlName="instagram">
+          <i class="fas fa-at icon-input"></i>
+        </div>
+        <div class="form-group col-12 col-md-6">
+          <label for="birth-date">Data de Nascimento</label>
+          <input type="date" class="form-control" id="birth-date" formControlName="birthDate">
+        </div>
+        <div class="form-group input-create-account col-12 col-md-6">
+          <label for="phone">Telefone *</label>
+          <input type="text" class="form-control" [ngClass]="cssError(createAccount.get('phone'))"
+                 id="phone" formControlName="phone" aria-describedby="field-phone"
+                 [showMaskTyped]="true"
+                 mask="(00) 00000-0000 || (00) 0000-0000">
+          <div id="field-phone" class="invalid-feedback">
+            <span *ngIf="validateFields.phone?.errors?.required">Por favor, insira seu telefone.</span>
+            <span *ngIf="validateFields.phone?.errors?.mask?.requiredMask">Por favor, insira um telefone válido.</span>
+          </div>
+          <i class="fas fa-mobile-alt icon-input"></i>
+        </div>
+        <fieldset class="form-group col-12">
+          <legend class="col-form-label col-12 p-0 mb-2">Sexo</legend>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="gender" id="masculino" value="MALE" formControlName="gender">
+            <label class="form-check-label" for="masculino">Masculino</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="gender" id="feminino" value="FEMALE" formControlName="gender">
+            <label class="form-check-label" for="feminino">Feminino</label>
+          </div>
+        </fieldset>
+        <div class="col-12 text-right mt-3">
+          <button class="btn btn-secondary btn-back-page mr-1" routerLink="{{ id ? '/minha-conta/meus-dados' : '../'}}"><i class="fas fa-arrow-left"></i></button>
+          <button type="submit" class="btn btn-primary btn-submit" [disabled]="!createAccount.valid">{{ id ? 'Salvar' : 'Criar Conta'}}</button>
+        </div>
+      </form>
     </div>
-</div>
+  </div>
+  
+  <swal
+    #error
+    [title]="''"
+    [text]="''"
+    [confirmButtonText]="''"
+    [cancelButtonText]="'cancelar'"
+    (cancel)="redirect()"
+    [showCancelButton]="true"
+    icon="error">
+  </swal>
+  
+  <swal
+    [swalOptions]="{ confirmButtonText: 'ok'}"
+    (confirm)="redirect()"
+    #success
+    [title]="''"
+    icon="success">
+  </swal>
+  
