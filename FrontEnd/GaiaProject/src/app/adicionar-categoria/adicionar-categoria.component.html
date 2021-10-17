@@ -26,33 +26,105 @@
     <div class="row mt-3 mb-5 d-flex justify-content-center">
         <div class="col-md-8">
 
-    <table class="table table-hover">
-        <thead>
-            <tr>
-                <th scope="col">#</th>
-                <th scope="col">Nome da categoria</th>
-                <th scope="col" class="text-right">Descricao</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor='let categorias of listaCategorias'>
-                <th>{{categorias.idCategoria}}</th>
-                <td>{{categorias.nomeDaCategoria}}</td>
-                <td>{{categorias.descricaoDaCategoria}}</td>
-                <td class="d-flex justify-content-end">
-                    <button class="btn btn-info mrButton"
-                        [routerLink]="['/categoria-put', categorias.idCategoria]">Editar</button>
-                    <Button class="btn btn-danger mrButton"
-                        [routerLink]="['/categoria-delete', categorias.idCategoria]">Apagar</Button>
-                </td>
-            </tr>
-            <tr>
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Nome da categoria</th>
+                        <th scope="col" class="text-right">Descricao</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor='let categorias of listaCategorias'>
+                        <th>{{categorias.idCategoria}}</th>
+                        <td>{{categorias.nomeDaCategoria}}</td>
+                        <td>{{categorias.descricaoDaCategoria}}</td>
+                        <td class="d-flex justify-content-end">
+                            <button class="btn btn-info mrButton"
+                                [routerLink]="['/categoria-put', categorias.idCategoria]">Editar</button>
+                            <Button class="btn btn-danger mrButton"
+                                [routerLink]="['/categoria-delete', categorias.idCategoria]">Apagar</Button>
+                        </td>
+                    </tr>
+                    <tr>
 
-        </tbody>
-    </table>
-</div>
-<div class="row">
-    <div class="col-md-12 d-flex justify-content-center">
-        <button class="btn btn-dark mrButton" routerLink="/adicionarProduto">Adicionar novo produto</button>
+                </tbody>
+            </table>
+        </div>
+        <div class="row">
+            <div class="col-md-12 d-flex justify-content-center">
+                <button class="btn btn-dark mrButton" routerLink="/adicionarProduto">Adicionar novo produto</button>
+            </div>
+        </div>
+
+        <div class="container mt-5 mb-5">
+
+            <div class="row">
+                <div class="col-md-12">
+                    <h1 class="text-center text-secondary">Adicionar Produtos:</h1>
+                </div>
+            </div>
+
+            <div class="row d-flex justify-content-center">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="descricao">Nome do produto:</label>
+                        <input type="text" class="form-control" id="nomeDoProduto" [(ngModel)]='produtos.nome'>
+                    </div>
+                    <div class="form-group">
+                        <label for="descricao">Descricao do produto:</label>
+                        <input type="text" class="form-control" id="descricao" [(ngModel)]='produtos.descricao'>
+                    </div>
+                    <div class="form-group">
+                        <label for="descricao">Marca do produto:</label>
+                        <input type="text" class="form-control" id="marca" [(ngModel)]='produtos.marca'>
+                    </div>
+                    <div class="form-group">
+                        <label for="descricao">Preco do produto:</label>
+                        <input type="text" class="form-control" id="preco" [(ngModel)]='produtos.preco'>
+                    </div>
+                    <div class="form-group">
+                        <label for="descricao">Imagem do produto:</label>
+                        <input type="text" class="form-control" id="link" [(ngModel)]='produtos.link'>
+                    </div>
+                    <div class="d-flex justify-content-center">
+                        <button class="btn btn-danger mrButton" routerLink="/home">Cancelar</button>
+                        <button class="btn btn-success mrButton" (click)='AdicionarProduto()'
+                            routerLink="/home">Adicionar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="mt-3 mb-5">
+                <div class="cards quebra">
+                    <div class="card mt-5 mb-5 ms-2 me-2" style="width: 300px;" *ngFor='let produtos of listaProdutos'>
+                        <div class="card-body text-center">
+                            <div>
+                                <!--Classe imgProd faz as definições da imagem-->
+                                <img src="{{produtos.link}}" alt="{{produtos.nome}}" class="imgProd">
+                            </div>
+                            <div class="tamanho">
+                                <div class="col-md-12">
+                                    <h5 class="card-title mt-3">{{produtos.nome}}</h5>
+                                    <!--Não consegui alinhar o texto da composteira-->
+                                    <p class="card-text mt-2">{{produtos.descricao}}</p>
+                                </div>
+                            </div>
+                            <div class="EndButton d-flex mt-10">
+                                <p class="d-flex justify-content-center mt-3 btn btn-success w-50 h-50"
+                                    routerLink="/{{produtos.nome}}"> R$ {{produtos.preco}}</p>
+                            </div>
+                            <div class="justify-content-flex-center">
+                                <button class="btn btn-info mrButton edit"
+                                    [routerLink]="['/produtos-put', produtos.idProduto]">Editar</button>
+                                <Button class="btn btn-danger mrButton"
+                                    [routerLink]="['/produtos-delete', produtos.idProduto]">Apagar</Button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>

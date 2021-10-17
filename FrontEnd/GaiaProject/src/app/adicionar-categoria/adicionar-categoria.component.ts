@@ -5,6 +5,7 @@ import { Categorias } from '../model/Categorias';
 import { Produtos } from '../model/Produtos';
 import { Usuario } from '../model/Usuario';
 import { CategoriasService } from '../service/categorias.service';
+import { ProdutosService } from '../service/produtos.service';
 
 @Component({
   selector: 'app-adicionar-categoria',
@@ -12,7 +13,7 @@ import { CategoriasService } from '../service/categorias.service';
   styleUrls: ['./adicionar-categoria.component.css']
 })
 export class AdicionarCategoriaComponent implements OnInit {
-
+  listaProdutos: Produtos[]
   listaCategorias: Categorias[]
   categorias: Categorias = new Categorias()
   idCategoria: number
@@ -22,7 +23,8 @@ export class AdicionarCategoriaComponent implements OnInit {
 
   constructor(
     private router: Router,
-    private categoriaService: CategoriasService
+    private categoriaService: CategoriasService,
+    private produtoService: ProdutosService
    ) { }
  
    ngOnInit(){
@@ -30,6 +32,7 @@ export class AdicionarCategoriaComponent implements OnInit {
    this.router.navigate(['/login'])
  }
   this.findAllCategorias()
+  this.findAllProduto()
  } 
  
 
@@ -45,6 +48,12 @@ export class AdicionarCategoriaComponent implements OnInit {
      this.categorias = resp
    })
  }
+ 
+ findAllProduto(){
+  this.produtoService.getAllProduto().subscribe((resp: Produtos[])=> {
+    this.listaProdutos = resp
+  })
+  }
 
  AdicionarCategoria(){
     this.produtos.idProduto = this.idProduto
@@ -55,6 +64,17 @@ export class AdicionarCategoriaComponent implements OnInit {
     this.categorias = resp
     this.router.navigate(['/home'])
     alert('Categoria adicionada com sucesso')
+    })
+  }
+
+  AdicionarProduto(){
+    this.categorias.idCategoria = this.idCategoria
+    this.usuario.idUsuario = environment.idUsuario
+    this.categorias.usuario = this.usuario
+    console.log("produto "+JSON.stringify(this.produtos))
+    this.produtoService.postProduto(this.produtos).subscribe((resp: Produtos) => {
+    this.produtos = resp
+    alert('Produto adicionado com sucesso')
     })
   }
 }
