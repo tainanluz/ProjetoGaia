@@ -1,63 +1,133 @@
-.color{
-    /* background-color: rgb(242, 120, 11); */
-    background: linear-gradient(rgba(216, 107, 11, 0.616),rgb(129, 57, 8));
-    /* background: rgb(63,94,251);
-    background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%)*/
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
 
-.color:hover{
-    /* background-color: rgb(242, 120, 11); */
-    background: linear-gradient(rgba(216, 107, 11, 0.767),rgb(129, 57, 8));
-    /* background: rgb(63,94,251);
-    background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%)*/
+body {
+  display: flex;
+  background: #333;
+  justify-content: flex-end;
+  align-items: flex-end;
+  min-height: 100vh;
 }
 
-.tm-social {
-    width: 50px;
-    height: 50px;
-    margin-right: 15px; 
-}
-.tm-social:hover {
-    width: 52px;
-    height: 52px;
-    margin-right: 15px;
-}
-
-/* You can add global styles to this file, and also import other style files */
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
-
-.tbolder {
-    font-family: 'Quicksand', sans-serif;
-    font-weight: 700;
+.footer {
+margin-top: 65px;
+  position: relative;
+  width: 100%;
+  background: rgb(41, 134, 255);/*Cor do footer*/
+  min-height: 100px;
+  padding: 20px 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
-.tbold {
-    font-family: 'Quicksand', sans-serif;
-    font-weight: 600;
-    color: #fff;
-    font-size: 20px;
+.social-icon,
+.menu {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0;
+  flex-wrap: wrap;
 }
 
-.center {
-    margin: auto;
-    width: 100%;
-    padding: 20px;
+.social-icon__item,
+.menu__item {
+  list-style: none;
+}
+
+.social-icon__link {
+  font-size: 2rem;
+  color: #fff; /*Cor dos ícones do footer*/
+  margin: 0 10px;
+  display: inline-block;
+  transition: 0.5s;
+}
+.social-icon__link:hover {
+  transform: translateY(-10px);
+}
+
+.menu__link {
+  font-size: 1.2rem;
+  color: rgb(255, 255, 255);/*Cor das letras do footer Home About  Services Team Contact*/
+  margin: 0 10px;
+  display: inline-block;
+  transition: 0.5s;
+  text-decoration: none;
+  opacity: 0.75;
+  font-weight: 300;
+}
+
+.menu__link:hover {
+  opacity: 1;
+}
+
+.footer p {
+  color: rgb(255, 255, 255); /*Cor das letras do footer ©2021 Nadine Coelho | All Rights Reserved*/
+  margin: 15px 0 10px 0;
+  font-size: 1rem;
+  font-weight: 300;
+}
+
+.wave {
+  position: absolute;
+  top: -100px;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background: url("https://i.ibb.co/wQZVxxk/wave.png"); /*Imagem das ondas*/
+  background-size: 1000px 100px;
+}
+
+.wave#wave1 {
+  z-index: 1000;
+  opacity: 1;
+  bottom: 0;
+  animation: animateWaves 4s linear infinite;/*Animação das ondas*/
+}
+
+.wave#wave2 {
+  z-index: 999;
+  opacity: 0.5;
+  bottom: 10px;
+  animation: animate 4s linear infinite !important;/*Animação das ondas*/
+}
+
+.wave#wave3 {
+  z-index: 1000;
+  opacity: 0.2;
+  bottom: 15px;
+  animation: animateWaves 3s linear infinite;/*Animação das ondas*/
+}
+
+.wave#wave4 {
+  z-index: 999;
+  opacity: 0.7;
+  bottom: 20px;
+  animation: animate 3s linear infinite;/*Animação das ondas*/
+}
+
+@keyframes animateWaves { /*Posição da animação*/
+  0% {
+    background-position-x: 1000px;
   }
-  .center2 {
-    text-align: center;
-    padding: 5px;
+  100% {
+    background-positon-x: 0px;
   }
+}
 
-  .row{
-    position: unset;
-    display: flow-root;
-    justify-content: center;
-    align-items: center;
-    text-decoration: none;
+@keyframes animate { /*Posição da animação*/
+  0% {
+    background-position-x: -1000px;
   }
-
-  .aln{
-    justify-content: center;
-    align-items: center;
-    margin-top: 10px;
+  100% {
+    background-positon-x: 0px;
+  }
 }

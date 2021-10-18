@@ -48,7 +48,8 @@ export class AdicionarCategoriaComponent implements OnInit {
      this.categorias = resp
    })
  }
- 
+
+
  findAllProduto(){
   this.produtoService.getAllProduto().subscribe((resp: Produtos[])=> {
     this.listaProdutos = resp
@@ -70,7 +71,8 @@ export class AdicionarCategoriaComponent implements OnInit {
   AdicionarProduto(){
     this.categorias.idCategoria = this.idCategoria
     this.usuario.idUsuario = environment.idUsuario
-    this.categorias.usuario = this.usuario
+
+    this.produtos.categoriaRelacionada = this.categorias
     console.log("produto "+JSON.stringify(this.produtos))
     this.produtoService.postProduto(this.produtos).subscribe((resp: Produtos) => {
     this.produtos = resp

@@ -16,7 +16,7 @@
                         <table class="table table-hover">
                             <tbody>
                                 <tr *ngFor='let categorias of listaCategorias'>
-                                    <a routerLink="/{{categorias.nomeDaCategoria}}">
+                                    <a class="btn" routerLink="/{{categorias.nomeDaCategoria}}">
                                         <td class="btn">{{categorias.nomeDaCategoria}}</td>
                                     </a>
                                 </tr>
@@ -76,7 +76,9 @@
                             <div class="col-md-12">
                                 <h5 class="card-title mt-3">{{produtos.nome}}</h5>
                                 <!--Não consegui alinhar o texto da composteira-->
+                                <p class="card-text mt-2 tbold">{{produtos.categoriaRelacionada.nomeDaCategoria}}</p>
                                 <p class="card-text mt-2">{{produtos.descricao}}</p>
+                                
                             </div>
                         </div>
                         <div class="EndButton d-flex mt-10">

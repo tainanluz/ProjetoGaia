@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { AdicionarCategoriaComponent } from './adicionar-categoria/adicionar-categoria.component';
-import { AdicionarProdutoComponent } from './adicionar-produto/adicionar-produto.component';
 import { CadastroComponent } from './cadastro/cadastro.component';
 import { ContactComponent } from './contact/contact.component';
 import { CategoriaDeleteComponent } from './delete/categoria-delete/categoria-delete.component';
@@ -16,7 +15,7 @@ import { MenuComponent } from './menu/menu.component';
 
 
 const routes: Routes = [
-  {path:'', redirectTo:'login', pathMatch: 'full'},
+  {path:'', redirectTo:'home', pathMatch: 'full'},
   {path: 'home', component:HomeComponent},
   {path: 'aboutUs', component:AboutUsComponent},
   {path: 'contact', component:ContactComponent},
@@ -27,7 +26,6 @@ const routes: Routes = [
   {path: 'adicionarCategoria', component:AdicionarCategoriaComponent},
   {path: 'categoria-delete/:id', component:CategoriaDeleteComponent},
   {path: 'categoria-put/:id', component:CategoriaPutComponent},
-  {path: 'adicionarProduto', component:AdicionarProdutoComponent},
   {path: 'produtos-delete/:id', component:ProdutosDeleteComponent},
   {path: 'produtos-put/:id', component:ProdutosPutComponent},
 ];

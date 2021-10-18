@@ -1,4 +1,3 @@
-
 <nav class="navbar navbar-expand-lg navbar-dark bg-transparent">
     <div class="container-fluid">
   
@@ -11,23 +10,22 @@
   
         <ul class="navbar-nav  d-flex align-items-center">
           <li class="nav-item mt-1">
-            <img src="https://cdn.discordapp.com/attachments/892048100582109274/895042203322306660/Logo.png" alt="Logo do site" width="150px" height="50px" class="img-fluid">
+            <a routerLink="/home">
+              <img src="https://cdn.discordapp.com/attachments/892048100582109274/898737626750783498/logo_gaia.png" alt="Logo do site" width="200px" height="100px" class="img-fluid">
+            </a>
           </li>
         </ul>
 
         <ul class="navbar-nav mb-2 d-flex align-items-center">
 
-
-          <div>
-            <button class="mr-3 btn bg-transparent tbold button1" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">CATEGORIAS</button>
-          </div>
           <div>
             <button class="mr-3 btn bg-transparent tbold button1" routerLink="/home">HOME</button>
           </div>
-
           <div>
-            <button class="mr-3 btn bg-transparent tbold button1" routerLink="/adicionarProduto">PRODUTOS</button>
+            <button class="mr-3 btn bg-transparent tbold button1" type="button" data-bs-toggle="offcanvas" 
+            data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">CATEGORIAS</button>
           </div>
+          
           <div>
             <button class="mr-3 btn bg-transparent tbold button1" routerLink="/aboutUs">SOBRE</button>
           </div>

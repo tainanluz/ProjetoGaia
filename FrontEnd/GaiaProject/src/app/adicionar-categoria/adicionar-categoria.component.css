@@ -1,3 +1,7 @@
+.fundo{
+    background-image: url('https://media.discordapp.net/attachments/892048100582109274/899452754936868944/backgroung.jpg?width=288&height=675');
+}
+
 .quebra{
     display: flex;
     justify-content: flex-start;
@@ -67,4 +71,8 @@
     align-content: center; /*alinhando os cards*/
     justify-content: center;
     margin: 15px; /*Margem para não colar os cards internos no card que os contém*/
+}
+
+.tdTamanho{
+    height: inherit;
 }

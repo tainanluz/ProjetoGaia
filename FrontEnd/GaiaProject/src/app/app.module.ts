@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
-
 import { AppComponent } from './app.component';
 import { ContactComponent } from './contact/contact.component';
 import { AboutUsComponent } from './about-us/about-us.component';
@@ -15,7 +14,6 @@ import { CadastroComponent } from './cadastro/cadastro.component';
 import { AdicionarCategoriaComponent } from './adicionar-categoria/adicionar-categoria.component';
 import { CategoriaDeleteComponent } from './delete/categoria-delete/categoria-delete.component';
 import { CategoriaPutComponent } from './edit/categoria-put/categoria-put.component';
-import { AdicionarProdutoComponent } from './adicionar-produto/adicionar-produto.component';
 import { ProdutosDeleteComponent } from './delete/produtos-delete/produtos-delete.component';
 import { ProdutosPutComponent } from './edit/produtos-put/produtos-put.component';
 
@@ -33,7 +31,6 @@ import { ProdutosPutComponent } from './edit/produtos-put/produtos-put.component
     AdicionarCategoriaComponent,
     CategoriaDeleteComponent,
     CategoriaPutComponent,
-    AdicionarProdutoComponent,
     ProdutosDeleteComponent,
     ProdutosPutComponent,
   ],

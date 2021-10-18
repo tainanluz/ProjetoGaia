@@ -21,8 +21,6 @@ export class HomeComponent implements OnInit {
   produtos: Produtos = new Produtos()
   listaProdutos: Produtos[]
   
-
-
   constructor(
    private router: Router,
    private categoriaService: CategoriasService,

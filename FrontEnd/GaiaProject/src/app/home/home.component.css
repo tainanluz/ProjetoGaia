@@ -74,14 +74,12 @@ align-content: space-between;
 }
 
 .btn{ /*Cores para o botão*/
-    background: rgb(20, 128, 92);
-    color: rgb(233, 239, 241);
     transition: 0.5s;
+    width: inherit;
 }
 
 .btn:hover{ /*hover para o botão*/
-    background: rgb(10, 66, 73);
-    color: rgb(233, 239, 241);
+    color: rgb(10, 66, 73);
 }
 .tamanho{
     display: grid;
@@ -110,4 +108,10 @@ align-content: space-between;
     display: flex;
     justify-content: flex-start;
     flex-wrap: wrap;
+}
+
+.tbold{
+    font-weight: bold;
+    text-decoration: underline;
+    color: black;
 }

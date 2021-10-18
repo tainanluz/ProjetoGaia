@@ -8,4 +8,5 @@ export class Produtos{
     public descricao: string
     public link: string
     public categorias: Categorias
+    public categoriaRelacionada: Categorias
 }
