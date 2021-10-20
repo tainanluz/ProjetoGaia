@@ -11,9 +11,18 @@ export class ProdutosService {
 
 
   constructor(private http: HttpClient) { }
+  tokenLocalStorage = localStorage.getItem('token');
+  
 
   token = {
-    headers: new HttpHeaders().set('Authorization', environment.token)
+    headers: new HttpHeaders().set('Authorization', this.getToken())
+  }
+
+  getToken(): string {
+    if (this.tokenLocalStorage) {
+      return this.tokenLocalStorage;
+    } 
+    return '';
   }
 
   getAllProduto(): Observable<Produtos[]>{

@@ -1,45 +1,49 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-transparent">
-    <div class="container-fluid">
-  
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-  
-      <div class="collapse navbar-collapse d-flex justify-content-between align-items-center" id="navbarSupportedContent">
-  
-        <ul class="navbar-nav  d-flex align-items-center">
-          <li class="nav-item mt-1">
-            <a routerLink="/home">
-              <img src="https://cdn.discordapp.com/attachments/892048100582109274/898737626750783498/logo_gaia.png" alt="Logo do site" width="200px" height="100px" class="img-fluid">
-            </a>
-          </li>
-        </ul>
+  <div class="container-fluid">
 
-        <ul class="navbar-nav mb-2 d-flex align-items-center">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-          <div>
-            <button class="mr-3 btn bg-transparent tbold button1" routerLink="/home">HOME</button>
-          </div>
-          <div>
-            <button class="mr-3 btn bg-transparent tbold button1" type="button" data-bs-toggle="offcanvas" 
+    <div class="collapse navbar-collapse d-flex justify-content-between align-items-center" id="navbarSupportedContent">
+
+      <ul class="navbar-nav  d-flex align-items-center">
+        <li class="nav-item mt-1">
+          <a routerLink="/home">
+            <img src="https://cdn.discordapp.com/attachments/892048100582109274/898737626750783498/logo_gaia.png"
+              alt="Logo do site" width="200px" height="100px" class="img-fluid">
+          </a>
+        </li>
+      </ul>
+
+      <ul class="navbar-nav mb-2 d-flex align-items-center">
+
+        <div>
+          <button class="mr-3 btn bg-transparent tbold button1" routerLink="/home">HOME</button>
+        </div>
+        <div>
+          <button class="mr-3 btn bg-transparent tbold button1" type="button" data-bs-toggle="offcanvas"
             data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">CATEGORIAS</button>
-          </div>
-          
-          <div>
-            <button class="mr-3 btn bg-transparent tbold button1 text-dark" routerLink="/aboutUs">SOBRE</button>
-          </div>
-          <div>
-            <button class="mr-3 btn bg-transparent tbold button1" routerLink="/contact">CONTATO</button>
-          </div>
-          <div>
-            <button class="mr-3 btn bg-transparent tbold btnuser button1" routerLink="/login">LOGIN</button>
-          </div>
-          <div>
-            <button class="mr-3 btn bg-transparent tbold btnuser button1" routerLink="/cadastro">CADASTRO</button>
-          </div>
-        </ul>
-  
-      </div>
+        </div>
+
+        <div>
+          <button class="mr-3 btn bg-transparent tbold button1 text-dark" routerLink="/aboutUs">SOBRE</button>
+        </div>
+        <div>
+          <button class="mr-3 btn bg-transparent tbold button1" routerLink="/contact">CONTATO</button>
+        </div>
+        <div>
+          <button class="mr-3 btn bg-transparent tbold btnuser button1" *ngIf="!isLogged"
+            routerLink="/login">LOGIN</button>
+          <button class="mr-3 btn bg-transparent tbold btnuser button1" *ngIf="isLogged"
+            routerLink="/login" (click)="logout()">SAIR</button>
+        </div>
+        <div>
+          <button class="mr-3 btn bg-transparent tbold btnuser button1" routerLink="/cadastro">CADASTRO</button>
+        </div>
+      </ul>
+
     </div>
-  </nav>
+  </div>
+</nav>

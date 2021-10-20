@@ -21,6 +21,18 @@ export class AuthService {
     return this.http.post<Usuario>('https://deploygaia.herokuapp.com/Usuario/salvar', usuario)
   }
 
+  logout():void{
+    localStorage.removeItem('token');
+  }
+
+  isLogged():boolean{
+    const token=localStorage.getItem('token');
+    if(token){
+      return true;
+    }
+    return false;
+  }
+
 }
 
 

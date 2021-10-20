@@ -26,6 +26,7 @@ export class LoginComponent implements OnInit {
       this.usuarioLogin = resp
 
       environment.token = this.usuarioLogin.token
+      localStorage.setItem('token',this.usuarioLogin.token);
       environment.nome = this.usuarioLogin.nome
       environment.idUsuario = this.usuarioLogin.idUsuario
       

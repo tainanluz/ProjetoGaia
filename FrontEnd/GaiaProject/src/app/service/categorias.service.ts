@@ -1,7 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { environment } from 'src/environments/environment.prod';
 import { Categorias } from '../model/Categorias';
 
 @Injectable({
@@ -10,9 +9,18 @@ import { Categorias } from '../model/Categorias';
 export class CategoriasService {
 
   constructor(private http: HttpClient) { }
+  tokenLocalStorage = localStorage.getItem('token');
+  
 
   token = {
-    headers: new HttpHeaders().set('Authorization', environment.token)
+    headers: new HttpHeaders().set('Authorization', this.getToken())
+  }
+
+  getToken(): string {
+    if (this.tokenLocalStorage) {
+      return this.tokenLocalStorage;
+    } 
+    return '';
   }
 
   getAllCategoria(): Observable<Categorias[]>{
