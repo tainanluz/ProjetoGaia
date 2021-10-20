@@ -33,17 +33,34 @@
         <div>
           <button class="mr-3 btn bg-transparent tbold button1" routerLink="/contact">CONTATO</button>
         </div>
+
+
+
         <div>
-          <button class="mr-3 btn bg-transparent tbold btnuser button1" *ngIf="!isLogged"
-            routerLink="/login">LOGIN</button>
-          <button class="mr-3 btn bg-transparent tbold btnuser button1" *ngIf="isLogged"
-            routerLink="/login" (click)="logout()">SAIR</button>
+          <button class="mr-3 btn bg-transparent tbold btnuser button1" *ngIf="!isLogged" data-bs-toggle="modal" data-bs-target="#cadastro">LOGIN</button>
+          <button class="mr-3 btn bg-transparent tbold btnuser button1" *ngIf="isLogged" routerLink="/loginv2"
+            (click)="logout()">SAIR</button>
+            <button class="mr-3 btn bg-transparent tbold btnuser button1" *ngIf="!isLogged">CADASTRO</button>
         </div>
-        <div>
-          <button class="mr-3 btn bg-transparent tbold btnuser button1" *ngIf="!isLogged" routerLink="/cadastrov2">CADASTRO</button>
-        </div>
+       
       </ul>
 
     </div>
   </div>
 </nav>
+
+<div class="modal fade" id="cadastro" tabindex="-1">
+<div class="modal-dialog modal-dialog-centered">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title">Modal title</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    </div>
+    <div class="modal-body">
+    <div class="modal-footer">
+      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Save changes</button>
+    </div>
+  </div>
+</div>
+</div>

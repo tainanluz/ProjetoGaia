@@ -18,6 +18,7 @@ import { ProdutosDeleteComponent } from './delete/produtos-delete/produtos-delet
 import { ProdutosPutComponent } from './edit/produtos-put/produtos-put.component';
 import { Cadastrov2Component } from './cadastrov2/cadastrov2.component';
 import { Loginv2Component } from './loginv2/loginv2.component';
+import { CarrinhoComponent } from './carrinho/carrinho.component';
 
 
 @NgModule({
@@ -37,6 +38,7 @@ import { Loginv2Component } from './loginv2/loginv2.component';
     ProdutosPutComponent,
     Cadastrov2Component,
     Loginv2Component,
+    CarrinhoComponent,
   ],
   imports: [
     BrowserModule,
