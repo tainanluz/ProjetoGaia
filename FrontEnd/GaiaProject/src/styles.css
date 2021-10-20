@@ -34,3 +34,92 @@
 .bg-geral{
     background-image: url('https://media.discordapp.net/attachments/892048100582109274/899452754936868944/backgroung.jpg?width=288&height=675');
 }
+
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@100;200;300;400;500;600;700;800;900&display=swap');
+/* You can add global styles to this file, and also import other style files */
+
+
+/* body {
+  font-family: "Barlow", sans-serif;
+} */
+
+a {
+  text-decoration: none;
+}
+
+/* // owl-theme nz store */
+.owl-nz-store .owl-theme .owl-nav [class*=owl-] {
+  position: absolute;
+  top: 0;
+  color: #8d8d8d;
+  font-size: 16px;
+  background: #fff;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.owl-nz-store .owl-theme .owl-nav .owl-prev {
+  right: 105px;
+}
+
+.owl-nz-store .owl-theme .owl-nav .owl-next {
+  right: 0px;
+}
+
+.owl-nz-store .owl-theme .owl-nav [class*=owl-]:hover {
+  color: #F37135;
+  background-color: #fff;
+}
+
+.owl-nz-store .owl-stage {
+  margin: 70px 0 15px;
+}
+/* // end owl-theme nz store */
+
+
+/* // ngx-image-zoom */
+
+.ngxImageZoomContainer {
+  width: 100% !important;;
+  height: auto !important;
+}
+
+.ngxImageZoomContainer img {
+  width: 100%;
+  height: auto;
+}
+
+/* // end ngx-image-zoom */
+
+
+/* // owl-theme product details */
+.owl-product-details .owl-theme .owl-nav [class*=owl-] {
+  position: absolute;
+  top: calc(50% - 25px);
+  color: #fff;
+  font-size: 26px;
+  background: #2b2828;
+  opacity: 0.6;
+  font-weight: 700;
+  height: 50px;
+  width: 40px;
+}
+
+.owl-product-details .owl-theme .owl-nav .owl-prev {
+  left: -10px;
+}
+
+.owl-product-details .owl-theme .owl-nav .owl-next {
+  right: -10px;
+}
+
+.owl-product-details .owl-theme .owl-nav [class*=owl-]:hover {
+  opacity: 0.8;
+}
+
+.owl-product-details .carousel-images.ng-star-inserted {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+/* // end owl-theme product details */
