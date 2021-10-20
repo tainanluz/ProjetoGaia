@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { AdicionarCategoriaComponent } from './adicionar-categoria/adicionar-categoria.component';
 import { CadastroComponent } from './cadastro/cadastro.component';
+import { Cadastrov2Component } from './cadastrov2/cadastrov2.component';
 import { ContactComponent } from './contact/contact.component';
 import { CategoriaDeleteComponent } from './delete/categoria-delete/categoria-delete.component';
 import { ProdutosDeleteComponent } from './delete/produtos-delete/produtos-delete.component';
@@ -28,6 +29,7 @@ const routes: Routes = [
   {path: 'categoria-put/:id', component:CategoriaPutComponent},
   {path: 'produtos-delete/:id', component:ProdutosDeleteComponent},
   {path: 'produtos-put/:id', component:ProdutosPutComponent},
+  {path: 'cadastrov2', component:Cadastrov2Component},
 ];
 
 @NgModule({
