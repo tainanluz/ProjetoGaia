@@ -2,10 +2,10 @@
 
 @font-face {
   font-family: 'Trueno-Round-Bold';
-  src:url('../../assets/font/Trueno-Round-Bold.ttf.woff') format('woff'),
-      url('../../assets/font/Trueno-Round-Bold.ttf.svg') format('svg'),
-      url('../../assets/font/Trueno-Round-Bold.ttf.eot'),
-      url('../../assets/font/Trueno-Round-Bold.ttf.eot?#iefix') format('embedded-opentype'); 
+  src:url('../../assets/fonts/Trueno-Round-Bold.ttf.woff') format('woff'),
+      url('../../assets/fonts/Trueno-Round-Bold.ttf.svg') format('svg'),
+      url('../../assets/fonts/Trueno-Round-Bold.ttf.eot'),
+      url('../../assets/fonts/Trueno-Round-Bold.ttf.eot?#iefix') format('embedded-opentype'); 
   font-weight: normal;
   font-style: normal;
 }
