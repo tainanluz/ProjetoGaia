@@ -41,9 +41,10 @@
             <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner">
                     <div class="carousel-item active" data-bs-interval="10000">
-                        <a routerLink="/home"><img src="https://cdn.discordapp.com/attachments/892048100582109274/899039509654691900/Banner2.jpg"
-                            class="d-block esticar" alt="..."></a>
-                        
+                        <a routerLink="/home"><img
+                                src="https://cdn.discordapp.com/attachments/892048100582109274/899039509654691900/Banner2.jpg"
+                                class="d-block esticar" alt="..."></a>
+
                     </div>
                     <div class="carousel-item" data-bs-interval="2000">
                         <img src="https://cdn.discordapp.com/attachments/892048100582109274/899029701232832512/Banner.jpg"
@@ -65,13 +66,13 @@
 
             <!--Ofertas!!!-->
             <div class="cards quebra">
-                <div class="card mt-5 mb-5 ms-2 me-2" style="width: 300px;"
-                    *ngFor='let produtos of listaProdutos'>
+                <div class="card mt-5 mb-5 ms-2 me-2" style="width: 300px;" *ngFor='let produtos of listaProdutos'>
                     <div class="card-body text-center">
 
                         <div>
                             <!--Classe imgProd faz as definições da imagem-->
-                            <a routerLink="/produto/{{produtos.idProduto}}"><img src="{{produtos.link}}" alt="{{produtos.nome}}" class="imgProd"></a>
+                            <a routerLink="/produto/{{produtos.idProduto}}"><img src="{{produtos.link}}"
+                                    alt="{{produtos.nome}}" class="imgProd"></a>
                         </div>
 
                         <div class="tamanho">
@@ -79,23 +80,33 @@
                                 <h5 class="card-title mt-3">{{produtos.nome}}</h5>
                                 <!--Não consegui alinhar o texto da composteira-->
                                 <p class="card-text mt-2 tbold">{{produtos.categoriaRelacionada.nomeDaCategoria}}</p>
-                                <p class="card-text mt-2">{{produtos.descricao}}</p>
-                                
+                                <p class="card-text mt-2 text-dark">{{produtos.descricao}}</p>
+
                             </div>
                         </div>
+                        <div class="EndButton d-flex mt-10  hh">
+                            <sup id="desc" class="btn btn-secondary me-2"><del>{{produtos.preco |
+                                    currency}}</del></sup>
+                            <p class="d-flex justify-content-center btn btn-success"
+                                (click)='adicionarCarrinho(produtos.idProduto, 1)' routerLink="/{{produtos.nome}}">
+                                {{(produtos.preco*0.7).toFixed(2) | currency}} </p>
 
-                        <div class="EndButton d-flex mt-10">
-                            <p class="d-flex justify-content-center btn btn-success w-50 h-50"
-                                routerLink="/{{produtos.nome}}"> R$ {{produtos.preco}}</p>
-                            
                         </div>
                         
+                        <p (click)='removerProduto(produtos.idProduto, 1)' class="btn btn-danger">Remover carrinho</p>
+
+                        <!-- <div class="EndButton d-flex mt-10">
+                            <p class="d-flex justify-content-center btn btn-success w-50 h-50"
+                                routerLink="/{{produtos.nome}}"> R$ {{produtos.preco}}</p>
+
+                        </div> -->
+
                     </div>
                 </div>
             </div>
             <!--Ofertas!!!-->
 
-        <!--Recurso de navegação entre pag's
+            <!--Recurso de navegação entre pag's
             <nav aria-label="Page navigation example">
                 <ul class="pagination justify-content-center p-md-3">
                     <li class="page-item disabled">
@@ -113,4 +124,32 @@
         </div>
     </div>
     <app-footer></app-footer>
+</div>
+
+
+<div class="modal fade" id="carrinho" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered form-create-account">
+        <div class="modal-content ">
+            <h1 class="modal-title mt-4 page-title mb-5 op">Login</h1>
+            <div class="modal-body">
+                <div class="row op d-flex justify-content-center">
+
+
+
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <div class="col-md-6 text-right mt-3 d-flex bttn">
+                    <button type="submit" data-bs-dismiss="modal" class="btn btn-secondary btn-back-page mrButton "
+                        routerLink='/home'><i class="fas fa-arrow-left"></i></button>
+                    <button type="submit" data-bs-dismiss="modal" class="btn mrButton btn-primary btn-submit mrb"
+                        data-bs-toggle="modal" data-bs-target="#cadastro">Criar Conta</button>
+                    <button type="submit" data-bs-dismiss="modal" class="btn btn-primary btn-submit mrb"
+                        >Entrar</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

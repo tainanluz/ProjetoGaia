@@ -37,11 +37,14 @@
 
 
         <div>
-          <button class="mr-3 btn bg-transparent tbold btnuser button1" *ngIf="!isLogged" data-bs-toggle="modal"
-            data-bs-target="#login">LOGIN</button>
-          <button class="mr-3 btn bg-transparent tbold btnuser button1" *ngIf="isLogged" (click)="logout()">SAIR</button>
-          <button class="mr-3 btn bg-transparent tbold btnuser button1" *ngIf="!isLogged" data-bs-toggle="modal"
-            data-bs-target="#cadastro">CADASTRO</button>
+          <!-- data-bs-toggle="modal"
+            data-bs-target="#login" -->
+          <button class="mr-3 btn bg-transparent tbold btnuser button1" *ngIf="!isLogged" routerLink='/loginv2'>LOGIN</button>
+          <button class="mr-3 btn bg-transparent tbold btnuser button1" *ngIf="isLogged"
+            (click)="logout()" routerLink='/loginv2'>SAIR</button>
+            <!-- data-bs-toggle="modal"
+            data-bs-target="#cadastro" -->
+          <button class="mr-3 btn bg-transparent tbold btnuser button1" *ngIf="!isLogged" routerLink='/cadastrov2'>CADASTRO</button>
         </div>
 
       </ul>
@@ -171,9 +174,10 @@
         <div class="col-md-6 text-right mt-3 d-flex bttn">
           <button type="submit" data-bs-dismiss="modal" class="btn btn-secondary btn-back-page mrButton "
             routerLink='/home'><i class="fas fa-arrow-left"></i></button>
-          <button type="submit" data-bs-dismiss="modal" class="btn mrButton btn-primary btn-submit mrb" data-bs-toggle="modal"
-            data-bs-target="#cadastro">Criar Conta</button>
-          <button type="submit" data-bs-dismiss="modal" class="btn btn-primary btn-submit mrb"  (click)='login()'>Entrar</button>
+          <button type="submit" data-bs-dismiss="modal" class="btn mrButton btn-primary btn-submit mrb"
+            data-bs-toggle="modal" data-bs-target="#cadastro">Criar Conta</button>
+          <button type="submit" data-bs-dismiss="modal" class="btn btn-primary btn-submit mrb"
+            (click)='login()'>Entrar</button>
 
         </div>
       </div>

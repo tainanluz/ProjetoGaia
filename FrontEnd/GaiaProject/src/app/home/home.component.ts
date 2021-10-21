@@ -2,8 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
 import { Categorias } from '../model/Categorias';
+import { ItemCarrinho } from '../model/ItemCarrinho';
 import { Produtos } from '../model/Produtos';
 import { Usuario } from '../model/Usuario';
+import { CarrinhoService } from '../service/carrinho.service';
 import { CategoriasService } from '../service/categorias.service';
 import { ProdutosService } from '../service/produtos.service';
 
@@ -20,11 +22,14 @@ export class HomeComponent implements OnInit {
   usuario: Usuario = new Usuario()
   produtos: Produtos = new Produtos()
   listaProdutos: Produtos[]
+  itemCarrinho: ItemCarrinho
 
   constructor(
     private router: Router,
     private categoriaService: CategoriasService,
     private produtosService: ProdutosService,
+    private carrinhoService: CarrinhoService,
+    
 
   ) {
 
@@ -32,7 +37,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     if (localStorage.getItem('token') == '') {
-      this.router.navigate(['/login'])
+      this.router.navigate(['/loginv2'])
     }
     this.findAllCategorias()
     this.findAllProduto()
@@ -66,6 +71,14 @@ export class HomeComponent implements OnInit {
       this.listaProdutos = resp
     })
   }
+  adicionarCarrinho(productId: number, quantidade:number):void{
+    this.itemCarrinho={productId, quantidade}
+    this.carrinhoService.adicionarItem(this.itemCarrinho)
+  }
 
+  removerProduto(productId:number,quantidade:number):void{
+    this.itemCarrinho={productId, quantidade}
+    this.carrinhoService.removerItem(this.itemCarrinho)
+  }
 }
 

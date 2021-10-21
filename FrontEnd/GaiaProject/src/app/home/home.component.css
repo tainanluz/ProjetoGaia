@@ -17,6 +17,17 @@
     width: 100%;
 }
 
+.hh{
+    height: fit-content+10px;
+}
+#desc{
+    text-decoration: none;
+    cursor: default !important;
+}
+#desc:hover{
+    color:#fff !important;
+}
+
 .cards{ /*Parte onde contém os produtos*/
     display: flex;  
     flex-direction: row;
