@@ -26,7 +26,7 @@ export class ProdutosDeleteComponent implements OnInit {
 
   ) { }  ngOnInit() {
     if(environment.token =='')
-    this.router.navigate(['/login'])
+    this.router.navigate(['/loginv2'])
 
     this.idProduto = this.route.snapshot.params['id']
     this.findByIdCategoria(this.idProduto)

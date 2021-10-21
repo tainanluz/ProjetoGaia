@@ -31,7 +31,7 @@ export class CategoriaPutComponent implements OnInit {
 
   ngOnInit() {
     if(environment.token =='')
-    this.router.navigate(['/entrar'])
+    this.router.navigate(['/loginv2'])
     let id = this.route.snapshot.params['id']
     this.findByIdCategoria(id)
   }

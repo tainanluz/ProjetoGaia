@@ -18,7 +18,7 @@ export class ContactComponent implements OnInit {
 
   ngOnInit() {
     if (environment.token == ''){
-      this.router.navigate(['/login'])
+      this.router.navigate(['/loginv2'])
     }
 
     (function () {
