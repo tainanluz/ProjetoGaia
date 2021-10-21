@@ -68,10 +68,12 @@
                 <div class="card mt-5 mb-5 ms-2 me-2" style="width: 300px;"
                     *ngFor='let produtos of listaProdutos'>
                     <div class="card-body text-center">
+
                         <div>
                             <!--Classe imgProd faz as definições da imagem-->
-                            <img src="{{produtos.link}}" alt="{{produtos.nome}}" class="imgProd">
+                            <a routerLink="/produto/{{produtos.idProduto}}"><img src="{{produtos.link}}" alt="{{produtos.nome}}" class="imgProd"></a>
                         </div>
+
                         <div class="tamanho">
                             <div class="col-md-12">
                                 <h5 class="card-title mt-3">{{produtos.nome}}</h5>
@@ -81,10 +83,13 @@
                                 
                             </div>
                         </div>
+
                         <div class="EndButton d-flex mt-10">
                             <p class="d-flex justify-content-center btn btn-success w-50 h-50"
                                 routerLink="/{{produtos.nome}}"> R$ {{produtos.preco}}</p>
+                            
                         </div>
+                        
                     </div>
                 </div>
             </div>

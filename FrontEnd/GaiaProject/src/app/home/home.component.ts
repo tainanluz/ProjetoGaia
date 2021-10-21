@@ -20,52 +20,51 @@ export class HomeComponent implements OnInit {
   usuario: Usuario = new Usuario()
   produtos: Produtos = new Produtos()
   listaProdutos: Produtos[]
-  
+
   constructor(
-   private router: Router,
-   private categoriaService: CategoriasService,
-   private produtosService: ProdutosService,
+    private router: Router,
+    private categoriaService: CategoriasService,
+    private produtosService: ProdutosService,
 
-   ) {
-    
-   }
+  ) {
 
-  ngOnInit(){
-  if (localStorage.getItem('token') == '')
-  { 
-   this.router.navigate(['/login'])
-  }
-  this.findAllCategorias()
-  this.findAllProduto()
-} 
- 
-
- findAllCategorias(){
-  this.categoriaService.getAllCategoria().subscribe((resp: Categorias[])=> {
-    this.listaCategorias = resp
-  })
   }
 
- AdicionarCategoria(){
-    this.produtos.idProduto = this.idProduto
-    this.usuario.idUsuario = environment.idUsuario
-    this.categorias.usuario = this.usuario
-    console.log("produto "+JSON.stringify(this.categorias))
-    this.categoriaService.postCategoria(this.categorias).subscribe((resp: Categorias) => {
-    this.categorias = resp
-    alert('Categoria adicionada com sucesso')
+  ngOnInit() {
+    if (localStorage.getItem('token') == '') {
+      this.router.navigate(['/login'])
+    }
+    this.findAllCategorias()
+    this.findAllProduto()
+  }
+
+
+  findAllCategorias() {
+    this.categoriaService.getAllCategoria().subscribe((resp: Categorias[]) => {
+      this.listaCategorias = resp
     })
   }
 
-findByIdCategoria() {
-  this.categoriaService.getByIdCategoria(this.idCategoria).subscribe((resp: Categorias) => {
-    this.categorias = resp
-  })
-}
-findAllProduto(){
-  this.produtosService.getAllProduto().subscribe((resp: Produtos[])=> {
-    this.listaProdutos = resp
-  })
+  AdicionarCategoria() {
+    this.produtos.idProduto = this.idProduto
+    this.usuario.idUsuario = environment.idUsuario
+    this.categorias.usuario = this.usuario
+    console.log("produto " + JSON.stringify(this.categorias))
+    this.categoriaService.postCategoria(this.categorias).subscribe((resp: Categorias) => {
+      this.categorias = resp
+      alert('Categoria adicionada com sucesso')
+    })
+  }
+
+  findByIdCategoria() {
+    this.categoriaService.getByIdCategoria(this.idCategoria).subscribe((resp: Categorias) => {
+      this.categorias = resp
+    })
+  }
+  findAllProduto() {
+    this.produtosService.getAllProduto().subscribe((resp: Produtos[]) => {
+      this.listaProdutos = resp
+    })
   }
 
 }
