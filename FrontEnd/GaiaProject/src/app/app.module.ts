@@ -1,5 +1,5 @@
 import { HttpClientModule } from '@angular/common/http'
-import { NgModule } from '@angular/core';
+import { DEFAULT_CURRENCY_CODE, LOCALE_ID, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
@@ -20,7 +20,10 @@ import { Cadastrov2Component } from './cadastrov2/cadastrov2.component';
 import { Loginv2Component } from './loginv2/loginv2.component';
 import { CarrinhoComponent } from './carrinho/carrinho.component';
 import { ProdutoComponent } from './produto/produto.component';
+import { registerLocaleData } from '@angular/common';
+import localePt from '@angular/common/locales/pt';
 
+registerLocaleData(localePt);
 
 @NgModule({
   declarations: [
@@ -48,7 +51,16 @@ import { ProdutoComponent } from './produto/produto.component';
     HttpClientModule,
     FormsModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: LOCALE_ID,
+      useValue: 'pt-BR'
+    },
+    {
+      provide: DEFAULT_CURRENCY_CODE,
+      useValue: 'BRL'
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

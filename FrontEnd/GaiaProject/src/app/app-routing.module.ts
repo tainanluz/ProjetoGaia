@@ -14,10 +14,11 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { Loginv2Component } from './loginv2/loginv2.component';
 import { MenuComponent } from './menu/menu.component';
+import { ProdutoComponent } from './produto/produto.component';
 
 
 const routes: Routes = [
-  {path:'', redirectTo:'loginv2', pathMatch: 'full'},
+  {path:'', redirectTo:'produto', pathMatch: 'full'},
   {path: 'home', component:HomeComponent},
   {path: 'aboutUs', component:AboutUsComponent},
   {path: 'contact', component:ContactComponent},
@@ -32,6 +33,7 @@ const routes: Routes = [
   {path: 'produtos-put/:id', component:ProdutosPutComponent},
   {path: 'cadastrov2', component:Cadastrov2Component},
   {path: 'loginv2', component:Loginv2Component},
+  {path: 'produto/:id', component:ProdutoComponent}
 ];
 
 @NgModule({
