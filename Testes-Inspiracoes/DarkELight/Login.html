@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Dark & Light</title>
+    <!--Fontes https://cdnjs.com/libraries/font-awesome/4.7.0-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
+        integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="stylelogin.css">
+</head>
+
+<body>
+    <!--Fazendo o tema-->
+    <section class="sec">
+        <!--Botão do Sol e lua-->
+        <div class="toggle"></div>
+        <div class="card">
+
+            <div class="content">
+                <!--Dentro do card-->
+                <div class="container-fluid">
+                    <div class="row d-flex align-items-center">
+
+                        <div class="col-md-6">
+                            <div class="row d-flex justify-content-center">
+                                <div class="col-md-6">
+
+                                    <h1 class="text-center mb-3">Login<br><br></h1>
+                                    <div class="form">
+                                        <!-- Classe form-->
+                                        <div class="form-group">
+                                            <label for="email">Email<br></label>
+                                            <input [(ngModel)]='usuarioLogin.email' class="form-control mt-3"
+                                                type="email" name="email" id="email" placeholder="Seu E-mail">
+                                        </div>
+                                        <h2><br></h2> <!-- Alinhando o formulário-->
+                                        <div class="form-group">
+                                            <label for="senha">Senha<br></label>
+                                            <input [(ngModel)]='usuarioLogin.senha' class="form-control mt-3"
+                                                type="password" name="senha" id="senha" placeholder="Sua senha">
+                                        </div>
+                                        <h2><br></h2> <!-- Alinhando o formulário-->
+                                        <div class="d-flex justify-content-center mt-3">
+                                            <button type="submit" class="btn btn-success ps-4 pe-4"
+                                                (click)='login()'>Entrar</button>
+                                        </div>
+                                        <h2><br></h2> <!-- Alinhando o formulário-->
+                                    </div>
+                                    <hr class="mt-5 mb-5">
+
+                                    <p class="text-center">
+                                        Não tem uma conta? <a routerLink='/cadastro'>Cadastre-se</a>
+                                    </p>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6" id="img-bg">
+
+                        </div>
+
+
+                    </div>
+                </div>
+                <!--Aqui termina a parte que podemos colocar login-->
+            </div>
+        </div>
+    </section>
+    <!--Botão do Sol e lua - fazer funcionar -->
+    <script>
+        const sec = document.querySelector('.sec')
+        const toggle = document.querySelector('.toggle');
+        toggle.onclick = function () {
+            sec.classList.toggle('dark')
+        }
+    </script>
+    <!-- /Botão do Sol e lua - fazer funcionar -->
+</body>
+
+</html>
