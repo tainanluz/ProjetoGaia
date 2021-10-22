@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AboutUsComponent } from './about-us/about-us.component';
+import { Aboutus2Component } from './aboutus2/aboutus2.component';
 import { AdicionarCategoriaComponent } from './adicionar-categoria/adicionar-categoria.component';
 import { CadastroComponent } from './cadastro/cadastro.component';
 import { Cadastrov2Component } from './cadastrov2/cadastrov2.component';
@@ -18,7 +19,7 @@ import { ProdutoComponent } from './produto/produto.component';
 
 
 const routes: Routes = [
-  {path:'', redirectTo:'home', pathMatch: 'full'},
+  {path:'', redirectTo:'aboutus2', pathMatch: 'full'},
   {path: 'home', component:HomeComponent},
   {path: 'aboutUs', component:AboutUsComponent},
   {path: 'contact', component:ContactComponent},
@@ -33,7 +34,8 @@ const routes: Routes = [
   {path: 'produtos-put/:id', component:ProdutosPutComponent},
   {path: 'cadastrov2', component:Cadastrov2Component},
   {path: 'loginv2', component:Loginv2Component},
-  {path: 'produto/:id', component:ProdutoComponent}
+  {path: 'produto/:id', component:ProdutoComponent},
+  {path: 'aboutus2', component:Aboutus2Component}
 ];
 
 @NgModule({

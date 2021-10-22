@@ -22,6 +22,8 @@ import { CarrinhoComponent } from './carrinho/carrinho.component';
 import { ProdutoComponent } from './produto/produto.component';
 import { registerLocaleData } from '@angular/common';
 import localePt from '@angular/common/locales/pt';
+import { Aboutus2Component } from './aboutus2/aboutus2.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 registerLocaleData(localePt);
 
@@ -44,12 +46,14 @@ registerLocaleData(localePt);
     Loginv2Component,
     CarrinhoComponent,
     ProdutoComponent,
+    Aboutus2Component,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule,
   ],
   providers: [
     {
