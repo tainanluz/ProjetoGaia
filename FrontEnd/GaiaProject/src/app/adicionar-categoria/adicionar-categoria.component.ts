@@ -28,7 +28,7 @@ export class AdicionarCategoriaComponent implements OnInit {
    ) { }
  
    ngOnInit(){
-   if (environment.token == ''){
+   if (localStorage.getItem('token') == ''){
    this.router.navigate(['/loginv2'])
  }
   this.findAllCategorias()

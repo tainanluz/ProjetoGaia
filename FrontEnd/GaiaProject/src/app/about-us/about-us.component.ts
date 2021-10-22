@@ -33,10 +33,10 @@ export class AboutUsComponent implements OnInit {
     
    }
    ngOnInit(){
-    if (environment.token == '')
-    { 
-     this.router.navigate(['/loginv2'])
-    }
+    // if (environment.token == '')
+    // { 
+    //  this.router.navigate(['/loginv2'])
+    // }
     this.findAllCategorias()
     this.findAllProduto()
   } 
