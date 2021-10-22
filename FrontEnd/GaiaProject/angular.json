@@ -39,6 +39,7 @@
               "node_modules/@fortawesome/fontawesome-free/css/brands.css"
               ],
               "scripts": [
+              "src/app/aboutus2/aboutus2.component.js",
               "./node_modules/jquery/dist/jquery.js",
               "./node_modules/bootstrap/dist/js/bootstrap.js",
               "./node_modules/popper.js/dist/umd/popper.min.js"
