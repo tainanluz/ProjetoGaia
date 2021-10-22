@@ -40,7 +40,7 @@
 
         <div>
           <button class="mr-3 btn bg-transparent tbold btnuser button1" data-bs-toggle="modal"
-            data-bs-target="#carrinho">CARRINHO</button>
+            data-bs-target="#carrinho" (click)='teste()'>CARRINHO</button>
 
           <button class="mr-3 btn bg-transparent tbold btnuser button1" *ngIf="!isLogged" data-bs-toggle="modal"
             data-bs-target="#login">LOGIN</button>
@@ -197,15 +197,43 @@
       <div class="modal-body">
         <div class="row op d-flex justify-content-center">
 
-          <div class="col-md-9">
+          <div class="col-md-10">
             <div id="lista-detalhes">
 
               <div id="lista-carrinho">
                 <!-- {{listaCarrinho[0] | json}} -->
-                <div class="produto-carrinho" *ngFor="let items of listaCarrinho" id="titulo">
-                  <div><img src="{{items.produtos.link}}" alt=""></div>
-                  <p>{{items.produtos.nome}}</p>
-                  <p>{{items.quantidade}}</p>
+                <div *ngFor="let items of listaCarrinho" id="titulo">
+                  <div class="row mt-5 mb-5">
+                  <div class="col-md-4 tamanho">
+                    <img src="{{items.produtos.link}}" class="imgProd" alt="{{items.produtos.nome}}">
+                  </div>
+                  <div class="col-md-8">
+                    <table class="table table-hover">
+                      <thead>
+                          <tr>
+                              <th scope="col">Produto:</th>
+                              <th scope="col" class="text-right">Quantidade:</th>
+                              <th scope="col" class="text-right">Preço:</th>
+                          </tr>
+                      </thead>
+                      <tbody>
+                          <tr>
+                              <td class="text-start">{{items.produtos.nome}}</td>
+                              <td class="text-center">x{{items.quantidade}}</td>
+                              <td id="total" class="text-start">R${{(items.produtos.preco)*(items.quantidade)}}</td>
+                              <td class="justify-content-end">
+                                  <Button class="btn btn-danger mrButton">Remover</Button>
+                              </td>
+                          </tr>
+                          <tr>
+                      </tbody>
+                  </table>
+                  </div>
+                </div>
+                  <!--Não consegui alinhar o texto da composteira-->
+                  <!-- <p class="card-text mt-2 tbold">{{produtos.idProduto}}</p> -->
+
+
                   <!-- <div class="btn btn-success" (click)='teste()'>Preço</div>
                   <div>Quantidade</div>
                   <div>Subtotal</div>
@@ -219,37 +247,25 @@
                     <span id="texto-total">Total</span>
                     <span id="total">R$ </span>
                   </div>
-                  <div class="btn btn-success" (click)='teste()'>Mostrar carrinho</div>
                   <!-- <div class="btn btn-danger" (click)='teste2()'>Mostrar produto</div> -->
-                  <div id="comprar-mais">
-                    <a href="index.html">Comprar mais produtos</a>
-                  </div>
-                  <div onclick='finalizar();' id="confirmar-compra">
-                    <a href="index.html">Finalizar Pedido</a>
-                  </div>
                 </div>
               </div>
             </div>
-
-
           </div>
-
         </div>
-
-
-
       </div>
 
       <div class="modal-footer">
-        <div class="col-md-6 text-right mt-3 d-flex bttn">
-
-          <button type="submit" data-bs-dismiss="modal" class="btn btn-secondary btn-back-page mrButton "
-            routerLink='/home'><i class="fas fa-arrow-left"></i></button>
-          <button type="submit" data-bs-dismiss="modal" class="btn mrButton btn-primary btn-submit mrb"
-            data-bs-toggle="modal" data-bs-target="#cadastro">Criar Conta</button>
-          <button type="submit" data-bs-dismiss="modal" class="btn btn-primary btn-submit mrb"
-            >Entrar</button>
-
+        <div class="col-md-8 text-right mt-3 d-flex bttn">
+          <div class="btn btn-info" *ngIf="isLogged" onclick='finalizar();' id="confirmar-compra">
+            <a href="index.html">>Finalizar Pedido</a>
+          </div>
+          <button class="btn mrButton btn-primary btn-submit mrb" data-bs-dismiss="modal">continuar comprando</button>
+          <button *ngIf="!isLogged" type="submit" data-bs-dismiss="modal"
+            class="btn mrButton btn-primary btn-submit mrb" data-bs-toggle="modal" data-bs-target="#cadastro">Criar
+            Conta</button>
+          <button class="btn mrButton btn-primary btn-submit mrb" *ngIf="!isLogged" data-bs-toggle="modal"
+            data-bs-target="#login">Entrar</button>
         </div>
       </div>
     </div>

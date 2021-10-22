@@ -86,12 +86,9 @@ align-content: space-between;
 }
 
 .imgProd{
-    position: relative;
     width: 200px;
     height: 200px;
-    overflow: hidden;
     border-radius: 10%;
-    margin-bottom: 15px;
 }
 
 .p .card-text{ /*Não consegui alinhar o texto no card da composteira*/

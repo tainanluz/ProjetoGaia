@@ -167,6 +167,20 @@ input {
   padding-right: 25px;
 }
 
+.tamanho{
+  display: grid;
+  grid-template-rows: 40px 50px;
+}
+
+.imgProd{
+  position: inherit;
+  width: 100px;
+  height: 100px;
+  overflow: hidden;
+  border-radius: 10%;
+  margin-bottom: 15px;
+}
+
 @media (min-width: 576px) {
 
 }
