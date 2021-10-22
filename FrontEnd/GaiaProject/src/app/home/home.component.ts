@@ -5,6 +5,7 @@ import { Categorias } from '../model/Categorias';
 import { ItemCarrinho } from '../model/ItemCarrinho';
 import { Produtos } from '../model/Produtos';
 import { Usuario } from '../model/Usuario';
+import { AuthService } from '../service/auth.service';
 import { CarrinhoService } from '../service/carrinho.service';
 import { CategoriasService } from '../service/categorias.service';
 import { ProdutosService } from '../service/produtos.service';
@@ -23,13 +24,15 @@ export class HomeComponent implements OnInit {
   produtos: Produtos = new Produtos()
   listaProdutos: Produtos[]
   itemCarrinho: ItemCarrinho
+  isLogged = false;
+  listaCarrinho: ItemCarrinho[]
 
   constructor(
     private router: Router,
+    private authService: AuthService,
     private categoriaService: CategoriasService,
     private produtosService: ProdutosService,
-    private carrinhoService: CarrinhoService,
-    
+    private carrinhoService: CarrinhoService   
 
   ) {
 
@@ -39,8 +42,16 @@ export class HomeComponent implements OnInit {
     if (localStorage.getItem('token') == '') {
       this.router.navigate(['/loginv2'])
     }
+    this.isLogged = this.authService.isLogged();
     this.findAllCategorias()
     this.findAllProduto()
+    // this.findAllCarrinho()
+  }
+
+  findAllCarrinho() {
+    this.carrinhoService.getAllCarrinho().subscribe((resp: ItemCarrinho[]) => {
+      this.listaCarrinho = resp
+    })
   }
 
 
@@ -49,6 +60,7 @@ export class HomeComponent implements OnInit {
       this.listaCategorias = resp
     })
   }
+
 
   AdicionarCategoria() {
     this.produtos.idProduto = this.idProduto
@@ -71,14 +83,14 @@ export class HomeComponent implements OnInit {
       this.listaProdutos = resp
     })
   }
-  adicionarCarrinho(productId: number, quantidade:number):void{
-    this.itemCarrinho={productId, quantidade}
+  adicionarCarrinho(produtos: Produtos, quantidade:number):void{
+    this.itemCarrinho={produtos, quantidade}
     this.carrinhoService.adicionarItem(this.itemCarrinho)
   }
 
-  removerProduto(productId:number,quantidade:number):void{
-    this.itemCarrinho={productId, quantidade}
-    this.carrinhoService.removerItem(this.itemCarrinho)
-  }
+  // removerProduto(productId:number,quantidade:number):void{
+  //   this.itemCarrinho={productId, quantidade}
+  //   this.carrinhoService.removerItem(this.itemCarrinho)
+  // }
 }
 

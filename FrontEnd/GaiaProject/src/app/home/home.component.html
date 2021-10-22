@@ -26,7 +26,7 @@
                         </table>
                     </div>
                     <div class="mt-20">
-                        <p class="btn btn-primary" routerLink="/adicionarCategoria">Configurações</p>
+                        <p class="btn btn-primary" *ngIf="isLogged" routerLink="/adicionarCategoria">Configurações</p>
                     </div>
                 </div>
             </div>
@@ -37,16 +37,18 @@
     <div class="row d-flex justify-content-center shadow">
 
         <div class="col-9 bg-teste pt-2">
+
+            
             <!--Carrosel-->
             <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner">
-                    <div class="carousel-item active" data-bs-interval="10000">
+                    <div class="carousel-item active" data-bs-interval="5000">
                         <a routerLink="/home"><img
                                 src="https://cdn.discordapp.com/attachments/892048100582109274/899039509654691900/Banner2.jpg"
                                 class="d-block esticar" alt="..."></a>
 
                     </div>
-                    <div class="carousel-item" data-bs-interval="2000">
+                    <div class="carousel-item" data-bs-interval="5000">
                         <img src="https://cdn.discordapp.com/attachments/892048100582109274/899029701232832512/Banner.jpg"
                             class="d-block w-100" alt="...">
                     </div>
@@ -65,7 +67,7 @@
             <!--Carrosel-->
 
             <!--Ofertas!!!-->
-            <div class="cards quebra">
+            <div class="cards quebra d-flex justify-content-center">
                 <div class="card mt-5 mb-5 ms-2 me-2" style="width: 300px;" *ngFor='let produtos of listaProdutos'>
                     <div class="card-body text-center">
 
@@ -79,6 +81,7 @@
                             <div class="col-md-12">
                                 <h5 class="card-title mt-3">{{produtos.nome}}</h5>
                                 <!--Não consegui alinhar o texto da composteira-->
+                                <!-- <p class="card-text mt-2 tbold">{{produtos.idProduto}}</p> -->
                                 <p class="card-text mt-2 tbold">{{produtos.categoriaRelacionada.nomeDaCategoria}}</p>
                                 <p class="card-text mt-2 text-dark">{{produtos.descricao}}</p>
 
@@ -88,12 +91,16 @@
                             <sup id="desc" class="btn btn-secondary me-2"><del>{{produtos.preco |
                                     currency}}</del></sup>
                             <p class="d-flex justify-content-center btn btn-success"
-                                (click)='adicionarCarrinho(produtos.idProduto, 1)' routerLink="/{{produtos.nome}}">
+                                (click)='adicionarCarrinho(produtos, 1)' routerLink="/{{produtos.nome}}">
                                 {{(produtos.preco*0.7).toFixed(2) | currency}} </p>
 
+                            <!-- <p class="d-flex justify-content-center btn btn-success"
+                                (click)='adicionarCarrinho(produtos.idProduto, 1)' routerLink="/{{produtos.nome}}">
+                                {{(produtos.preco*0.7).toFixed(2) | currency}} </p> -->
+
                         </div>
-                        
-                        <p (click)='removerProduto(produtos.idProduto, 1)' class="btn btn-danger">Remover carrinho</p>
+
+                        <!-- <p (click)='removerProduto(produtos.idProduto, 1)' class="btn btn-danger">Remover carrinho</p> -->
 
                         <!-- <div class="EndButton d-flex mt-10">
                             <p class="d-flex justify-content-center btn btn-success w-50 h-50"
@@ -145,8 +152,7 @@
                         routerLink='/home'><i class="fas fa-arrow-left"></i></button>
                     <button type="submit" data-bs-dismiss="modal" class="btn mrButton btn-primary btn-submit mrb"
                         data-bs-toggle="modal" data-bs-target="#cadastro">Criar Conta</button>
-                    <button type="submit" data-bs-dismiss="modal" class="btn btn-primary btn-submit mrb"
-                        >Entrar</button>
+                    <button type="submit" data-bs-dismiss="modal" class="btn btn-primary btn-submit mrb">Entrar</button>
 
                 </div>
             </div>

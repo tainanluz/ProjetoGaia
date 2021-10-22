@@ -18,7 +18,9 @@
       </ul>
 
       <ul class="navbar-nav mb-2 d-flex align-items-center">
-
+        <div>
+          <button class="mr-3 btn bg-transparent tbold button1" routerLink="/aboutus2">SOBRE NÓS</button>
+        </div>
         <div>
           <button class="mr-3 btn bg-transparent tbold button1" routerLink="/home">HOME</button>
         </div>
@@ -37,14 +39,16 @@
 
 
         <div>
-          <!-- data-bs-toggle="modal"
-            data-bs-target="#login" -->
-          <button class="mr-3 btn bg-transparent tbold btnuser button1" *ngIf="!isLogged" routerLink='/loginv2'>LOGIN</button>
+          <button class="mr-3 btn bg-transparent tbold btnuser button1" data-bs-toggle="modal"
+            data-bs-target="#carrinho">CARRINHO</button>
+
+          <button class="mr-3 btn bg-transparent tbold btnuser button1" *ngIf="!isLogged" data-bs-toggle="modal"
+            data-bs-target="#login">LOGIN</button>
           <button class="mr-3 btn bg-transparent tbold btnuser button1" *ngIf="isLogged"
-            (click)="logout()" routerLink='/loginv2'>SAIR</button>
-            <!-- data-bs-toggle="modal"
-            data-bs-target="#cadastro" -->
-          <button class="mr-3 btn bg-transparent tbold btnuser button1" *ngIf="!isLogged" routerLink='/cadastrov2'>CADASTRO</button>
+            (click)="logout()">SAIR</button>
+
+          <button class="mr-3 btn bg-transparent tbold btnuser button1" *ngIf="!isLogged" data-bs-toggle="modal"
+            data-bs-target="#cadastro">CADASTRO</button>
         </div>
 
       </ul>
@@ -150,9 +154,9 @@
 
           <div class="col-md-9">
             <div class="form-floating input-create-account">
-              <input type="email" class="form-control" [(ngModel)]='usuarioLogin.email' id="floatingInput"
+              <input type="email" class="form-control" [(ngModel)]='usuarioLogin.email' id="floatingEmail"
                 placeholder=" ">
-              <label for="floatingInput">EMAIL</label>
+              <label for="floatingEmail">EMAIL</label>
             </div>
 
             <div class="lb form-floating input-create-account">
@@ -178,6 +182,72 @@
             data-bs-toggle="modal" data-bs-target="#cadastro">Criar Conta</button>
           <button type="submit" data-bs-dismiss="modal" class="btn btn-primary btn-submit mrb"
             (click)='login()'>Entrar</button>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="modal" id="carrinho" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered form-create-account">
+    <div class="modal-content ">
+      <h1 class="modal-title mt-4 page-title mb-5 op">Carrinho</h1>
+      <div class="modal-body">
+        <div class="row op d-flex justify-content-center">
+
+          <div class="col-md-9">
+            <div id="lista-detalhes">
+
+              <div id="lista-carrinho">
+                <!-- {{listaCarrinho[0] | json}} -->
+                <div class="produto-carrinho" *ngFor="let items of listaCarrinho" id="titulo">
+                  <p>{{listaProdutos[2].nome}}</p>
+                  <!-- <p>{{items.quantidade}}</p> -->
+                  <!-- <div class="btn btn-success" (click)='teste()'>Preço</div>
+                  <div>Quantidade</div>
+                  <div>Subtotal</div>
+                  <div></div> -->
+                </div>
+              </div>
+
+              <div id="finalizacao-compra">
+                <div id="tela-total">
+                  <div id="valor-total">
+                    <span id="texto-total">Total</span>
+                    <span id="total">R$ </span>
+                  </div>
+                  <div class="btn btn-success" (click)='teste()'>Mostrar carrinho</div>
+                  <!-- <div class="btn btn-danger" (click)='teste2()'>Mostrar produto</div> -->
+                  <div id="comprar-mais">
+                    <a href="index.html">Comprar mais produtos</a>
+                  </div>
+                  <div onclick='finalizar();' id="confirmar-compra">
+                    <a href="index.html">Finalizar Pedido</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+          </div>
+
+        </div>
+
+
+
+      </div>
+
+      <div class="modal-footer">
+        <div class="col-md-6 text-right mt-3 d-flex bttn">
+
+          <button type="submit" data-bs-dismiss="modal" class="btn btn-secondary btn-back-page mrButton "
+            routerLink='/home'><i class="fas fa-arrow-left"></i></button>
+          <button type="submit" data-bs-dismiss="modal" class="btn mrButton btn-primary btn-submit mrb"
+            data-bs-toggle="modal" data-bs-target="#cadastro">Criar Conta</button>
+          <button type="submit" data-bs-dismiss="modal" class="btn btn-primary btn-submit mrb"
+            >Entrar</button>
 
         </div>
       </div>
