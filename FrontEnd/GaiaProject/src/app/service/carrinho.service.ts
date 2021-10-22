@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
 import { ItemCarrinho } from '../model/ItemCarrinho';
 
 @Injectable({
@@ -35,7 +34,7 @@ export class CarrinhoService {
     }
   }
 
-  getAllCarrinho(): any {
+  getAllCarrinho(): ItemCarrinho[] {
     return JSON.parse(localStorage.getItem('carrinho') || '{}');
   }
 

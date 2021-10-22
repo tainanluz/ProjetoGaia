@@ -203,8 +203,9 @@
               <div id="lista-carrinho">
                 <!-- {{listaCarrinho[0] | json}} -->
                 <div class="produto-carrinho" *ngFor="let items of listaCarrinho" id="titulo">
-                  <p>{{listaProdutos[2].nome}}</p>
-                  <!-- <p>{{items.quantidade}}</p> -->
+                  <div><img src="{{items.produtos.link}}" alt=""></div>
+                  <p>{{items.produtos.nome}}</p>
+                  <p>{{items.quantidade}}</p>
                   <!-- <div class="btn btn-success" (click)='teste()'>Preço</div>
                   <div>Quantidade</div>
                   <div>Subtotal</div>

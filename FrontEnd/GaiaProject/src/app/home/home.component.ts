@@ -49,9 +49,7 @@ export class HomeComponent implements OnInit {
   }
 
   findAllCarrinho() {
-    this.carrinhoService.getAllCarrinho().subscribe((resp: ItemCarrinho[]) => {
-      this.listaCarrinho = resp
-    })
+    this.listaCarrinho = this.carrinhoService.getAllCarrinho();
   }
 
 

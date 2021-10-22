@@ -37,7 +37,7 @@ export class MenuComponent implements OnInit {
   ngOnInit() {
     this.isLogged = this.authService.isLogged()
     this.findAllProduto()
-    // this.findAllCarrinho()
+    this.findAllCarrinho()
   }
 
   confirmarSenha(event: any) {
