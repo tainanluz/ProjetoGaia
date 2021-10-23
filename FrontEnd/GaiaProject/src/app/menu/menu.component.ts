@@ -100,6 +100,15 @@ export class MenuComponent implements OnInit {
 
   }
 
+  getTotal(){
+    var total = 0;
+    for(var i = 0; i < this.listaCarrinho.length; i++){
+        var items = this.listaCarrinho[i];
+        total += (items.produtos.preco * items.quantidade);
+    }
+    return total;
+  }
+
   // teste2() {
   //   this.findAllProduto();
   //   console.log(this.listaProdutos);

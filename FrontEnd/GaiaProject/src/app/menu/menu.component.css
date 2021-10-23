@@ -181,6 +181,10 @@ input {
   margin-bottom: 15px;
 }
 
+.txt-total{
+font-size: 23px;
+}
+
 @media (min-width: 576px) {
 
 }
