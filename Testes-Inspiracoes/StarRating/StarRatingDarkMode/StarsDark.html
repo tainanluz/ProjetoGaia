@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stars Dark</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
+        integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!--
+      Star Rater
+      https://www.youtube.com/watch?v=rw3eZ6XodN8
+
+      <i class="fa fa-star" aria-hidden="true"></i>
+    -->
+  <div class="container">
+    <div class="post">
+      <div class="text">Obrigado por sua opinião!</div>
+      <div class="edit">EDIT</div>
+    </div>
+    <div class="star-widget">
+      <input type="radio" name="rate" id="rate-5">
+      <label for="rate-5" class="fa fa-star"></label>
+      <input type="radio" name="rate" id="rate-4">
+      <label for="rate-4" class="fa fa-star"></label>
+      <input type="radio" name="rate" id="rate-3">
+      <label for="rate-3" class="fa fa-star"></label>
+      <input type="radio" name="rate" id="rate-2">
+      <label for="rate-2" class="fa fa-star"></label>
+      <input type="radio" name="rate" id="rate-1">
+      <label for="rate-1" class="fa fa-star"></label>
+      <form action='#'>
+        <header></header>
+        <div class="textarea">
+          <textarea cols="30" placeholder="Descreva sua experiência"></textarea>
+        </div>
+        <div class="btn">
+          <button type="submit">Post</button>
+        </div>
+      </form>
+
+    </div>
+  </div>
+  <script>
+    const btn = document.querySelector("button");
+    const post = document.querySelector(".post");
+    const widget = document.querySelector(".star-widget");
+    const editBtn = document.querySelector(".edit");
+
+    btn.onclick = () =>{
+      widget.style.display = "none";
+      post.style.display = "block";
+      editbtn.onclick = () =>{
+        widget.style.display = "block";
+        post.style.display = "none";
+        }
+        return false;
+    }
+  </script>
+
+</body>
+</html>

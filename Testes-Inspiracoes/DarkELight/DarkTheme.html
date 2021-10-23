@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dark & Light</title>
+    <!--Fontes https://cdnjs.com/libraries/font-awesome/4.7.0-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!--Fazendo o tema-->
+     <section class="sec">
+         <div class="card">
+             <!--Botão do Sol e lua-->
+             <div class="toggle"></div>
+            <div class="content">
+                <div class="imgText">
+                    <div class="imgBx">
+                        <img src="https://cdn.discordapp.com/attachments/892048100582109274/894615206452412467/img2.jpg">
+                    </div>
+                    <h3>Dark & Light modes<br><span>Gaia Project</span></h3>
+                </div>
+                <ul class="sci">
+                    <!--Fontes dos icones: https://fontawesome.com/v4.7/icons/ -->
+                    <li><a href="#"><i class="fa fa-facebook-square" aria-hidden="true"></i></a></li>
+                    <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                    <li><a href="#"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a></li>
+                </ul>
+            </div>
+         </div>
+     </section>
+     <!--Botão do Sol e lua - fazer funcionar -->
+     <script>
+         const sec = document.querySelector('.sec')
+         const toggle = document.querySelector('.toggle');
+         toggle.onclick = function (){
+             sec.classList.toggle('dark')
+         }
+     </script>
+     <!-- /Botão do Sol e lua - fazer funcionar -->
+</body>
+</html>
