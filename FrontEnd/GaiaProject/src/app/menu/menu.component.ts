@@ -94,10 +94,8 @@ export class MenuComponent implements OnInit {
     })
   }
   teste() {
-
     this.findAllCarrinho();
     console.log(this.listaCarrinho);
-
   }
 
   getTotal(){
@@ -118,5 +116,20 @@ export class MenuComponent implements OnInit {
       this.listaCategorias = resp
     })
   }
+
+  removerAll(produtos: Produtos):void{
+    this.carrinhoService.removerAll(produtos);
+    this.teste();
+  }
+
+  diminuirqtd(itemCarrinho: ItemCarrinho):void{
+    this.carrinhoService.removerItem(itemCarrinho);
+    this.teste();
+  }
+  
+  adicionarItem(itemCarrinho: ItemCarrinho):void{
+    this.carrinhoService.adicionarItem(itemCarrinho);
+    this.teste();
+}
 }
 

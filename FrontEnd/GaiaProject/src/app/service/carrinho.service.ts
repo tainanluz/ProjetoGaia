@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { ItemCarrinho } from '../model/ItemCarrinho';
+import { Produtos } from '../model/Produtos';
 
 @Injectable({
   providedIn: 'root'
@@ -17,6 +18,7 @@ export class CarrinhoService {
   adicionarItem(itemCarrinho: ItemCarrinho): void {
     let isAdd: boolean = false;
     let i = 0;
+    this.carrinho=this.getAllCarrinho() ? this.getAllCarrinho() : [];
 
     this.carrinho.forEach(item => {
       if (item.produtos.idProduto === itemCarrinho.produtos.idProduto) {
@@ -34,22 +36,41 @@ export class CarrinhoService {
     }
   }
 
+  removerItem(itemCarrinho: ItemCarrinho): void {
+    let i = 0;
+    this.carrinho=this.getAllCarrinho();
+    if(itemCarrinho.quantidade>1){
+    this.carrinho.forEach(item => {
+      if (item.produtos.idProduto === itemCarrinho.produtos.idProduto) {
+        console.log(item);
+        this.carrinho[i].quantidade--;
+        localStorage.setItem('carrinho', JSON.stringify(this.carrinho));
+        return;
+      }
+      i++;
+    });
+    return ;
+  }
+  this.removerAll(itemCarrinho.produtos);
+  return ;
+  }
+
   getAllCarrinho(): ItemCarrinho[] {
     return JSON.parse(localStorage.getItem('carrinho') || '{}');
   }
 
-  removerItem(itemCarrinho: ItemCarrinho): void {
-    let i = 0;
 
-    this.carrinho.forEach(item => {
-      if (item.produtos.idProduto == itemCarrinho.produtos.idProduto) {
-        if (this.carrinho[i].quantidade > 1) {
-          this.carrinho[i].quantidade--;
-          localStorage.setItem('carrinho', JSON.stringify(this.carrinho));
-          return;
-        }
+  removerAll(produtos: Produtos):void{
+    let auxCarrinho:ItemCarrinho[] = [];
+    auxCarrinho=this.getAllCarrinho();
+    this.carrinho=[];
+    auxCarrinho.forEach(item =>{
+      if(item.produtos.idProduto!==produtos.idProduto)
+      {
+        this.carrinho.push(item);
       }
-    })
+    });
+    localStorage.setItem('carrinho',JSON.stringify(this.carrinho));
   }
 
 

@@ -204,32 +204,39 @@
                 <!-- {{listaCarrinho[0] | json}} -->
                 <div *ngFor="let items of listaCarrinho" id="titulo">
                   <div class="row mt-5 mb-5">
-                  <div class="col-md-4 tamanho">
-                    <img src="{{items.produtos.link}}" class="imgProd" alt="{{items.produtos.nome}}">
-                  </div>
-                  <div class="col-md-8">
-                    <table class="table table-hover">
-                      <thead>
+                    <div class="col-md-4 tamanho">
+                      <img src="{{items.produtos.link}}" class="imgProd" alt="{{items.produtos.nome}}">
+                    </div>
+                    <div class="col-md-10">
+                      <table class="table table-hover">
+                        <thead>
                           <tr>
-                              <th scope="col">Produto:</th>
-                              <th scope="col" class="text-right">Quantidade:</th>
-                              <th scope="col" class="text-right">Preço:</th>
+                            <th scope="col">Produto:</th>
+
+                            <th scope="col" class="text-right">Quantidade:</th>
+
+                            <th scope="col" class="text-right">Preço:</th>
                           </tr>
-                      </thead>
-                      <tbody>
+                        </thead>
+                        <tbody>
                           <tr>
-                              <td class="text-start">{{items.produtos.nome}}</td>
-                              <td class="text-center">x{{items.quantidade}}</td>
-                              <td id="total" class="text-start">R${{(items.produtos.preco)*(items.quantidade)}}</td>
-                              <td class="justify-content-end">
-                                  <Button class="btn btn-danger mrButton">Remover</Button>
-                              </td>
+                            <td class="text-start">{{items.produtos.nome}}</td>
+                            <td class="text-center">
+                            <button class="text-left btn btn-primary" (click)="diminuirqtd(items)">-</button>
+                            x{{items.quantidade}}
+                            <button class="text-start btn btn-primary"(click)="adicionarItem(items)">+</button>
+                            </td>
+                            <td id="total" class="text-start">R${{(items.produtos.preco)*(items.quantidade)}}</td>
+                            <td class="justify-content-end">
+                              <Button class="btn btn-danger mrButton"
+                                (click)="removerAll(items.produtos)">Remover</Button>
+                            </td>
                           </tr>
                           <tr>
-                      </tbody>
-                  </table>
+                        </tbody>
+                      </table>
+                    </div>
                   </div>
-                </div>
                   <!--Não consegui alinhar o texto da composteira-->
                   <!-- <p class="card-text mt-2 tbold">{{produtos.idProduto}}</p> -->
 
