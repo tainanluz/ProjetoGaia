@@ -254,3 +254,11 @@ font-size: 23px;
   justify-self: end;
 }
 
+.white-theme{
+  color: red;
+}
+
+.dark-theme{
+  color: black;
+}
+

@@ -41,6 +41,10 @@
     color: rgb(16, 24, 24);
 }
 
+.white-theme{
+    color: white;
+}
+
 .cards{ /*Parte onde contém os produtos*/
     display: flex;  
     flex-direction: row;

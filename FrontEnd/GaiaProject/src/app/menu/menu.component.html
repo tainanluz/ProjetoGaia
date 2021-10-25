@@ -51,7 +51,7 @@
             (click)='teste()'><i class="uil uil-shopping-cart"></i></button>
 
 
-          <button class="mr-3 btn bg-transparent tbold button1" *ngIf="!isLogged" data-bs-toggle="modal"
+          <button [ngClass]="{'white-theme': isDark}" class="mr-3 btn bg-transparent tbold button1" *ngIf="!isLogged" data-bs-toggle="modal"
             data-bs-target="#login">LOGIN</button>
 
           <button class="mr-3 btn bg-transparent tbold button1 d-flex align-items-center" *ngIf="isLogged"
@@ -285,7 +285,7 @@
             Conta</button>
           <button class="btn mrButton btn-submit mrb" *ngIf="!isLogged" data-bs-toggle="modal"
             data-bs-target="#login">Entrar</button>
-          <button class="btn btn-submit mrButton w-50 h-90" *ngIf="isLogged" onclick='finalizar();' id="confirmar-compra"><i class="uil uil-coins"></i>Finalizar Pedido <i class="uil uil-coins"></i>
+          <button class="btn btn-submit mrButton w-50 h-90" *ngIf="isLogged" onclick='finalizar()' id="confirmar-compra"><i class="uil uil-coins"></i>Finalizar Pedido <i class="uil uil-coins"></i>
             <!-- < href="index.html">>Finalizar Pedido</> -->
           </button>
         </div>
