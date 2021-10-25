@@ -9,6 +9,10 @@ background: rgb(63, 94, 251);
 background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%);
 }
 
+.bg-teste.dark {
+  background: rgb(16, 24, 24);
+}
+
 .bg{
     background-image: url(https://cdn.discordapp.com/attachments/892048100582109274/894645545132519454/img3.jpg);
 }
@@ -41,16 +45,30 @@ background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100
     font-size: 26px;
 }
 
+.tbold.dark {
+  color: rgb(193, 215, 213);
+}
+
 .btnuser{
     border: solid;
     border-color: rgb(221, 137, 73);
     border-radius: 20px;
     margin:5px;
 }
+
+
+.btnuser.dark {
+  color: rgb(109, 42, 34);
+}
+
 .button1:hover{
     background-color: transparent;
     color: rgb(226, 94, 17);
   }
+
+.button1:hover.dark {
+  color: rgb(160, 55, 44);
+}
 
   @import url('https://fonts.googleapis.com/css2?family=Laila:wght@300;400;500;600&display=swap');
 
@@ -74,6 +92,10 @@ label{
   margin-left: 5px;
 }
 
+label.dark {
+  color: rgb(193, 215, 213);
+}
+
 .lb{
   margin-top: 1.2em;
 }
@@ -84,6 +106,12 @@ label{
   font-size: 14px;
   color: #979797;
 }
+
+.container-create-account.dark {
+  background-color: rgb(109, 42, 34);
+  color: rgb(160, 55, 44);
+}
+
 .bttn{
   justify-content: end;
 }
@@ -97,6 +125,11 @@ label{
 input {
   border-radius: 8px;
   background-color: #F4F8F7;
+}
+
+
+input.dark {
+  background-color: rgb(16, 24, 24);
 }
 
 
@@ -128,6 +161,10 @@ input {
   text-align: center;
 }
 
+.page-title.dark {
+  background-color: rgb(7, 32, 34);
+}
+
 .btn-submit {
   font-family: 'Quicksand', sans-serif;
   font-weight: 700;
@@ -141,8 +178,18 @@ input {
   transition: 0.3s;
 }
 
+.btn-submit.dark {
+  background-color: rgb(7, 32, 34);
+  border: rgb(16, 24, 24);
+}
+
 .btn-submit:hover{
   background-color:#429E69;
+}
+
+.btn-submit:hover.dark {
+  background-color: rgb(16, 24, 24);
+  border: rgb(7, 32, 34);
 }
 
 .btn-input {
@@ -155,6 +202,10 @@ input {
   padding: 0;
   top: 38px;
   right: 20px;
+}
+
+.btn-input.dark {
+  color: rgb(16, 24, 24);
 }
 
 .btn-back-page {
@@ -179,6 +230,10 @@ input {
   overflow: hidden;
   border-radius: 10%;
   margin-bottom: 15px;
+}
+
+.txt-total{
+font-size: 23px;
 }
 
 @media (min-width: 576px) {

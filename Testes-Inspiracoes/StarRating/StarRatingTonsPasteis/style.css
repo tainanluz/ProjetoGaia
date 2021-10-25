@@ -1,0 +1,161 @@
+*
+{
+  margin:0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins',sans-serif;
+}
+
+html,body{
+  display: grid;
+  height: 100%;
+  place-items: center;
+  text-align: center;
+  background: rgb(241, 131, 88);
+}
+
+.container{
+  position: relative;
+  width: 400px;
+  background: rgb(238, 163, 102);
+  padding: 20px 30px;
+  border: 1px solid rgb(250, 177, 175);
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.container .post{
+  display: none;
+}
+
+.container .text{
+  font-size: 25px;
+  color: #888;
+  font-weight: 500;
+}
+
+.container .edit{
+  position: absolute;
+  right: 10px;
+  top: 5px;
+  font-size: 16px;
+  color: #888;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.container .edit:hover{
+  text-decoration: underline;
+}
+
+.container .star-widget input{
+  display: none;
+}
+
+.star-widget label{
+  font-size: 40px;
+  color: #888;
+  padding: 10px;
+  float: right;
+  transition: all 0.2s ease;
+}
+
+input:not(:checked) ~label:hover,
+input:not(:checked) ~label:hover ~ label{
+  color: #fd4;
+}
+
+input:checked ~ label{
+  color: #fd4;
+}
+
+input#rate-5:checked ~label{
+  color: #fe7;
+  text-shadow: 0 0 20px rgb(246, 226, 169);
+}
+
+#rate-1:checked ~ form header:before{
+  content: "Não gostei.";
+}
+
+#rate-2:checked ~ form header:before{
+  content: "Pode melhorar.";
+}
+
+#rate-3:checked ~ form header:before{
+  content: "Gostei.";
+}
+
+#rate-4:checked ~ form header:before{
+  content: "Gostei muito!";
+}
+
+#rate-5:checked ~ form header:before{
+  content: "Amei!";
+}
+
+.container form{
+  display: none;
+}
+input:checked ~ form{
+  display: block;
+}
+
+form header{
+  width: 100%;
+  font-size: 25px;
+  color: rgb(246, 55, 21);
+  font-weight: 500;
+  margin: 5px 0 20px 0;
+  text-align: center;
+  transition: all 0.2s ease;
+}
+
+
+form .textarea{
+  height: 100px;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 5px;
+}
+
+form .textarea textarea{
+  height: 100%;
+  width: 100%;
+  outline: none;
+  color: #222;
+  border: 1px solid rgb(228, 194, 194);
+  background: rgb(235, 196, 184);
+  padding: 10px;
+  font-size: 16px;
+  resize: none;
+}
+
+form .btn{
+  height: 45px;
+  width: 100%;
+  margin: 15px 0;
+}
+
+form .btn button{
+  height: 100%;
+  width: 100%;
+  border: 1px solid rgb(228, 194, 194);
+  border-radius: 5px;
+  outline: none;
+  background: rgb(235, 196, 184);
+  color: #868;
+  font-size: 17px;
+  font-weight: 500;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+form .btn button:hover{
+  background: rgb(245, 105, 80);
+  color: rgb(235, 196, 184);
+}

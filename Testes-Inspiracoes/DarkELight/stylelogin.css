@@ -1,0 +1,143 @@
+/*Importar fontes daqui: https://fonts.google.com/specimen/Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+/*Estilos CSS*/
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+section{
+    position: relative;
+    /*background: rgb(61, 221, 194); Cor do fundo geral*/
+    background-image: url(https://cdn.discordapp.com/attachments/892048100582109274/894615206452412467/img2.jpg);
+    background-position: center;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+section.dark{ /*Cor do fundo geral no modo dark*/
+    /*background: rgb(49, 45, 45);*/
+    background-image: url(https://cdn.discordapp.com/attachments/892048100582109274/894645545132519454/img3.jpg);
+    background-position: center;
+}
+
+section .card{
+    position: relative;
+    margin: 5px;
+    width: 550px;
+    height: 600px;
+    background: rgb(238, 134, 108); /*Cor do fundo do card*/
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.25);
+    border-radius: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background 0.5s; /*Tempo de mudança da cor do fundo*/
+}
+
+section .card h1{ /*Sobre o texto do h1*/
+    font-weight: 700;
+    font-size: 2em;
+    line-height: 1.2em;
+    text-align: start;
+    color: black;
+}
+section .card .form{ /*Sobre o formulário*/
+    font-weight: 200;
+    font-size: 1.3em; /*Tamanho da letra do formulário*/
+    line-height: 1.2em;
+    text-align: start;
+    color: black;
+}
+
+section .card .form .btn{ /*Sobre o botão*/
+    position: relative;
+    /*top: 30px;
+    right: 30px;*/
+    background: rgb(204, 129, 104);/*Cor de fundo*/
+    color: rgb(0, 0, 0);
+    width: 60px; /*Largura do fundo*/
+    height: 40px;/*Altura do fundo*/
+    border-radius: 10%; /*Suavização do quanto é quadrado*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background 0.5s; /*Tempo de mudança da cor do fundo*/
+    transition: color 0.3s; /*Tempo de mudança da cor do fundo*/
+}
+
+section .card .form .btn:hover{ /*Sobre o botão*/
+    background: rgb(150, 103, 88);/*Cor de fundo*/
+    color: rgb(220, 222, 255);
+}
+
+section .card .form .form-control{ /*Sobre a caixa de texto*/
+    background: rgb(154, 189, 186);/*Cor de fundo*/
+    transition: background 0.5s; /*Tempo de mudança da cor do fundo*/
+}
+section .card .form .form-control:hover{ /*Sobre a caixa de texto*/
+    background: rgb(215, 231, 223);/*Cor de fundo*/
+    color: black;
+}
+
+
+section .card:hover{/*Cor do fundo do card no hover*/
+    background: rgb(240, 160, 129);
+}
+
+section.dark .card:hover{/*Cor do fundo do card no modo dark no hover*/
+    background: rgb(173, 57, 28);
+}
+
+section.dark .card{
+    background: firebrick;/*Cor do fundo do card no modo dark*/
+}
+
+
+/*Botão de mudança Lua e Sol*/
+.toggle{
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    background: rgb(238, 134, 108);/*Cor de fundo*/
+    width: 60px; /*Largura do fundo*/
+    height: 60px;/*Altura do fundo*/
+    border-radius: 50%; /*Suavização do quanto é quadrado*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 1.6em;
+    line-height: 1.2em;
+    transition: background 0.5s; /*Tempo de mudança da cor do fundo*/
+}
+
+section .toggle:hover{ /*Cor de fundo do botão Lua*/
+    background: rgb(221, 64, 64);
+}
+
+section.dark .toggle{ /*Cor de fundo do botão Sol*/
+    background: rgb(197, 127, 21);
+}
+section.dark .toggle:hover{ /*Cor de fundo do botão Sol*/
+    background: rgb(241, 171, 66);
+}
+
+.toggle:before{
+    content: '\f186'; /*Código da Lua*/
+    font-family: fontAwesome; /*Código da Lua pra chamar a fonte*/
+    color: rgb(8, 55, 73); /*Cor da Lua*/
+}
+
+section.dark .toggle:before{
+    content: '\f185'; /*Código do Sol*/
+    font-family: fontAwesome; /*Código do Sol pra chamar a fonte*/
+    color: rgb(61, 5, 19); /*Cor do Sol*/
+}
