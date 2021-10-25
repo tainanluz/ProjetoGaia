@@ -11,6 +11,7 @@ import { CarrinhoService } from '../service/carrinho.service';
 import { CategoriasService } from '../service/categorias.service';
 import { ProdutosService } from '../service/produtos.service';
 
+
 @Component({
   selector: 'app-menu',
   templateUrl: './menu.component.html',
@@ -25,7 +26,7 @@ export class MenuComponent implements OnInit {
   itemCarrinho: ItemCarrinho
   listaCarrinho: ItemCarrinho[]
   usuarioLogin: UsuarioLogin = new UsuarioLogin()
-
+  
   constructor(
     private authService: AuthService,
     private router: Router,
@@ -131,5 +132,6 @@ export class MenuComponent implements OnInit {
     this.carrinhoService.adicionarItem(itemCarrinho);
     this.teste();
 }
+  
 }
 

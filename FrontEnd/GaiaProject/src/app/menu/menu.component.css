@@ -49,12 +49,12 @@ background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100
   color: rgb(193, 215, 213);
 }
 
-.btnuser{
+/* .btnuser{
     border: solid;
     border-color: rgb(221, 137, 73);
     border-radius: 20px;
     margin:5px;
-}
+} */
 
 
 .btnuser.dark {
@@ -165,32 +165,7 @@ input.dark {
   background-color: rgb(7, 32, 34);
 }
 
-.btn-submit {
-  font-family: 'Quicksand', sans-serif;
-  font-weight: 700;
-  width: calc(100% - 50px);
-  border-radius: 20px;
-  background-color: #429e68d5;
-  border: #429E69;
-  font-size: 16px;
-  padding: 10px 6px;
-  text-transform: uppercase;
-  transition: 0.3s;
-}
 
-.btn-submit.dark {
-  background-color: rgb(7, 32, 34);
-  border: rgb(16, 24, 24);
-}
-
-.btn-submit:hover{
-  background-color:#429E69;
-}
-
-.btn-submit:hover.dark {
-  background-color: rgb(16, 24, 24);
-  border: rgb(7, 32, 34);
-}
 
 .btn-input {
   position: absolute;
@@ -263,4 +238,49 @@ font-size: 23px;
  /* Extra large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
 
+}
+.btn-submit {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 700;
+  width: calc(100% - 50px);
+  border-radius: 20px;
+  background-color: #429e68d5;
+  border: #429E69;
+  font-size: 16px;
+  padding: 10px 6px;
+  text-transform: uppercase;
+  transition: 0.3s;
+  color: #f7f7f7;
+}
+
+
+.btn-submit.dark-mode {
+  background-color: rgb(7, 32, 34);
+  border: rgb(16, 24, 24);
+}
+
+.btn-submit:hover{
+  background-color:#429E69;
+}
+
+.btn-submit:hover.dark-mode {
+  background-color: rgb(16, 24, 24);
+  border: rgb(7, 32, 34);
+}
+
+.uil{
+  font-size: 35px;
+  padding-right: 5px;
+}
+
+.uil-signout{
+  font-size: 35px;
+}
+
+.jsc{
+  justify-self: center;
+}
+
+.jse{
+  justify-self: end;
 }

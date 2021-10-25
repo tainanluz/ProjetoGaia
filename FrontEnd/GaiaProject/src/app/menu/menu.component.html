@@ -6,7 +6,8 @@
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <div class=" collapse navbar-collapse d-flex justify-content-between align-items-center" id="navbarSupportedContent">
+    <div class=" collapse navbar-collapse d-flex justify-content-between align-items-center"
+      id="navbarSupportedContent">
 
       <ul class="navbar-nav  d-flex align-items-center">
         <li class="nav-item mt-1">
@@ -17,54 +18,64 @@
         </li>
       </ul>
 
-      <ul class=" navbar-nav mb-2 d-flex align-items-center">
-        
-        <div>
-          <button class="mr-3 btn bg-transparent tbold button1" routerLink="/aboutus2">SOBRE NÓS</button>
-        </div>
-        <div>
-          <button class="mr-3 btn bg-transparent tbold button1" routerLink="/home">HOME</button>
-        </div>
-        <div>
-          <button class="mr-3 btn bg-transparent tbold button1" type="button" data-bs-toggle="offcanvas"
-            data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">CATEGORIAS</button>
-        </div>
+      <ul class="navbar-nav mb-2 d-flex align-items-center">
+
+        <!-- <lord-icon trigger="hover" src="/my-icon.json"></lord-icon> -->
 
         <div>
-          <button class="mr-3 btn bg-transparent tbold button1 text-dark" routerLink="/aboutUs">SOBRE</button>
+          <button class="mr-3 btn bg-transparent tbold button1 d-flex align-items-center" routerLink="/home"><i
+              class="uil uil-estate"></i>HOME</button>
         </div>
         <div>
-          <button class="mr-3 btn bg-transparent tbold button1" routerLink="/contact">CONTATO</button>
+          <button class="mr-3 btn bg-transparent tbold button1 d-flex align-items-center" type="button"
+            data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling"><i
+              class="uil uil-list-ul"></i>CATEGORIAS</button>
         </div>
-
-
-
         <div>
-          
-          <button class="mr-3 btn bg-transparent tbold btnuser button1" data-bs-toggle="modal"
-            data-bs-target="#carrinho" (click)='teste()'>CARRINHO</button>
-          
-
-          <button class="mr-3 btn bg-transparent tbold btnuser button1" *ngIf="!isLogged" data-bs-toggle="modal"
-            data-bs-target="#login">LOGIN</button>
-          <button class="mr-3 btn bg-transparent tbold btnuser button1" *ngIf="isLogged"
-            (click)="logout()">SAIR</button>
-
-          <button class="mr-3 btn bg-transparent tbold btnuser button1" *ngIf="!isLogged" data-bs-toggle="modal"
-            data-bs-target="#cadastro">CADASTRO</button>
+          <button class="mr-3 btn bg-transparent tbold button1" routerLink="/aboutus2"><i
+              class="uil uil-trees"></i>SOBRE NÓS</button>
         </div>
-        <app-teste></app-teste>
-        
+        <!-- <div>
+            <button class="mr-3 btn bg-transparent tbold button1" routerLink="/aboutUs">SOBRE</button>
+          </div> -->
+        <div>
+          <button class="mr-3 btn bg-transparent tbold button1" routerLink="/contact"><i class="uil uil-message"></i>CONTATO</button>
+        </div>
+
+
+
+
+
+
 
       </ul>
-      
+
+      <ul class="navbar-nav mb-2 d-flex align-items-center">
+        <div class="d-flex jse">
+          <!-- Carrinho -->
+          <button class="mr-3 btn bg-transparent tbold button1 p-2" data-bs-toggle="modal" data-bs-target="#carrinho"
+            (click)='teste()'><i class="uil uil-shopping-cart"></i></button>
+
+
+          <button class="mr-3 btn bg-transparent tbold button1" *ngIf="!isLogged" data-bs-toggle="modal"
+            data-bs-target="#login">LOGIN</button>
+
+          <button class="mr-3 btn bg-transparent tbold button1 d-flex align-items-center" *ngIf="isLogged"
+            (click)="logout()">SAIR <i class="uil uil-signout"></i></button>
+
+          <button class="mr-3 btn bg-transparent tbold button1" *ngIf="!isLogged" data-bs-toggle="modal"
+            data-bs-target="#cadastro">CADASTRO</button>
+        </div>
+
+        <app-teste></app-teste>
+      </ul>
     </div>
-    
+
   </div>
-  
+
 </nav>
 <div class="d-flex justify-content-end">
-  
+
 </div>
 
 <div class="modal fade" id="cadastro" tabindex="-1">
@@ -217,7 +228,7 @@
                     <div class="col-md-4 tamanho">
                       <img src="{{items.produtos.link}}" class="imgProd" alt="{{items.produtos.nome}}">
                     </div>
-                    <div class="col-md-10">
+                    <div class="col-md-12">
                       <table class="table table-hover">
                         <thead>
                           <tr>
@@ -232,9 +243,9 @@
                           <tr>
                             <td class="text-start">{{items.produtos.nome}}</td>
                             <td class="text-center">
-                            <button class="text-left btn btn-primary" (click)="diminuirqtd(items)">-</button>
-                            x{{items.quantidade}}
-                            <button class="text-start btn btn-primary"(click)="adicionarItem(items)">+</button>
+                              <button class="text-left btn btn-primary" (click)="diminuirqtd(items)">-</button>
+                              x{{items.quantidade}}
+                              <button class="text-start btn btn-primary" (click)="adicionarItem(items)">+</button>
                             </td>
                             <td id="total" class="text-start">R${{(items.produtos.preco)*(items.quantidade)}}</td>
                             <td class="justify-content-end">
@@ -274,15 +285,16 @@
 
       <div class="modal-footer">
         <div class="col-md-8 text-right mt-3 d-flex bttn">
-          <div class="btn btn-info" *ngIf="isLogged" onclick='finalizar();' id="confirmar-compra">
-            <a href="index.html">>Finalizar Pedido</a>
-          </div>
-          <button class="btn mrButton btn-primary btn-submit mrb" data-bs-dismiss="modal">continuar comprando</button>
-          <button *ngIf="!isLogged" type="submit" data-bs-dismiss="modal"
-            class="btn mrButton btn-primary btn-submit mrb" data-bs-toggle="modal" data-bs-target="#cadastro">Criar
+          <button class="btn mrButton btn-submit mrb " data-bs-dismiss="modal">continuar comprando</button>
+          <button *ngIf="!isLogged" type="submit" data-bs-dismiss="modal" class="btn mrButton btn-submit mrb"
+            data-bs-toggle="modal" data-bs-target="#cadastro">Criar
             Conta</button>
-          <button class="btn mrButton btn-primary btn-submit mrb" *ngIf="!isLogged" data-bs-toggle="modal"
+          <button class="btn mrButton btn-submit mrb" *ngIf="!isLogged" data-bs-toggle="modal"
             data-bs-target="#login">Entrar</button>
+          <button class="btn btn-submit mrButton" *ngIf="isLogged" onclick='finalizar();' id="confirmar-compra">
+            Finalizar Pedido
+            <!-- < href="index.html">>Finalizar Pedido</> -->
+          </button>
         </div>
       </div>
     </div>
