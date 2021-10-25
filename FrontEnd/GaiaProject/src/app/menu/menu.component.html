@@ -39,14 +39,8 @@
             <button class="mr-3 btn bg-transparent tbold button1" routerLink="/aboutUs">SOBRE</button>
           </div> -->
         <div>
-          <button class="mr-3 btn bg-transparent tbold button1" routerLink="/contact"><i class="uil uil-message"></i>CONTATO</button>
-        </div>
-
-
-
-
-
-
+          <button class="mr-3 btn bg-transparent tbold button1" routerLink="/contact"><i class="uil uil-envelope"></i>CONTATO</button>
+        </div> 
 
       </ul>
 
@@ -218,17 +212,17 @@
       <div class="modal-body">
         <div class="row op d-flex justify-content-center">
 
-          <div class="col-md-10">
+          <div class="col-md-12">
             <div id="lista-detalhes">
 
               <div id="lista-carrinho">
                 <!-- {{listaCarrinho[0] | json}} -->
                 <div *ngFor="let items of listaCarrinho" id="titulo">
                   <div class="row mt-5 mb-5">
-                    <div class="col-md-4 tamanho">
+                    <div class="col-md-2 card tamanho">
                       <img src="{{items.produtos.link}}" class="imgProd" alt="{{items.produtos.nome}}">
                     </div>
-                    <div class="col-md-12">
+                    <div class="col-md-10">
                       <table class="table table-hover">
                         <thead>
                           <tr>
@@ -242,10 +236,10 @@
                         <tbody>
                           <tr>
                             <td class="text-start">{{items.produtos.nome}}</td>
-                            <td class="text-center">
-                              <button class="text-left btn btn-primary" (click)="diminuirqtd(items)">-</button>
+                            <td class="text-start">
+                              <button class="btn-primary circle-button" (click)="diminuirqtd(items)"><i class=" uil uil-minus-circle"></i></button>
                               x{{items.quantidade}}
-                              <button class="text-start btn btn-primary" (click)="adicionarItem(items)">+</button>
+                              <button class="btn-primary circle-button text-start" (click)="adicionarItem(items)"><i class="text-center uil uil-plus-circle"></i></button>
                             </td>
                             <td id="total" class="text-start">R${{(items.produtos.preco)*(items.quantidade)}}</td>
                             <td class="justify-content-end">
@@ -285,14 +279,13 @@
 
       <div class="modal-footer">
         <div class="col-md-8 text-right mt-3 d-flex bttn">
-          <button class="btn mrButton btn-submit mrb " data-bs-dismiss="modal">continuar comprando</button>
+          <button class="btn btn-secondary btn-back-page mrButton w-10" data-bs-dismiss="modal"> <i class="fas fa-arrow-left"> </i></button>
           <button *ngIf="!isLogged" type="submit" data-bs-dismiss="modal" class="btn mrButton btn-submit mrb"
             data-bs-toggle="modal" data-bs-target="#cadastro">Criar
             Conta</button>
           <button class="btn mrButton btn-submit mrb" *ngIf="!isLogged" data-bs-toggle="modal"
             data-bs-target="#login">Entrar</button>
-          <button class="btn btn-submit mrButton" *ngIf="isLogged" onclick='finalizar();' id="confirmar-compra">
-            Finalizar Pedido
+          <button class="btn btn-submit mrButton w-50 h-90" *ngIf="isLogged" onclick='finalizar();' id="confirmar-compra"><i class="uil uil-coins"></i>Finalizar Pedido <i class="uil uil-coins"></i>
             <!-- < href="index.html">>Finalizar Pedido</> -->
           </button>
         </div>

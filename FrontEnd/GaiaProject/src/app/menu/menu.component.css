@@ -1,28 +1,9 @@
-.bg-none{
-    background-color: none;
-    opacity: 120%;
-}
-
-.bg-teste
-{
-background: rgb(63, 94, 251);
-background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%);
-}
-
-.bg-teste.dark {
+.bg-teste.dark-mode {
   background: rgb(16, 24, 24);
 }
 
 .bg{
-    background-image: url(https://cdn.discordapp.com/attachments/892048100582109274/894645545132519454/img3.jpg);
-}
-
-.nav-link{
-    font-size: 26px;
-}
-
-#teste:hover {
-    background-color: #777;
+    background-image: url('https://cdn.discordapp.com/attachments/892048100582109274/894645545132519454/img3.jpg');
 }
 
 .navbar{
@@ -30,43 +11,26 @@ background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100
     justify-content: center !important;
 }
 
-/* You can add global styles to this file, and also import other style files */
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
-
-.tbolder {
-    font-family: 'Quicksand', sans-serif;
-    font-weight: 700;
-}
 
 .tbold {
-    font-family: 'Quicksand', sans-serif;
-    font-weight: 600;
+    font-family: "Barlow", sans-serif;
+    font-weight: 200;
     color: black;
     font-size: 26px;
 }
 
-.tbold.dark {
+.tbold.dark-mode {
   color: rgb(193, 215, 213);
 }
 
-/* .btnuser{
-    border: solid;
-    border-color: rgb(221, 137, 73);
-    border-radius: 20px;
-    margin:5px;
-} */
 
-
-.btnuser.dark {
-  color: rgb(109, 42, 34);
-}
 
 .button1:hover{
     background-color: transparent;
     color: rgb(226, 94, 17);
   }
 
-.button1:hover.dark {
+.button1:hover.dark-mode {
   color: rgb(160, 55, 44);
 }
 
@@ -92,7 +56,7 @@ label{
   margin-left: 5px;
 }
 
-label.dark {
+label.dark-mode {
   color: rgb(193, 215, 213);
 }
 
@@ -107,7 +71,7 @@ label.dark {
   color: #979797;
 }
 
-.container-create-account.dark {
+.container-create-account.dark-mode {
   background-color: rgb(109, 42, 34);
   color: rgb(160, 55, 44);
 }
@@ -128,7 +92,7 @@ input {
 }
 
 
-input.dark {
+input.dark-mode {
   background-color: rgb(16, 24, 24);
 }
 
@@ -151,6 +115,7 @@ input.dark {
   font-size: 16px;
 }
 
+
 .mrb{
   margin-top: 5px;
 }
@@ -161,11 +126,13 @@ input.dark {
   text-align: center;
 }
 
-.page-title.dark {
+.page-title.dark-mode {
   background-color: rgb(7, 32, 34);
 }
 
-
+.button.dark-mode{
+color: white;
+}
 
 .btn-input {
   position: absolute;
@@ -179,7 +146,7 @@ input.dark {
   right: 20px;
 }
 
-.btn-input.dark {
+.btn-input.dark-mode {
   color: rgb(16, 24, 24);
 }
 
@@ -211,35 +178,9 @@ input.dark {
 font-size: 23px;
 }
 
-@media (min-width: 576px) {
 
-}
-
-/* Medium devices (tablets, 768px and up) */
-@media (min-width: 768px) {
-  .container-create-account {
-    padding: 32px 16px 80px;
-  }
-
-  .form-create-account {
-    padding: 32px;
-  }
-
-  .btn-submit {
-    width: 200px;
-  }
-}
-
- /* Large devices (desktops, 992px and up) */
-@media (min-width: 992px) {
-
-}
-
- /* Extra large devices (large desktops, 1200px and up) */
-@media (min-width: 1200px) {
-
-}
 .btn-submit {
+  width: auto;
   font-family: 'Quicksand', sans-serif;
   font-weight: 700;
   width: calc(100% - 50px);
@@ -268,6 +209,34 @@ font-size: 23px;
   border: rgb(7, 32, 34);
 }
 
+.uil-plus-circle{
+  margin-left: 3px;
+  border-radius: 30px !important;
+  font-size: 20px !important;
+  color: black;
+}
+
+.uil-minus-circle{
+  margin-left: 3px;
+  border-radius: 30px !important;
+  font-size: 20px !important;
+  color: black;
+}
+
+.circle-button{
+  background-color: transparent;
+  border-color: transparent;
+}
+
+.circle-button:hover{
+  border-radius: 18px !important;
+  background-color: gray;
+}
+
+.uil-coins{
+  font-size: 23px !important
+}
+
 .uil{
   font-size: 35px;
   padding-right: 5px;
@@ -284,3 +253,4 @@ font-size: 23px;
 .jse{
   justify-self: end;
 }
+

@@ -132,6 +132,10 @@ export class MenuComponent implements OnInit {
     this.carrinhoService.adicionarItem(itemCarrinho);
     this.teste();
 }
+
+getDarkMode(): boolean {
+  return JSON.parse(localStorage.getItem('dark-mode') || '{}');
+}
   
 }
 

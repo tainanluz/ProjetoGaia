@@ -31,9 +31,9 @@
     margin-right: 5px;
     margin-top: 5px;
 }
-/* .bg-geral{
-    background-image: url('https://media.discordapp.net/attachments/892048100582109274/899452754936868944/backgroung.jpg?width=288&height=675');
-} */
+.bg-geral{
+    background-image: url('https://cdn.discordapp.com/attachments/892048100582109274/902271060668469288/novo_background.png');
+}
 
 @import url('https://fonts.googleapis.com/css2?family=Barlow:wght@100;200;300;400;500;600;700;800;900&display=swap');
 /* You can add global styles to this file, and also import other style files */

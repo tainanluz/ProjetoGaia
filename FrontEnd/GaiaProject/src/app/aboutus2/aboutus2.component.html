@@ -1,38 +1,4 @@
 <div class="bg-geral2">
-    <app-menu></app-menu>
-    <!--Off Canvas-->
-    <div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1"
-        id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
-        <div class="offcanvas-header">
-            <h5 class="offcanvas-title" id="offcanvasScrollingLabel">Categorias de produtos:</h5>
-            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-        </div>
-
-        <div class="offcanvas-body">
-            <div>
-                <div class="row mt-3 mb-5 d-flex justify-content-center">
-                    <div class="col-md-12">
-                        <table class="table table-hover">
-                            <tbody>
-                                <tr *ngFor='let categorias of listaCategorias'>
-                                    <a routerLink="/{{categorias.nomeDaCategoria}}">
-                                        <td class="btn">{{categorias.nomeDaCategoria}}</td>
-                                    </a>
-                                </tr>
-                                <tr>
-
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="mt-20">
-                        <p class="btn btn-primary" routerLink="/adicionarCategoria">Configurações</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!--Off Canvas-->
-
     <div class="container-fluid p-o">
 
         <section>
@@ -44,7 +10,9 @@
             <img src="https://media.discordapp.net/attachments/892048100582109274/900148248747049021/forest.png?width=1202&height=676"
                 id="forest">
                 
-            <a href="#teste" id="btn">Explore</a>
+            <button id="btn" class="circle" routerLink="/home"><i
+                class="uil uil-estate"></i></button>
+
             <img src="https://cdn.discordapp.com/attachments/892048100582109274/900148288408408164/rocks.png"
                 id="rocks">
             <img src="https://media.discordapp.net/attachments/892048100582109274/900148290421653504/water.png?width=1202&height=676"

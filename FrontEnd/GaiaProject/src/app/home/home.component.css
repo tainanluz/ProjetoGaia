@@ -9,7 +9,7 @@
 }
 
 .bg-teste.dark {
-    background-color: rgb(16, 24, 24);
+    background-color: rgb(137, 138, 138);
     box-shadow: 0px -15px 3em rgb(195, 142, 111);
 }
 
@@ -51,7 +51,7 @@
     justify-content: space-between; /*alinhando os cards - deixa justificado no card que eles estão*/
 }
 
-.cards.dark {
+.cards.dark-mode {
     background-color: rgb(16, 24, 24);
     box-shadow: 0 15px 25px rgb(195, 142, 111);
 }
@@ -70,7 +70,7 @@
     transition: 0.5s;
 }
 
-.card.dark {
+.card.dark-mode {
     background: rgb(109, 42, 34);
     box-shadow: 0 15px 25px rgb(195, 142, 111);
 }
@@ -87,7 +87,7 @@
     margin: 15px; /*Margem para não colar os cards internos no card que os contém*/
 }
 
-.card.dark:hover {
+.card.dark-mode:hover {
     background: rgba(109, 42, 34, 0.733);
 }
 
