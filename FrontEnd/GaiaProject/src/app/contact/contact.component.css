@@ -56,12 +56,20 @@
     font-weight: 300;
 }
 
+.form-label.dark {
+    color: rgb(195, 142, 111);
+}
+
 .title {
     color: #222222;
     text-align: center;
     padding-bottom: 43px;
     display: block;
     line-height: 1.2;
+}
+
+.title.dark {
+    color: rgb(195, 142, 111);
 }
 
 
@@ -82,6 +90,12 @@
     letter-spacing: 1px;
     text-transform: uppercase;
 }
+
+.cadastro.dark {
+    color: rgb(160, 55, 44);
+    background-color: rgb(109, 42, 34);
+}
+
 .bt {
 
     justify-content: center;

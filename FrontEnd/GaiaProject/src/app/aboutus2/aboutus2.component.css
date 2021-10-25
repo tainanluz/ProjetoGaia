@@ -28,6 +28,11 @@
     text-align: center;
 }
 
+.color2.dark {
+    background-color: rgb(16, 24, 24);
+    color: 0px -15px 3em rgb(195, 142, 111);
+}
+
 
 .team{
     font-weight: 400;
@@ -35,6 +40,10 @@
     line-height: 1.2em;
     text-align: center;
     color: black
+}
+
+.team.dark {
+    color: 0px -15px 3em rgb(195, 142, 111);
 }
 
 h5 {
@@ -53,8 +62,17 @@ h5 {
     align-items: center;
 }
 
+.card.dark {
+    background: rgb(109, 42, 34);
+    box-shadow: 0 15px 25px rgb(195, 142, 111);
+}
+
 .card:hover{
     background: rgba(233, 186, 124, 0.678); /*Cor do fundo do card*/
+}
+
+.card.dark:hover {
+    background: rgba(109, 42, 34, 0.733);
 }
 
 .card .content,
@@ -92,10 +110,18 @@ h5 {
     color: black;
 }
 
+.card .imgText h3.dark {
+    color: 0px -15px 3em rgb(195, 142, 111);
+}
+
 .card .imgText h3 span{ /*Sobre o texto do span do h3*/
     font-weight: 400;
     font-size: 0.9em;
     color: black;
+}
+
+.card .imgText h3 span.dark {
+    color: 0px -15px 3em rgb(195, 142, 111);
 }
 
 .card .sci{ /*Onde estão os ícones das redes sociais*/
@@ -111,7 +137,7 @@ h5 {
     position: relative;
     width: 50px;
     height: 50px;
-    background: burlywood; /*Cor do fundo da bolinha*/
+    background: rgb(195, 142, 111); /*Cor do fundo da bolinha*/
     color: black;
     margin: 0 5px;
     display: flex;
@@ -124,7 +150,7 @@ h5 {
 }
 
 .card .sci li a:hover{
-    background: rgb(238, 170, 69); /*Cor do fundo da bolinha*/
+    background: rgb(160, 55, 44); /*Cor do fundo da bolinha*/
     color: rgb(240, 228, 219);
 }
 
@@ -140,6 +166,12 @@ h5 {
 .bg-geral2{
     background-color: #fff;
 }
+
+.bg-geral2.dark {
+    background-color: 0px -15px 3em rgb(16, 24, 24);
+}
+
+
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap");
 
 
@@ -158,6 +190,10 @@ body
     min-height: 100vh;
 }
 
+body.dark {
+    background-color: 0px -15px 3em rgb(16, 24, 24);
+}
+
 #header
 {
     position: absolute;
@@ -171,6 +207,7 @@ body
     z-index: 10000; /*aqui voltou a funcionar a hover do menu*/
 }
 
+/*Esta parte vai ser usada?*/
 #header .logo
 {
     color: #094b65;

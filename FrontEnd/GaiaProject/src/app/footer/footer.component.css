@@ -56,6 +56,12 @@ margin-top: 65px;
   display: inline-block;
   transition: 0.5s;
 }
+
+
+.social-icon__link.dark {
+  color: rgb(16, 24, 24);
+}
+
 .social-icon__link:hover {
   transform: translateY(-10px);
 }
@@ -70,6 +76,12 @@ margin-top: 65px;
   opacity: 0.75;
   font-weight: 300;
 }
+
+
+.menu__link.dark {
+  color: rgb(16, 24, 24);
+}
+
 
 .menu__link:hover {
   opacity: 1;
