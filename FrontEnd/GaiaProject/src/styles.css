@@ -31,9 +31,9 @@
     margin-right: 5px;
     margin-top: 5px;
 }
-.bg-geral{
+/* .bg-geral{
     background-image: url('https://media.discordapp.net/attachments/892048100582109274/899452754936868944/backgroung.jpg?width=288&height=675');
-}
+} */
 
 @import url('https://fonts.googleapis.com/css2?family=Barlow:wght@100;200;300;400;500;600;700;800;900&display=swap');
 /* You can add global styles to this file, and also import other style files */
@@ -6663,3 +6663,14 @@ html .bg--parallax {
   padding-left: 100px; }
 
 /*# sourceMappingURL=style.css.map */
+
+
+body.dark-mode {
+  background-color: #151d29;
+  color: #d6e7f7;
+}
+
+body.light-mode {
+  background-color: #d6e7f7;
+  color: #151d29;
+}

@@ -6,7 +6,7 @@
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <div class="collapse navbar-collapse d-flex justify-content-between align-items-center" id="navbarSupportedContent">
+    <div class=" collapse navbar-collapse d-flex justify-content-between align-items-center" id="navbarSupportedContent">
 
       <ul class="navbar-nav  d-flex align-items-center">
         <li class="nav-item mt-1">
@@ -17,7 +17,8 @@
         </li>
       </ul>
 
-      <ul class="navbar-nav mb-2 d-flex align-items-center">
+      <ul class=" navbar-nav mb-2 d-flex align-items-center">
+        
         <div>
           <button class="mr-3 btn bg-transparent tbold button1" routerLink="/aboutus2">SOBRE NÓS</button>
         </div>
@@ -39,8 +40,10 @@
 
 
         <div>
+          
           <button class="mr-3 btn bg-transparent tbold btnuser button1" data-bs-toggle="modal"
             data-bs-target="#carrinho" (click)='teste()'>CARRINHO</button>
+          
 
           <button class="mr-3 btn bg-transparent tbold btnuser button1" *ngIf="!isLogged" data-bs-toggle="modal"
             data-bs-target="#login">LOGIN</button>
@@ -50,12 +53,19 @@
           <button class="mr-3 btn bg-transparent tbold btnuser button1" *ngIf="!isLogged" data-bs-toggle="modal"
             data-bs-target="#cadastro">CADASTRO</button>
         </div>
+        <app-teste></app-teste>
+        
 
       </ul>
-
+      
     </div>
+    
   </div>
+  
 </nav>
+<div class="d-flex justify-content-end">
+  
+</div>
 
 <div class="modal fade" id="cadastro" tabindex="-1">
   <div class="modal-dialog modal-dialog-centered form-create-account">

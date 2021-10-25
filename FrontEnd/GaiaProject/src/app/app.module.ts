@@ -24,6 +24,7 @@ import { registerLocaleData } from '@angular/common';
 import localePt from '@angular/common/locales/pt';
 import { Aboutus2Component } from './aboutus2/aboutus2.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { TesteComponent } from './teste/teste.component';
 
 registerLocaleData(localePt);
 
@@ -47,6 +48,7 @@ registerLocaleData(localePt);
     CarrinhoComponent,
     ProdutoComponent,
     Aboutus2Component,
+    TesteComponent,
   ],
   imports: [
     BrowserModule,
