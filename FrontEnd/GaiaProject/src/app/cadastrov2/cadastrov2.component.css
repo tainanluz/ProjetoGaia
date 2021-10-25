@@ -20,6 +20,11 @@ label{
   margin-left: 5px;
 }
 
+
+label.dark {
+  color: rgb(193, 215, 213);
+}
+
 .lb{
   margin-top: 1.2em;
 }
@@ -30,6 +35,12 @@ label{
   font-size: 14px;
   color: #979797;
 }
+
+.container-create-account.dark {
+  background-color: rgb(109, 42, 34);
+  color: rgb(160, 55, 44);
+}
+
 .bttn{
   justify-content: end;
 }
@@ -42,11 +53,18 @@ label{
   border-radius: 15px;
 }
 
+.form-create-account.dark {
+  background-color: rgb(16, 24, 24);
+}
+
 input {
   border-radius: 8px;
   background-color: #F4F8F7;
 }
 
+input.dark {
+  background-color: rgb(16, 24, 24);
+}
 
 .bgimg{
   background-image: url('https://media.discordapp.net/attachments/892048100582109274/900117258897088542/photo-1447752875215-b2761acb3c5d.jpg?width=1014&height=676');
@@ -76,6 +94,10 @@ input {
   text-align: center;
 }
 
+.page-title.dark {
+  background-color: rgb(7, 32, 34);
+}
+
 .btn-submit {
   font-family: 'Quicksand', sans-serif;
   font-weight: 700;
@@ -89,8 +111,17 @@ input {
   transition: 0.3s;
 }
 
+.btn-submit.dark {
+  background-color: rgb(7, 32, 34);
+  border: rgb(16, 24, 24);
+}
+
 .btn-submit:hover{
   background-color:#429E69;
+}
+
+.btn-submit.dark:hover {
+  background-color: rgb(16, 24, 24);
 }
 
 .btn-input {
@@ -103,6 +134,10 @@ input {
   padding: 0;
   top: 38px;
   right: 20px;
+}
+
+.btn-input.dark {
+  color: rgb(16, 24, 24);
 }
 
 .btn-back-page {

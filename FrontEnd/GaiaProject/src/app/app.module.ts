@@ -24,8 +24,13 @@ import { registerLocaleData } from '@angular/common';
 import localePt from '@angular/common/locales/pt';
 import { Aboutus2Component } from './aboutus2/aboutus2.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { TesteComponent } from './teste/teste.component';
+// import loadAnimation from "lottie-web";
+// import { defineLordIconElement } from 'lord-icon-element';
 
+// defineLordIconElement(loadAnimation);
 registerLocaleData(localePt);
+
 
 @NgModule({
   declarations: [
@@ -47,6 +52,7 @@ registerLocaleData(localePt);
     CarrinhoComponent,
     ProdutoComponent,
     Aboutus2Component,
+    TesteComponent,
   ],
   imports: [
     BrowserModule,

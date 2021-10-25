@@ -4,12 +4,21 @@
 }
 
 .bg-teste{
-    background-color: #deeed5d8;
+    border-radius: 15px;
     box-shadow: 0px -15px 3em rgb(0, 0, 0);
+}
+
+.bg-teste.dark {
+    background-color: rgb(16, 24, 24);
+    box-shadow: 0px -15px 3em rgb(195, 142, 111);
 }
 
 .color-white{
     color: white;
+}
+
+.color-white.dark {
+    color: rgb(16, 24, 24);
 }
 
 .esticar{
@@ -28,6 +37,10 @@
     color:#fff !important;
 }
 
+#desc.dark:hover {
+    color: rgb(16, 24, 24);
+}
+
 .cards{ /*Parte onde contém os produtos*/
     display: flex;  
     flex-direction: row;
@@ -37,6 +50,12 @@
     align-content: center; /*alinhando os cards*/
     justify-content: space-between; /*alinhando os cards - deixa justificado no card que eles estão*/
 }
+
+.cards.dark {
+    background-color: rgb(16, 24, 24);
+    box-shadow: 0 15px 25px rgb(195, 142, 111);
+}
+
 
 .card{ /*Produtos individualmente*/
     background: rgba(233, 205, 163, 0.733);
@@ -51,6 +70,11 @@
     transition: 0.5s;
 }
 
+.card.dark {
+    background: rgb(109, 42, 34);
+    box-shadow: 0 15px 25px rgb(195, 142, 111);
+}
+
 .card:hover{ /*Produtos individualmente*/
     background: rgba(233, 197, 163, 0.897);
     display: flex;  
@@ -61,6 +85,10 @@
     align-content: center; /*alinhando os cards*/
     justify-content: center;
     margin: 15px; /*Margem para não colar os cards internos no card que os contém*/
+}
+
+.card.dark:hover {
+    background: rgba(109, 42, 34, 0.733);
 }
 
 .space-between{
@@ -80,6 +108,11 @@ align-content: space-between;
 .btn:hover{ /*hover para o botão*/
     color: rgb(10, 66, 73);
 }
+
+.btn.dark:hover {
+    color: rgb(7, 32, 34);
+}
+
 .tamanho{
     display: grid;
     grid-template-rows: 40px 100px;
@@ -110,4 +143,8 @@ align-content: space-between;
     font-weight: bold;
     text-decoration: underline;
     color: black;
+}
+
+.tbold.dark {
+    color: rgb(193, 215, 213);
 }
