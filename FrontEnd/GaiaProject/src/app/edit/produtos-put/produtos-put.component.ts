@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Categorias } from 'src/app/model/Categorias';
 import { Produtos } from 'src/app/model/Produtos';
 import { Usuario } from 'src/app/model/Usuario';
+import { AuthService } from 'src/app/service/auth.service';
 import { CategoriasService } from 'src/app/service/categorias.service';
 import { ProdutosService } from 'src/app/service/produtos.service';
 import { environment } from 'src/environments/environment.prod';
@@ -20,8 +21,10 @@ export class ProdutosPutComponent implements OnInit {
   idProduto: number
   usuario: Usuario = new Usuario()
   produtos: Produtos = new Produtos()
+  isLogged = false;
 
   constructor(
+    private authService: AuthService,
     private produtosService: ProdutosService,
     private categoriasService: CategoriasService,
     private router: Router,
@@ -29,28 +32,31 @@ export class ProdutosPutComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    if(environment.token =='')
-    this.router.navigate(['/loginv2'])
+    if (localStorage.getItem('token') == '') {
+      this.router.navigate(['/loginv2'])
+    }
+    this.isLogged = this.authService.isLogged();
+
     let id = this.route.snapshot.params['id']
     this.findByIdCategoria(id)
     this.findAllCategorias()
     this.findAllProduto()
   }
 
-  findAllProduto(){
-    this.produtosService.getAllProduto().subscribe((resp: Produtos[])=> {
+  findAllProduto() {
+    this.produtosService.getAllProduto().subscribe((resp: Produtos[]) => {
       this.listaProdutos = resp
     })
-    }
+  }
 
-  findAllCategorias(){
-    this.categoriasService.getAllCategoria().subscribe((resp: Categorias[])=> {
+  findAllCategorias() {
+    this.categoriasService.getAllCategoria().subscribe((resp: Categorias[]) => {
       this.listaCategorias = resp
     })
-    }
+  }
 
-  findByIdCategoria(id: number){
-    this.produtosService.getByIdProduto(id).subscribe((resp: Produtos)=>{
+  findByIdCategoria(id: number) {
+    this.produtosService.getByIdProduto(id).subscribe((resp: Produtos) => {
       this.produtos = resp
     })
   }
@@ -68,16 +74,17 @@ export class ProdutosPutComponent implements OnInit {
   //   this.router.navigate(['adicionarCategoria'])
   //   })
   // }
-  
-  atualizar(){
+
+  atualizar() {
     this.categorias.idCategoria = this.idCategoria
     this.usuario.idUsuario = environment.idUsuario
 
     this.produtos.categoriaRelacionada = this.categorias
-    console.log("produto "+JSON.stringify(this.produtos))
+    console.log("produto " + JSON.stringify(this.produtos))
     this.produtosService.putProduto(this.produtos).subscribe((resp: Produtos) => {
-    this.produtos = resp
-    alert('Produto adicionado com sucesso')
+      this.produtos = resp
+      alert('Produto adicionado com sucesso')
+      this.router.navigate(['/adicionarCategoria'])
     })
   }
 }

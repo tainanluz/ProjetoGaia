@@ -4,6 +4,7 @@ import { environment } from 'src/environments/environment.prod';
 import { Categorias } from '../model/Categorias';
 import { Produtos } from '../model/Produtos';
 import { Usuario } from '../model/Usuario';
+import { AuthService } from '../service/auth.service';
 import { CategoriasService } from '../service/categorias.service';
 import { ProdutosService } from '../service/produtos.service';
 
@@ -20,63 +21,66 @@ export class AdicionarCategoriaComponent implements OnInit {
   idProduto: number
   usuario: Usuario = new Usuario()
   produtos: Produtos = new Produtos()
+  isLogged = false;
 
   constructor(
+    private authService: AuthService,
     private router: Router,
     private categoriaService: CategoriasService,
     private produtoService: ProdutosService
-   ) { }
- 
-   ngOnInit(){
-   if (localStorage.getItem('token') == ''){
-   this.router.navigate(['/loginv2'])
- }
-  this.findAllCategorias()
-  this.findAllProduto()
- } 
- 
+  ) { }
 
- findAllCategorias(){
-  this.categoriaService.getAllCategoria().subscribe((resp: Categorias[])=> {
-    this.listaCategorias = resp
-  })
+  ngOnInit() {
+    if (localStorage.getItem('token') == '') {
+      this.router.navigate(['/loginv2'])
+    }
+    this.isLogged = this.authService.isLogged();
+    this.findAllCategorias()
+    this.findAllProduto()
   }
 
 
- findByIdCategoria() {
-   this.categoriaService.getByIdCategoria(this.idCategoria).subscribe((resp: Categorias) => {
-     this.categorias = resp
-   })
- }
-
-
- findAllProduto(){
-  this.produtoService.getAllProduto().subscribe((resp: Produtos[])=> {
-    this.listaProdutos = resp
-  })
-  }
-
- AdicionarCategoria(){
-    this.produtos.idProduto = this.idProduto
-    this.usuario.idUsuario = environment.idUsuario
-    this.categorias.usuario = this.usuario
-    console.log("produto "+JSON.stringify(this.categorias))
-    this.categoriaService.postCategoria(this.categorias).subscribe((resp: Categorias) => {
-    this.categorias = resp
-    this.router.navigate(['/home'])
-    alert('Categoria adicionada com sucesso')
+  findAllCategorias() {
+    this.categoriaService.getAllCategoria().subscribe((resp: Categorias[]) => {
+      this.listaCategorias = resp
     })
   }
 
-  AdicionarProduto(){
+
+  findByIdCategoria() {
+    this.categoriaService.getByIdCategoria(this.idCategoria).subscribe((resp: Categorias) => {
+      this.categorias = resp
+    })
+  }
+
+
+  findAllProduto() {
+    this.produtoService.getAllProduto().subscribe((resp: Produtos[]) => {
+      this.listaProdutos = resp
+    })
+  }
+
+  AdicionarCategoria() {
+    this.produtos.idProduto = this.idProduto
+    this.usuario.idUsuario = environment.idUsuario
+    this.categorias.usuario = this.usuario
+    console.log("produto " + JSON.stringify(this.categorias))
+    this.categoriaService.postCategoria(this.categorias).subscribe((resp: Categorias) => {
+      this.categorias = resp
+      this.router.navigate(['/home'])
+      alert('Categoria adicionada com sucesso')
+    })
+  }
+
+  AdicionarProduto() {
     this.categorias.idCategoria = this.idCategoria
     this.usuario.idUsuario = environment.idUsuario
 
     this.produtos.categoriaRelacionada = this.categorias
-    console.log("produto "+JSON.stringify(this.produtos))
+    console.log("produto " + JSON.stringify(this.produtos))
     this.produtoService.postProduto(this.produtos).subscribe((resp: Produtos) => {
-    this.produtos = resp
-    alert('Produto adicionado com sucesso')
+      this.produtos = resp
+      alert('Produto adicionado com sucesso')
     })
   }
 }
