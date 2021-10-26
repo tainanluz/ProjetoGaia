@@ -21,9 +21,10 @@
                     <div class="col-md-12">
                         <table class="table table-hover">
                             <tbody>
+                                <!-- <i class="uil uil-sanitizer"></i> -->
                                 <tr *ngFor='let categorias of listaCategorias'>
                                     <a class="btn w-100 text-start" routerLink="/{{categorias.nomeDaCategoria}}">
-                                        <td class="btn categ text-start"><i class="uil uil-sanitizer"></i>{{categorias.nomeDaCategoria}}</td>
+                                        <td class="btn categ text-start">{{categorias.nomeDaCategoria}}</td>
                                     </a>
                                 </tr>
                                 <!-- <tr> -->
