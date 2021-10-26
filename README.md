@@ -1,26 +1,27 @@
-# ProjetoGaia
-Projeto de conclusão do curso Generation
+# GaiaProject
 
-Sobre: E-comerce de produtos de energia limpa e gestão de energia e resíduos.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.1.2.
 
-Objetivo: Mostrar o quanto de impacto ambiental será reduzido com o consumo daquele produto talvez.
+## Development server
 
-Projeto desenvolvido utilizando Spring Boot, Java, MySql, Angular, HTML5, CSS3, Javascript.
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-Atributos escolhidos e seus motivos
+## Code scaffolding
 
-Casa e construção
-Artigos para instalações e para incorporar à construção da casa para melhor aproveitamento de água e energia de forma limpa e sustentável.
-Ex: painéis solares, reservatório de água.
+Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-Culinária
-Canudos de metal, talheres portáteis, copos reutilizáveis e com suporte de variação de temperatura.
+## Build
 
-Para Levar
-Ecobags, sacolas para mercado e feira.
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-Jardinagem
-Composteira, sementes, jardins verticais, hortas.
+## Running unit tests
 
-Higiene e cosméticos
-Ex: Escova de dente de bambu, pastilhas de pasta de dente, pastilhas de enxaguante bucal, shampoo e condicionador em barra, etc.
+Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+
+## Running end-to-end tests
+
+Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+
+## Further help
+
+To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
