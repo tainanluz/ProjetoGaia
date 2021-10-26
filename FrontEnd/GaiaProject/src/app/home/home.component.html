@@ -22,16 +22,16 @@
                         <table class="table table-hover">
                             <tbody>
                                 <tr *ngFor='let categorias of listaCategorias'>
-                                    <a class="btn w-100" routerLink="/{{categorias.nomeDaCategoria}}">
-                                        <td class="btn categ text-start">{{categorias.nomeDaCategoria}}</td>
+                                    <a class="btn w-100 text-start" routerLink="/{{categorias.nomeDaCategoria}}">
+                                        <td class="btn categ text-start"><i class="uil uil-sanitizer"></i>{{categorias.nomeDaCategoria}}</td>
                                     </a>
                                 </tr>
-                                <tr>
+                                <!-- <tr> -->
 
                             </tbody>
                         </table>
                     </div>
-                    <div class="mt-20">
+                    <div class="mt-20 d-flex justify-content-center">
                         <p class="btn btn__config" *ngIf="isLogged" routerLink="/adicionarCategoria">Configurações</p>
                     </div>
                 </div>
@@ -42,7 +42,7 @@
 
     <div class="row d-flex justify-content-center mt-4">
 
-        <div class="col-9 bg-teste pt-2">
+        <div class="col-md-10 col-lg-9 bg-teste pt-2">
 
 
             <!--Carrosel-->
@@ -94,11 +94,10 @@
                             </div>
                         </div>
 
-                        
+
 
                         <div class="EndButton col-12 d-flex mt-10 hh">
-                            <div class="d-flex btn btn__preco prec mt-0 EndButton" 
-                                routerLink="/{{produtos.nome}}">
+                            <div class="d-flex btn btn__preco prec mt-0 EndButton" routerLink="/{{produtos.nome}}">
                                 {{(produtos.preco*0.7).toFixed(2) | currency}}
                                 <div class="desc btn mb-0 prec">
                                     <sup><del>{{produtos.preco | currency}}</del></sup>

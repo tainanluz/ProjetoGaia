@@ -19,15 +19,11 @@
     width: fit-content;
 }
 
+
+
 .btn__preco{
     font-family: 'Poppins', sans-serif;
     font-weight: 500;
-    background-color: #429E69;
-    color: whitesmoke;
-    
-}
-
-.btn__preco{
     background-color: #32794f;
     color: whitesmoke !important;
 }
@@ -63,7 +59,10 @@
     font-family: 'Poppins', sans-serif;
     font-weight: 500;
 }
-
+.jcs{
+    display: flex;
+    justify-content: start;
+}
 .prec{
     cursor: default;
 }
@@ -71,6 +70,7 @@
 .add__cart:hover{
     font-size: 18px;
     color: whitesmoke !important;
+    transition: 0.3s;
 }
 
 .white-theme{
@@ -125,6 +125,7 @@
     font-size: 18px;
     color: whitesmoke;
     border-radius: 8px;
+    width: 80%;
 }
 
 .btn__config:hover{
@@ -136,6 +137,7 @@
     font-family: 'Poppins', sans-serif;
     font-weight: 500;
     font-size: 18px;
+    text-align: start !important;
 }
 .titulo__categ{
     font-size: 24px;
@@ -145,17 +147,6 @@
 }
 .space-between{
 align-content: space-between;
-}
-
-
-
-.btn{ /*Cores para o botão*/
-    transition: 0.5s;
-    width: inherit;
-}
-
-.btn:hover{ /*hover para o botão*/
-    color: rgb(10, 66, 73);
 }
 
 .card-title{
