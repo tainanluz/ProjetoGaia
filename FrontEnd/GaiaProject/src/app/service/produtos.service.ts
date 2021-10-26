@@ -33,6 +33,10 @@ export class ProdutosService {
     return this.http.get<Produtos>(`https://deploygaia.herokuapp.com/Produtos/Busca/ID/${id}`, this.token)
   }
 
+  getByNomeProduto(nome: string): Observable<Produtos[]>{
+    return this.http.get<Produtos[]>(`https://deploygaia.herokuapp.com/Produtos/Busca/Nome/${nome}` ,this.token)
+  }
+
   postProduto(produtos: Produtos): Observable<Produtos>{
     return this.http.post<Produtos>('https://deploygaia.herokuapp.com/Produtos/Salvar', produtos, this.token)
   }

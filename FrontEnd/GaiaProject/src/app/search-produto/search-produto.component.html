@@ -1,0 +1,62 @@
+<div class="bg-geral">
+    <app-menu></app-menu>
+
+    <div class="row d-flex justify-content-center mt-5 mb-5">
+        <div class="col-md-4">
+            <div class="form-group">
+                <input type="text" class="form-control" id="nome" placeholder="Digite o nome do produto" [(ngModel)]="nomeProduto" (keyup)='findByNomeProduto()'>
+            </div>
+        </div>
+    </div>
+
+    <div class="cards quebra d-flex justify-content-center">
+        <div class="card mt-5 mb-5 ms-2 me-2" style="width: 300px;" *ngFor='let produtos of listaProdutos'>
+            <div class="card-body text-center d-flex flex-wrap justify-content-center">
+
+                <div>
+                    <!--Classe imgProd faz as definições da imagem-->
+                    <a routerLink="/produto/{{produtos.idProduto}}"><img src="{{produtos.link}}" alt="{{produtos.nome}}"
+                            class="imgProd"></a>
+                </div>
+
+                <div class="tamanho">
+                    <div class="col-md-12">
+                        <h5 class="card-title mt-3 tbold">{{produtos.nome}}</h5>
+                        <!--Não consegui alinhar o texto da composteira-->
+                        <!-- <p class="card-text mt-2 tbold">{{produtos.idProduto}}</p> -->
+                        <p class="card-text mt-0 mb-0 tnormal card__categ">
+                            {{produtos.categoriaRelacionada.nomeDaCategoria}}</p>
+                        <p class="card-text mt-2 tlight card__desc">{{produtos.descricao}}</p>
+                    </div>
+                </div>
+
+
+
+                <div class="EndButton col-12 d-flex mt-10 hh">
+                    <div class="d-flex btn btn__preco prec mt-0 EndButton" routerLink="/{{produtos.nome}}">
+                        {{(produtos.preco*0.7).toFixed(2) | currency}}
+                        <div class="desc btn mb-0 prec">
+                            <sup><del>{{produtos.preco | currency}}</del></sup>
+                        </div>
+                    </div>
+
+                    <!-- <p class="d-flex justify-content-center btn btn-success"
+                    (click)='adicionarCarrinho(produtos.idProduto, 1)' routerLink="/{{produtos.nome}}">
+                    {{(produtos.preco*0.7).toFixed(2) | currency}} </p> -->
+
+                </div>
+
+                <!-- <p (click)='removerProduto(produtos.idProduto, 1)' class="btn btn-danger">Remover carrinho</p> -->
+
+                <!-- <div class="EndButton d-flex mt-10">
+                <p class="d-flex justify-content-center btn btn-success w-50 h-50"
+                    routerLink="/{{produtos.nome}}"> R$ {{produtos.preco}}</p>
+
+            </div> -->
+
+            </div>
+            <div class="add__cart p-3 btn" (click)='adicionarCarrinho(produtos, 1)'>Adicionar no Carrinho</div>
+        </div>
+    </div>
+    <app-footer></app-footer>
+</div>

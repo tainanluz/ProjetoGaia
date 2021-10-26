@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Categorias } from 'src/app/model/Categorias';
 import { Produtos } from 'src/app/model/Produtos';
 import { Usuario } from 'src/app/model/Usuario';
+import { AuthService } from 'src/app/service/auth.service';
 import { CategoriasService } from 'src/app/service/categorias.service';
 import { environment } from 'src/environments/environment.prod';
 
@@ -19,16 +20,20 @@ export class CategoriaDeleteComponent implements OnInit {
   idProduto: number
   usuario: Usuario = new Usuario()
   produtos: Produtos = new Produtos()
+  isLogged = false;
 
   constructor(
+    private authService: AuthService,
     private categoriaService: CategoriasService,
     private router: Router,
     private route: ActivatedRoute
   ) { }
 
   ngOnInit() {
-    if(environment.token =='')
-    this.router.navigate(['/loginv2'])
+    if (localStorage.getItem('token') == '') {
+      this.router.navigate(['/loginv2'])
+    }
+    this.isLogged = this.authService.isLogged();
 
     this.idCategoria = this.route.snapshot.params['id']
     this.findByIdCategoria(this.idCategoria)

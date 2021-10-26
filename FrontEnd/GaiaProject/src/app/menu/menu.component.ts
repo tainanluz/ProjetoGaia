@@ -11,6 +11,7 @@ import { CarrinhoService } from '../service/carrinho.service';
 import { CategoriasService } from '../service/categorias.service';
 import { ProdutosService } from '../service/produtos.service';
 
+
 @Component({
   selector: 'app-menu',
   templateUrl: './menu.component.html',
@@ -25,7 +26,8 @@ export class MenuComponent implements OnInit {
   itemCarrinho: ItemCarrinho
   listaCarrinho: ItemCarrinho[]
   usuarioLogin: UsuarioLogin = new UsuarioLogin()
-
+  isDark:boolean = false;
+  
   constructor(
     private authService: AuthService,
     private router: Router,
@@ -38,6 +40,7 @@ export class MenuComponent implements OnInit {
     this.isLogged = this.authService.isLogged()
     this.findAllProduto()
     this.findAllCarrinho()
+    this.getDarkMode()
   }
 
   confirmarSenha(event: any) {
@@ -96,6 +99,7 @@ export class MenuComponent implements OnInit {
   teste() {
     this.findAllCarrinho();
     console.log(this.listaCarrinho);
+
   }
 
   getTotal(){
@@ -130,6 +134,10 @@ export class MenuComponent implements OnInit {
   adicionarItem(itemCarrinho: ItemCarrinho):void{
     this.carrinhoService.adicionarItem(itemCarrinho);
     this.teste();
+}
+
+getDarkMode(): boolean {
+ return this.isDark = this.carrinhoService.getDarkMode();
 }
 }
 

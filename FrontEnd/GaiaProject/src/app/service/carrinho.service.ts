@@ -73,6 +73,10 @@ export class CarrinhoService {
     localStorage.setItem('carrinho',JSON.stringify(this.carrinho));
   }
 
+  getDarkMode(): boolean {
+    return JSON.parse(localStorage.getItem('dark-mode') || '{}');
+  }
+
 
   // adicionarItem(itemCarrinho: ItemCarrinho): void {
   //   let isAdd: boolean = false;

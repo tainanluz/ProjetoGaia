@@ -20,6 +20,7 @@ export class Aboutus2Component implements OnInit {
   usuario: Usuario = new Usuario()
   produtos: Produtos = new Produtos()
   listaProdutos: Produtos[]
+  isLogged = false;
 
   constructor(
     private router: Router,

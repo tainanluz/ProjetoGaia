@@ -1,38 +1,39 @@
-/* You can add global styles to this file, and also import other style files */
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
-
-.tbolder {
-    font-family: 'Quicksand', sans-serif;
-    font-weight: 700;
-}
+@import url('https://fonts.googleapis.com/css2?family=Exo:wght@400;500;600&family=Poppins:wght@300;400;500&display=swap');
 
 .tbold {
-    font-family: 'Quicksand', sans-serif;
-    font-weight: 600;
-    color: red;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  color: #222222;
 }
 
 .tnormal {
-    font-family: 'Quicksand', sans-serif;
-    font-weight: 500;
+    font-family: 'Poppins', sans-serif !important;
+    font-weight: 400 !important;
+    color: #222222;
 }
 
 .tlight {
-    font-family: 'Quicksand', sans-serif;
-    font-weight: 400;
+    font-family: 'Poppins', sans-serif !important;
+    font-weight: 300 !important;
+    color: #222222;
+    
 }
 
-.tlighter {
-    font-family: 'Quicksand', sans-serif;
-    font-weight: 300;
+/* .tbolder {
+  font-family: 'Exo', sans-serif;
+  font-weight: 700;
 }
+.tlighter {
+    font-family: 'Exo', sans-serif;
+    font-weight: 300;
+} */
 
 .mrButton{
     margin-right: 5px;
     margin-top: 5px;
 }
 .bg-geral{
-    background-image: url('https://media.discordapp.net/attachments/892048100582109274/899452754936868944/backgroung.jpg?width=288&height=675');
+    background-image: url('https://cdn.discordapp.com/attachments/892048100582109274/902271060668469288/novo_background.png');
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Barlow:wght@100;200;300;400;500;600;700;800;900&display=swap');
@@ -6663,3 +6664,14 @@ html .bg--parallax {
   padding-left: 100px; }
 
 /*# sourceMappingURL=style.css.map */
+
+
+/* body.dark-mode {
+  background-color: #151d29;
+  color: #d6e7f7;
+}
+
+body.light-mode {
+  background-color: #d6e7f7;
+  color: #151d29;
+} */

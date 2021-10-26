@@ -1,23 +1,29 @@
-<div class="bg-secondary bg-geral container-fluid p-0">
+<div class="bg-geral container-fluid  p-0">
     <app-menu></app-menu>
 
     <!--Off Canvas-->
     <div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1"
         id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
-        <div class="offcanvas-header">
-            <h5 class="offcanvas-title" id="offcanvasScrollingLabel">Categorias de produtos:</h5>
+
+        <div class="offcanvas-header mb-2">
+            <div class="faixa ">
+                <i class="d-flex justify-content-center align-items-center">
+                    <h5 class="offcanvas-title titulo__categ" id="offcanvasScrollingLabel">Categorias de produtos:</h5>
+                </i>
+            </div>
+
             <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
 
-        <div class="offcanvas-body">
+        <div class="offcanvas-body mt-2">
             <div>
                 <div class="row mt-3 mb-5 d-flex justify-content-center">
                     <div class="col-md-12">
                         <table class="table table-hover">
                             <tbody>
                                 <tr *ngFor='let categorias of listaCategorias'>
-                                    <a class="btn" routerLink="/{{categorias.nomeDaCategoria}}">
-                                        <td class="btn">{{categorias.nomeDaCategoria}}</td>
+                                    <a class="btn w-100" routerLink="/{{categorias.nomeDaCategoria}}">
+                                        <td class="btn categ text-start">{{categorias.nomeDaCategoria}}</td>
                                     </a>
                                 </tr>
                                 <tr>
@@ -26,7 +32,7 @@
                         </table>
                     </div>
                     <div class="mt-20">
-                        <p class="btn btn-primary" *ngIf="isLogged" routerLink="/adicionarCategoria">Configurações</p>
+                        <p class="btn btn__config" *ngIf="isLogged" routerLink="/adicionarCategoria">Configurações</p>
                     </div>
                 </div>
             </div>
@@ -34,11 +40,11 @@
     </div>
     <!--Off Canvas-->
 
-    <div class="row d-flex justify-content-center shadow">
+    <div class="row d-flex justify-content-center mt-4">
 
         <div class="col-9 bg-teste pt-2">
 
-            
+
             <!--Carrosel-->
             <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner">
@@ -69,7 +75,7 @@
             <!--Ofertas!!!-->
             <div class="cards quebra d-flex justify-content-center">
                 <div class="card mt-5 mb-5 ms-2 me-2" style="width: 300px;" *ngFor='let produtos of listaProdutos'>
-                    <div class="card-body text-center">
+                    <div class="card-body text-center d-flex flex-wrap justify-content-center">
 
                         <div>
                             <!--Classe imgProd faz as definições da imagem-->
@@ -79,20 +85,25 @@
 
                         <div class="tamanho">
                             <div class="col-md-12">
-                                <h5 class="card-title mt-3">{{produtos.nome}}</h5>
+                                <h5 class="card-title mt-3 tbold">{{produtos.nome}}</h5>
                                 <!--Não consegui alinhar o texto da composteira-->
                                 <!-- <p class="card-text mt-2 tbold">{{produtos.idProduto}}</p> -->
-                                <p class="card-text mt-2 tbold">{{produtos.categoriaRelacionada.nomeDaCategoria}}</p>
-                                <p class="card-text mt-2 text-dark">{{produtos.descricao}}</p>
-
+                                <p class="card-text mt-0 mb-0 tnormal card__categ">
+                                    {{produtos.categoriaRelacionada.nomeDaCategoria}}</p>
+                                <p class="card-text mt-2 tlight card__desc">{{produtos.descricao}}</p>
                             </div>
                         </div>
-                        <div class="EndButton d-flex mt-10  hh">
-                            <sup id="desc" class="btn btn-secondary me-2"><del>{{produtos.preco |
-                                    currency}}</del></sup>
-                            <p class="d-flex justify-content-center btn btn-success"
-                                (click)='adicionarCarrinho(produtos, 1)' routerLink="/{{produtos.nome}}">
-                                {{(produtos.preco*0.7).toFixed(2) | currency}} </p>
+
+                        
+
+                        <div class="EndButton col-12 d-flex mt-10 hh">
+                            <div class="d-flex btn btn__preco prec mt-0 EndButton" 
+                                routerLink="/{{produtos.nome}}">
+                                {{(produtos.preco*0.7).toFixed(2) | currency}}
+                                <div class="desc btn mb-0 prec">
+                                    <sup><del>{{produtos.preco | currency}}</del></sup>
+                                </div>
+                            </div>
 
                             <!-- <p class="d-flex justify-content-center btn btn-success"
                                 (click)='adicionarCarrinho(produtos.idProduto, 1)' routerLink="/{{produtos.nome}}">
@@ -109,6 +120,7 @@
                         </div> -->
 
                     </div>
+                    <div class="add__cart p-3 btn" (click)='adicionarCarrinho(produtos, 1)'>Adicionar no Carrinho</div>
                 </div>
             </div>
             <!--Ofertas!!!-->
