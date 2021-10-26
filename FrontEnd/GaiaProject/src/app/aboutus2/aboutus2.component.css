@@ -7,11 +7,7 @@
 .h1{
     font-weight: 600;
 }
-.lead{ /*Mudar o tamanho da letra do parágrafo*/
-    font-weight: 400;
-    font-size: 1.5em;
-    line-height: 1.3em;
-}
+
 
 .imgBx2{
     align-items: flex-start;
@@ -19,8 +15,21 @@
     width: 50%;
     height: 50%;
 }
+.textp{
+    color: whitesmoke !important;
+    font-family: 'Barlow', sans-serif;
+    font-weight: 500;
+    font-size: 20px !important;
+}
 
-
+.uil{
+    font-size: 30px;
+}
+.title{
+    color: whitesmoke;
+    font-family: 'Barlow', sans-serif;
+    font-weight: 600;
+}
 .color2{
     color: black;
     justify-content: center;
@@ -60,6 +69,7 @@ h5 {
     display:flex;
     justify-content: center;
     align-items: center;
+    margin-right: 10px;
 }
 
 .card.dark {
@@ -284,12 +294,12 @@ section #text44
     font-size: 10vw;
     text-align: center;
     line-height: 0.55em;
-    font-family: 'Rancho', cursive;
+    font-family: 'Poppins', sans-serif;
     font-weight: 400;
     transform: translateY(-50%);
     
 }
-@import url('https://fonts.googleapis.com/css2?family=Rancho&display=swap');
+
 section #text44 span
 {
     font-size: 0.2em;

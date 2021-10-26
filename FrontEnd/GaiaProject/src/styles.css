@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Exo:wght@400;500;600&family=Poppins:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&family=Exo:wght@400;500;600&family=Poppins:wght@300;400;500&display=swap');
 
 .tbold {
   font-family: 'Poppins', sans-serif;
@@ -36,7 +36,6 @@
     background-image: url('https://cdn.discordapp.com/attachments/892048100582109274/902271060668469288/novo_background.png');
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@100;200;300;400;500;600;700;800;900&display=swap');
 /* You can add global styles to this file, and also import other style files */
 
 
