@@ -6,6 +6,7 @@ import { Produtos } from '../model/Produtos';
 import { Usuario } from '../model/Usuario';
 import { CategoriasService } from '../service/categorias.service';
 import { ProdutosService } from '../service/produtos.service';
+import Swal from 'sweetalert2'
 
 @Component({
   selector: 'app-adicionar-categoria',
@@ -66,6 +67,7 @@ export class AdicionarCategoriaComponent implements OnInit {
     this.router.navigate(['/home'])
     alert('Categoria adicionada com sucesso')
     })
+
   }
 
   AdicionarProduto(){

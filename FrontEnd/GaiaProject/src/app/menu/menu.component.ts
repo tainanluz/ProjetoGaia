@@ -99,6 +99,7 @@ export class MenuComponent implements OnInit {
   teste() {
     this.findAllCarrinho();
     console.log(this.listaCarrinho);
+
   }
 
   getTotal(){
