@@ -1,6 +1,45 @@
 <div class="bg-geral">
     <app-menu></app-menu>
 
+        <!--Off Canvas-->
+        <div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1"
+        id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
+
+        <div class="offcanvas-header mb-2">
+            <div class="faixa ">
+                <i class="d-flex justify-content-center align-items-center">
+                    <h5 class="offcanvas-title titulo__categ" id="offcanvasScrollingLabel">Categorias de produtos:</h5>
+                </i>
+            </div>
+
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+
+        <div class="offcanvas-body mt-2">
+            <div>
+                <div class="row mt-3 mb-5 d-flex justify-content-center">
+                    <div class="col-md-12">
+                        <table class="table table-hover">
+                            <tbody>
+                                <tr *ngFor='let categorias of listaCategorias'>
+                                    <a class="btn w-100" routerLink="/{{categorias.nomeDaCategoria}}">
+                                        <td class="btn categ text-start">{{categorias.nomeDaCategoria}}</td>
+                                    </a>
+                                </tr>
+                                <tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="mt-20">
+                        <p class="btn btn__config" *ngIf="isLogged" routerLink="/adicionarCategoria">Configurações</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Off Canvas-->
+
     <div class="row d-flex justify-content-center mt-5 mb-5">
         <div class="col-md-4">
             <div class="form-group">
