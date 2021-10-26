@@ -15,7 +15,7 @@
     font-weight: 600;
     color: #222222;
     font-size: 30px;
-    background-color: #fff;
+    background-color: rgba(255, 255, 255, 0);
     
     border-radius: 15px;
     margin-left: 5px;
@@ -270,5 +270,5 @@ font-size: 23px;
 }
 
 .nav__bg {
-  background-color: rgba(255, 255, 255, 0.404);
+  background-color: rgba(255, 255, 255, 0.774);
 }
