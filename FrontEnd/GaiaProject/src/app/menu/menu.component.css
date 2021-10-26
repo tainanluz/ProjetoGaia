@@ -1,23 +1,35 @@
-.bg-teste.dark-mode {
-  background: rgb(16, 24, 24);
-}
+@import url('https://fonts.googleapis.com/css2?family=Exo:wght@300;400;600&display=swap');
 
 .bg{
     background-image: url('https://cdn.discordapp.com/attachments/892048100582109274/894645545132519454/img3.jpg');
 }
 
-.navbar{
+/* .navbar{
     display: flex !important; 
     justify-content: center !important;
-}
+} */
 
 
-.tbold {
-    font-family: "Barlow", sans-serif;
-    font-weight: 200;
-    color: black;
-    font-size: 26px;
+.navbtn {
+    font-family: 'Exo', sans-serif;
+    font-weight: 600;
+    color: #222222;
+    font-size: 30px;
+    background-color: #fff;
+    
+    border-radius: 15px;
+    margin-left: 5px;
+    margin-right: 5px;
 }
+
+.uil-user-circle {
+  font-size: 55px !important;
+}
+
+.uil-shopping-cart{
+  font-size: 55px !important;
+}
+
 
 .tbold.dark-mode {
   color: rgb(193, 215, 213);
@@ -26,15 +38,14 @@
 
 
 .button1:hover{
-    background-color: transparent;
-    color: rgb(226, 94, 17);
+    color: rgb(236, 93, 39);
   }
 
 .button1:hover.dark-mode {
   color: rgb(160, 55, 44);
 }
 
-  @import url('https://fonts.googleapis.com/css2?family=Laila:wght@300;400;500;600&display=swap');
+
 
 @font-face {
   font-family: 'Trueno-Round-Bold';
@@ -50,8 +61,8 @@ h1 {
 } 
 
 label{
-  font-family: 'Quicksand', sans-serif;
-  font-weight: 700;
+  font-family: 'Laila', sans-serif;
+  font-weight: 500;
   color: #2b2828c4;
   margin-left: 5px;
 }
@@ -122,7 +133,7 @@ input.dark-mode {
 .page-title {
   font-weight: 700;
   font-size: 45px;
-  color: #3AADA5;
+  color: #39BB8D;
   text-align: center;
 }
 
@@ -254,3 +265,10 @@ font-size: 23px;
   justify-self: end;
 }
 
+.bg-teste.dark-mode {
+  background: rgb(16, 24, 24);
+}
+
+.nav__bg {
+  background-color: rgba(255, 255, 255, 0.404);
+}
