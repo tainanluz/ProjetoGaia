@@ -59,6 +59,8 @@ section.dark .card{
     background: firebrick;/*Cor do fundo do card no modo dark*/
 }
 
+
+
 section .card .content,
 section .card .imgText{
     display: flex;

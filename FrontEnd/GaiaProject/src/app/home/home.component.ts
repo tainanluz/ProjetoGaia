@@ -25,7 +25,8 @@ export class HomeComponent implements OnInit {
   listaProdutos: Produtos[]
   itemCarrinho: ItemCarrinho
   isLogged = false;
-  listaCarrinho: ItemCarrinho[]
+  listaCarrinho: ItemCarrinho[];
+  isDark:boolean = false;
 
   constructor(
     private router: Router,
@@ -70,6 +71,10 @@ export class HomeComponent implements OnInit {
       alert('Categoria adicionada com sucesso')
     })
   }
+
+  getDarkMode(): boolean {
+    return this.isDark = this.carrinhoService.getDarkMode();
+   }
 
   findByIdCategoria() {
     this.categoriaService.getByIdCategoria(this.idCategoria).subscribe((resp: Categorias) => {

@@ -26,6 +26,7 @@ export class MenuComponent implements OnInit {
   itemCarrinho: ItemCarrinho
   listaCarrinho: ItemCarrinho[]
   usuarioLogin: UsuarioLogin = new UsuarioLogin()
+  isDark:boolean = false;
   
   constructor(
     private authService: AuthService,
@@ -39,6 +40,7 @@ export class MenuComponent implements OnInit {
     this.isLogged = this.authService.isLogged()
     this.findAllProduto()
     this.findAllCarrinho()
+    this.getDarkMode()
   }
 
   confirmarSenha(event: any) {
@@ -134,8 +136,7 @@ export class MenuComponent implements OnInit {
 }
 
 getDarkMode(): boolean {
-  return JSON.parse(localStorage.getItem('dark-mode') || '{}');
+ return this.isDark = this.carrinhoService.getDarkMode();
 }
-  
 }
 
