@@ -6,6 +6,7 @@ import { Usuario } from 'src/app/model/Usuario';
 import { AuthService } from 'src/app/service/auth.service';
 import { ProdutosService } from 'src/app/service/produtos.service';
 import { environment } from 'src/environments/environment.prod';
+import Swal from 'sweetalert2'
 
 @Component({
   selector: 'app-produtos-delete',
@@ -27,7 +28,7 @@ export class ProdutosDeleteComponent implements OnInit {
     private router: Router,
     private route: ActivatedRoute
 
-  ) { }  ngOnInit() {
+  ) { } ngOnInit() {
     if (localStorage.getItem('token') == '') {
       this.router.navigate(['/loginv2'])
     }
@@ -35,20 +36,58 @@ export class ProdutosDeleteComponent implements OnInit {
 
     this.idProduto = this.route.snapshot.params['id']
     this.findByIdCategoria(this.idProduto)
-    }
+  }
 
-    findByIdCategoria(id: number)
-    {
-      this.produtosService.getByIdProduto(id).subscribe((resp: Produtos)=>{
-        this.produtos=resp
-      })
-    }
+  findByIdCategoria(id: number) {
+    this.produtosService.getByIdProduto(id).subscribe((resp: Produtos) => {
+      this.produtos = resp
+    })
+  }
 
-    apagar(){
-      this.produtosService.deleteProduto(this.idProduto).subscribe(()=>{ console.log("Produto: "+JSON.stringify(this.produtos))
-        alert('Produto apagado com sucesso!')
+  apagar() {
+    const swalWithBootstrapButtons = Swal.mixin({
+      customClass: {
+        confirmButton: 'btn btn-success ms-2',
+        cancelButton: 'btn btn-danger me-2'
+      },
+      buttonsStyling: false
+    })
+    swalWithBootstrapButtons.fire({
+      title: 'Você tem certeza?',
+      text: "Não será possivel reverter!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonText: 'Sim, apague!',
+      cancelButtonText: 'Não, cancele!',
+      reverseButtons: true
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this.produtosService.deleteProduto(this.idProduto).subscribe(() => {
+          console.log("Produto: " + JSON.stringify(this.produtos))
+          // alert('Tema apagado com sucesso!')
+         
+        })
+        swalWithBootstrapButtons.fire(
+          'Deletado!',
+          'O produto foi deletado.',
+          'success'
+        )
         this.router.navigate(['/adicionarCategoria'])
-      })
-    }
+      }else if (
+        /* Read more about handling dismissals below */
+        result.dismiss === Swal.DismissReason.cancel
+      ) {
+        swalWithBootstrapButtons.fire(
+          'Cancelado',
+          'O produto está seguro',
+          'error'
+        )
+        this.router.navigate(['/adicionarCategoria'])
+      }
+    })
+
+    
+
+  }
 
 }
