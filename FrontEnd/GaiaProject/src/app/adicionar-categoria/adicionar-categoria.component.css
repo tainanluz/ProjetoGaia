@@ -1,7 +1,3 @@
-.fundo{
-    background-image: url('https://media.discordapp.net/attachments/892048100582109274/899452754936868944/backgroung.jpg?width=288&height=675');
-}
-
 .quebra{
     display: flex;
     justify-content: flex-start;
@@ -92,4 +88,48 @@
 
 .tdTamanho{
     height: inherit;
+}
+
+td > p {
+    font-size: 18px;
+}
+
+.adc_cat{
+    color: #555555;
+}
+
+.uil{
+    font-size: 24px;
+}
+
+th{
+    font-size: 24px;
+}
+
+.btn__delete{
+    border: solid;
+    border-color: #E63F31;
+    background-color: #fff;
+    border-radius: 50%;
+    color: #E63F31;
+}
+
+.btn__delete:hover{
+    transition: 0.5s !important;
+    background-color: #E63F31;
+    color: #fff;
+}
+
+.btn__edit{
+    border: solid;
+    border-color: #005A70;
+    background-color: #fff;
+    border-radius: 50%;
+    color: #005A70;
+}
+
+.btn__edit:hover{
+    transition: 0.5s !important;
+    background-color: #005A70;
+    color: #fff;
 }

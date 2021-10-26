@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-transparent">
+<nav class="navbar navbar-expand-lg navbar-dark nav__bg">
   <div class="container-fluid">
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
@@ -18,46 +18,51 @@
         </li>
       </ul>
 
-      <ul class="navbar-nav mb-2 d-flex align-items-center">
+      <ul class="navbar-nav mt-3 mb-0 d-flex align-items-center">
 
         <!-- <lord-icon trigger="hover" src="/my-icon.json"></lord-icon> -->
 
         <div>
-          <button class="mr-3 btn bg-transparent tbold button1 d-flex align-items-center" routerLink="/home"><i
+          <button class="mr-3 btn navbtn button1 d-flex align-items-center" routerLink="/home"><i
               class="uil uil-estate"></i>HOME</button>
         </div>
         <div>
-          <button class="mr-3 btn bg-transparent tbold button1 d-flex align-items-center" type="button"
+          <button class="mr-3 btn navbtn button1 d-flex align-items-center" type="button"
             data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling"><i
               class="uil uil-list-ul"></i>CATEGORIAS</button>
         </div>
         <div>
-          <button class="mr-3 btn bg-transparent tbold button1" routerLink="/aboutus2"><i
+          <button class="mr-3 btn navbtn button1" routerLink="/aboutus2"><i
               class="uil uil-trees"></i>SOBRE NÓS</button>
         </div>
         <!-- <div>
             <button class="mr-3 btn bg-transparent tbold button1" routerLink="/aboutUs">SOBRE</button>
           </div> -->
         <div>
-          <button class="mr-3 btn bg-transparent tbold button1" routerLink="/contact"><i class="uil uil-envelope"></i>CONTATO</button>
+          <button class="mr-3 btn navbtn button1" routerLink="/contact"><i class="uil uil-envelope"></i>CONTATO</button>
         </div> 
 
       </ul>
 
-      <ul class="navbar-nav mb-2 d-flex align-items-center">
+      <ul class="navbar-nav mt-3 mb-0 d-flex align-items-center">
         <div class="d-flex jse">
           <!-- Carrinho -->
-          <button class="mr-3 btn bg-transparent tbold button1 p-2" data-bs-toggle="modal" data-bs-target="#carrinho"
+
+          <button class="mr-3 btn navbtn button1 ">
+            <i class="uil uil-user-circle"></i>
+          </button>
+
+          <button class="mr-3 btn navbtn button1 " data-bs-toggle="modal" data-bs-target="#carrinho"
             (click)='teste()'><i class="uil uil-shopping-cart"></i></button>
 
 
-          <button [ngClass]="{'white-theme': isDark}" class="mr-3 btn bg-transparent tbold button1" *ngIf="!isLogged" data-bs-toggle="modal"
+          <button class="mr-3 btn navbtn button1" *ngIf="!isLogged" data-bs-toggle="modal"
             data-bs-target="#login">LOGIN</button>
 
-          <button class="mr-3 btn bg-transparent tbold button1 d-flex align-items-center" *ngIf="isLogged"
+          <button class="mr-3 btn navbtn button1 d-flex align-items-center" *ngIf="isLogged"
             (click)="logout()">SAIR <i class="uil uil-signout"></i></button>
 
-          <button class="mr-3 btn bg-transparent tbold button1" *ngIf="!isLogged" data-bs-toggle="modal"
+          <button class="mr-3 btn  navbtn button1" *ngIf="!isLogged" data-bs-toggle="modal"
             data-bs-target="#cadastro">CADASTRO</button>
         </div>
 
@@ -68,9 +73,7 @@
   </div>
 
 </nav>
-<div class="d-flex justify-content-end">
 
-</div>
 
 <div class="modal fade" id="cadastro" tabindex="-1">
   <div class="modal-dialog modal-dialog-centered form-create-account">
@@ -266,7 +269,7 @@
               <div id="finalizacao-compra">
                 <div id="tela-total">
                   <div id="valor-total">
-                    <span id="texto-total" class="tbold">Total:</span>
+                    <span id="texto-total" class="navbtn">Total:</span>
                     <span id="total" class="txt-total"> R${{getTotal().toFixed(2)}} </span>
                   </div>
                   <!-- <div class="btn btn-danger" (click)='teste2()'>Mostrar produto</div> -->

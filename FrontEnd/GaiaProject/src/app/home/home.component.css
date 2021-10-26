@@ -1,24 +1,6 @@
-.tm-social{
-    width: 50px;
-    height: 50px;
-}
-
 .bg-teste{
     border-radius: 15px;
-    box-shadow: 0px -15px 3em rgb(0, 0, 0);
-}
-
-.bg-teste.dark {
-    background-color: rgb(137, 138, 138);
-    box-shadow: 0px -15px 3em rgb(195, 142, 111);
-}
-
-.color-white{
-    color: white;
-}
-
-.color-white.dark {
-    color: rgb(16, 24, 24);
+    box-shadow: 0px 5px 1.5em rgb(0, 0, 0);
 }
 
 .esticar{
@@ -29,16 +11,66 @@
 .hh{
     height: fit-content+10px;
 }
-#desc{
-    text-decoration: none;
-    cursor: default !important;
-}
-#desc:hover{
-    color:#fff !important;
+
+.EndButton{
+    flex-wrap: wrap;
+    align-content: center; /*Alinhando o botão de preço*/
+    justify-content: center;
+    width: fit-content;
 }
 
-#desc.dark:hover {
-    color: rgb(16, 24, 24);
+.btn__preco{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    background-color: #429E69;
+    color: whitesmoke;
+    
+}
+
+.btn__preco{
+    background-color: #32794f;
+    color: whitesmoke !important;
+}
+
+.btn__preco:active{
+    border: none;
+}
+
+.desc{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    color: whitesmoke;
+    background-color: #32794f;
+    padding: 0;
+    /* background-color: #87B474; */
+    text-decoration: none;
+    /* cursor: default !important; */
+}
+.desc:hover{
+    color: whitesmoke !important;
+}
+
+.add__cart{
+    text-align: center;
+    background-color: #32794f;
+    width: 100%;
+    height: 60px;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;
+    color: whitesmoke;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+}
+
+.prec{
+    cursor: default;
+}
+
+.add__cart:hover{
+    font-size: 18px;
+    color: whitesmoke !important;
 }
 
 .white-theme{
@@ -55,10 +87,6 @@
     justify-content: space-between; /*alinhando os cards - deixa justificado no card que eles estão*/
 }
 
-.cards.dark-mode {
-    background-color: rgb(16, 24, 24);
-    box-shadow: 0 15px 25px rgb(195, 142, 111);
-}
 
 
 .card{ /*Produtos individualmente*/
@@ -72,37 +100,54 @@
     justify-content: center;
     margin: 15px; /*Margem para não colar os cards internos no card que os contém*/
     transition: 0.5s;
+    border: none;
 }
 
-.card.dark-mode {
-    background: rgb(109, 42, 34);
-    box-shadow: 0 15px 25px rgb(195, 142, 111);
-}
+
 
 .card:hover{ /*Produtos individualmente*/
-    background: rgba(233, 197, 163, 0.897);
+    background: rgba(233, 197, 163, 0.945);
+    /* border: none;
     display: flex;  
     flex-direction: row;
     flex-wrap: wrap;
     box-shadow: 0 15px 25px rgba(0, 0, 0, 0.25);
-    border-radius: 16px;
+    border-radius: 16px; */
     align-content: center; /*alinhando os cards*/
     justify-content: center;
     margin: 15px; /*Margem para não colar os cards internos no card que os contém*/
 }
 
-.card.dark-mode:hover {
-    background: rgba(109, 42, 34, 0.733);
+.btn__config{
+    background-color: #368157dc;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    color: whitesmoke;
+    border-radius: 8px;
 }
 
+.btn__config:hover{
+    background-color: #368156;
+    color: whitesmoke!important;
+}
+
+.categ{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+}
+.titulo__categ{
+    font-size: 24px;
+    color: #fff;
+    text-shadow: -1px 1px 5px black;
+
+}
 .space-between{
 align-content: space-between;
 }
 
-.EndButton{
-    align-content: center; /*Alinhando o botão de preço*/
-    justify-content: center;
-}
+
 
 .btn{ /*Cores para o botão*/
     transition: 0.5s;
@@ -113,8 +158,15 @@ align-content: space-between;
     color: rgb(10, 66, 73);
 }
 
-.btn.dark:hover {
-    color: rgb(7, 32, 34);
+.card-title{
+    font-size: 22px;
+}
+.card__categ{
+    font-size: 14px;
+}
+
+.card__desc{
+    font-size: 16px;
 }
 
 .tamanho{
@@ -143,12 +195,74 @@ align-content: space-between;
     flex-wrap: wrap;
 }
 
-.tbold{
+/* .tbold{
     font-weight: bold;
     text-decoration: underline;
     color: black;
+} */
+
+.faixa i{
+    position: absolute;
+    width: 400px;
+    height: 50px;
+    background-color: #61BD87;
+    top: 40px;
+    border-radius: 30px;
+    right: -15px;
+    border-bottom-right-radius: 0;
 }
 
+.faixa i::before{
+    content: '';
+    position: absolute;
+    right: 0px;
+    top: 50px;
+    background-color: #3e9462;
+    height: 30px;
+    width: 15px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    z-index: 2;
+}
+
+.faixa i::after{
+    content: '';
+    position: absolute;
+    right: 0px;
+    top: 50px;
+    background-color: #61BD87;
+    height: 15px;
+    width: 15px;
+}
+
+
+/* .cards.dark-mode {
+    background-color: rgb(16, 24, 24);
+    box-shadow: 0 15px 25px rgb(195, 142, 111);
+}
+
+#desc.dark:hover {
+    color: rgb(16, 24, 24);
+}
+
+.color-white.dark {
+    color: rgb(16, 24, 24);
+}
+
+.bg-teste.dark {
+    background-color: rgb(137, 138, 138);
+    box-shadow: 0px -15px 3em rgb(195, 142, 111);
+}
+.card.dark-mode {
+    background: rgb(109, 42, 34);
+    box-shadow: 0 15px 25px rgb(195, 142, 111);
+}
+.card.dark-mode:hover {
+    background: rgba(109, 42, 34, 0.733);
+}
+.btn.dark:hover {
+    color: rgb(7, 32, 34);
+}
 .tbold.dark {
     color: rgb(193, 215, 213);
-}
+} */

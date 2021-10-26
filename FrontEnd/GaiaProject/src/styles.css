@@ -1,31 +1,32 @@
-/* You can add global styles to this file, and also import other style files */
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
-
-.tbolder {
-    font-family: 'Quicksand', sans-serif;
-    font-weight: 700;
-}
+@import url('https://fonts.googleapis.com/css2?family=Exo:wght@400;500;600&family=Poppins:wght@300;400;500&display=swap');
 
 .tbold {
-    font-family: 'Quicksand', sans-serif;
-    font-weight: 600;
-    color: red;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  color: #222222;
 }
 
 .tnormal {
-    font-family: 'Quicksand', sans-serif;
-    font-weight: 500;
+    font-family: 'Poppins', sans-serif !important;
+    font-weight: 400 !important;
+    color: #222222;
 }
 
 .tlight {
-    font-family: 'Quicksand', sans-serif;
-    font-weight: 400;
+    font-family: 'Poppins', sans-serif !important;
+    font-weight: 300 !important;
+    color: #222222;
+    
 }
 
-.tlighter {
-    font-family: 'Quicksand', sans-serif;
-    font-weight: 300;
+/* .tbolder {
+  font-family: 'Exo', sans-serif;
+  font-weight: 700;
 }
+.tlighter {
+    font-family: 'Exo', sans-serif;
+    font-weight: 300;
+} */
 
 .mrButton{
     margin-right: 5px;
@@ -6665,7 +6666,7 @@ html .bg--parallax {
 /*# sourceMappingURL=style.css.map */
 
 
-body.dark-mode {
+/* body.dark-mode {
   background-color: #151d29;
   color: #d6e7f7;
 }
@@ -6673,4 +6674,4 @@ body.dark-mode {
 body.light-mode {
   background-color: #d6e7f7;
   color: #151d29;
-}
+} */
