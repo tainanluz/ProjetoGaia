@@ -88,6 +88,7 @@ export class AdicionarCategoriaComponent implements OnInit {
       icon: 'success',
       title: 'Categoria adicionada com sucesso'
     })
+
   }
 
   AdicionarProduto() {

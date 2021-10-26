@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { environment } from 'src/environments/environment.prod';
+import { ActivatedRoute, Params, Router } from '@angular/router';
+import { Observable } from 'rxjs';
 import { Categorias } from '../model/Categorias';
 import { ItemCarrinho } from '../model/ItemCarrinho';
 import { Produtos } from '../model/Produtos';
@@ -11,49 +11,41 @@ import { CategoriasService } from '../service/categorias.service';
 import { ProdutosService } from '../service/produtos.service';
 import Swal from 'sweetalert2'
 
-
-
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  selector: 'app-search-produto',
+  templateUrl: './search-produto.component.html',
+  styleUrls: ['./search-produto.component.css']
 })
-export class HomeComponent implements OnInit {
+export class SearchProdutoComponent implements OnInit {
+
+  listaProdutos: Produtos[]
   listaCategorias: Categorias[]
-  categorias: Categorias = new Categorias
+  categorias: Categorias = new Categorias()
   idCategoria: number
   idProduto: number
   usuario: Usuario = new Usuario()
   produtos: Produtos = new Produtos()
-  listaProdutos: Produtos[]
-  itemCarrinho: ItemCarrinho
   isLogged = false;
-  listaCarrinho: ItemCarrinho[];
-  isDark:boolean = false;
+  itemCarrinho: ItemCarrinho;
+  nomeProduto: string;
+  nomeCategoria: string;
 
   constructor(
-    private router: Router,
     private authService: AuthService,
+    private router: Router,
     private categoriaService: CategoriasService,
     private produtosService: ProdutosService,
-    private carrinhoService: CarrinhoService   
-
-  ) {
-
-  }
+    private carrinhoService: CarrinhoService,
+    private activatedRoute: ActivatedRoute
+    ) { }
 
   ngOnInit() {
     if (localStorage.getItem('token') == '') {
       this.router.navigate(['/loginv2'])
     }
     this.isLogged = this.authService.isLogged();
-    this.findAllCategorias()
-    this.findAllProduto()
-    // this.findAllCarrinho()
-  }
-
-  findAllCarrinho() {
-    this.listaCarrinho = this.carrinhoService.getAllCarrinho();
+    this.findAllCategorias();
+    this.findAllProduto();
   }
 
 
@@ -63,20 +55,20 @@ export class HomeComponent implements OnInit {
     })
   }
 
-  getDarkMode(): boolean {
-    return this.isDark = this.carrinhoService.getDarkMode();
-   }
 
   findByIdCategoria() {
     this.categoriaService.getByIdCategoria(this.idCategoria).subscribe((resp: Categorias) => {
       this.categorias = resp
     })
   }
+
+
   findAllProduto() {
     this.produtosService.getAllProduto().subscribe((resp: Produtos[]) => {
       this.listaProdutos = resp
     })
   }
+
   adicionarCarrinho(produtos: Produtos, quantidade:number):void{
     this.itemCarrinho={produtos, quantidade}
     this.carrinhoService.adicionarItem(this.itemCarrinho)
@@ -97,11 +89,29 @@ export class HomeComponent implements OnInit {
       icon: 'success',
       title: 'Produto adicionado'
     })
+  
   }
 
-  // removerProduto(productId:number,quantidade:number):void{
-  //   this.itemCarrinho={productId, quantidade}
-  //   this.carrinhoService.removerItem(this.itemCarrinho)
-  // }
+  findByNomeProduto(){
+    if(this.nomeProduto==''){
+    this.findAllProduto();
+    }
+    {
+      this.produtosService.getByNomeProduto(this.nomeProduto).subscribe((resp: Produtos[])=>{
+        this.listaProdutos=resp;
+    });
+  }
+  }
+
+  findByCategoria(){
+    if(this.nomeCategoria==''){
+      this.findAllCategorias()
+    }{
+      this.categoriaService.getByNomeCategoria(this.nomeCategoria).subscribe((resp: Categorias[])=>{
+        this.listaCategorias;
+        console.log(this.listaCategorias);
+       });
+    }
 }
 
+}

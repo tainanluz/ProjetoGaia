@@ -31,6 +31,10 @@ export class CategoriasService {
     return this.http.get<Categorias>(`https://deploygaia.herokuapp.com/Categorias/Busca/ID/${id}`, this.token)
   }
 
+  getByNomeCategoria(nome: string): Observable<Categorias[]>{
+    return this.http.get<Categorias[]>(`https://deploygaia.herokuapp.com/Categorias/Pesquisa/Nome/${nome}` ,this.token)
+  }
+
   postCategoria(categorias: Categorias): Observable<Categorias>{
     return this.http.post<Categorias>('https://deploygaia.herokuapp.com/Categorias/Salvar', categorias, this.token)
   }

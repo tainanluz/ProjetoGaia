@@ -25,6 +25,8 @@ import localePt from '@angular/common/locales/pt';
 import { Aboutus2Component } from './aboutus2/aboutus2.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TesteComponent } from './teste/teste.component';
+import { SearchProdutoComponent } from './search-produto/search-produto.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 // import loadAnimation from "lottie-web";
 // import { defineLordIconElement } from 'lord-icon-element';
 
@@ -53,6 +55,8 @@ registerLocaleData(localePt);
     ProdutoComponent,
     Aboutus2Component,
     TesteComponent,
+    SearchProdutoComponent,
+    DashboardComponent,
   ],
   imports: [
     BrowserModule,
