@@ -23,18 +23,6 @@
     justify-content: center;
 }
 
-.btn{ /*Cores para o botão*/
-    transition: 0.5s;
-}
-
-.btn:hover{ /*hover para o botão*/
-    background: rgb(10, 66, 73);
-    color: rgb(233, 239, 241);
-}
-
-.btn:hover.dark {
-    background: 0px -15px 3em rgb(7, 32, 34);
-}
 
 .p .card-text{ 
     display: flex;
@@ -132,4 +120,73 @@ th{
     transition: 0.5s !important;
     background-color: #005A70;
     color: #fff;
+}
+
+
+.btn__delete2{
+    border: solid;
+    border-color: #E63F31;
+    background-color: #E63F31;
+    border-radius: 50%;
+    color: #fff;
+}
+
+.btn__delete2:hover{
+    transition: 0.5s !important;
+    background-color: #fff;
+    color: #E63F31;
+}
+
+.btn__edit2{
+    border: solid;
+    border-color: #005A70;
+    background-color: #005A70;
+    border-radius: 50%;
+    color: #fff;
+}
+
+.btn__edit2:hover{
+    transition: 0.5s !important;
+    background-color: #fff;
+    color: #005A70;
+}
+
+.btn__preco{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    background-color: #32794f;
+    color: whitesmoke !important;
+}
+
+.btn__preco:active{
+    border: none;
+}
+
+.desc{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    color: whitesmoke;
+    background-color: #32794f;
+    padding: 0;
+    /* background-color: #87B474; */
+    text-decoration: none;
+    /* cursor: default !important; */
+}
+.desc:hover{
+    color: whitesmoke !important;
+}
+
+.prec{
+    cursor: default;
+}
+
+.card-title{
+    font-size: 22px;
+}
+.card__categ{
+    font-size: 14px;
+}
+
+.card__desc{
+    font-size: 16px;
 }

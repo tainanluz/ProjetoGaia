@@ -7,6 +7,7 @@ import { Usuario } from '../model/Usuario';
 import { AuthService } from '../service/auth.service';
 import { CategoriasService } from '../service/categorias.service';
 import { ProdutosService } from '../service/produtos.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-adicionar-categoria',
@@ -22,6 +23,7 @@ export class AdicionarCategoriaComponent implements OnInit {
   usuario: Usuario = new Usuario()
   produtos: Produtos = new Produtos()
   isLogged = false;
+  
 
   constructor(
     private authService: AuthService,
@@ -32,7 +34,7 @@ export class AdicionarCategoriaComponent implements OnInit {
 
   ngOnInit() {
     if (localStorage.getItem('token') == '') {
-      this.router.navigate(['/loginv2'])
+      this.router.navigate(['/loginv2'])                                          
     }
     this.isLogged = this.authService.isLogged();
     this.findAllCategorias()
@@ -67,8 +69,24 @@ export class AdicionarCategoriaComponent implements OnInit {
     console.log("produto " + JSON.stringify(this.categorias))
     this.categoriaService.postCategoria(this.categorias).subscribe((resp: Categorias) => {
       this.categorias = resp
-      this.router.navigate(['/home'])
-      alert('Categoria adicionada com sucesso')
+      // this.router.navigate(['/home'])
+      // alert('Categoria adicionada com sucesso')
+    })
+    const Toast = Swal.mixin({
+      toast: true,
+      position: 'top-end',
+      showConfirmButton: false,
+      timer: 3000,
+      timerProgressBar: true,
+      didOpen: (toast) => {
+        toast.addEventListener('mouseenter', Swal.stopTimer)
+        toast.addEventListener('mouseleave', Swal.resumeTimer)
+      }
+    })
+    
+    Toast.fire({
+      icon: 'success',
+      title: 'Categoria adicionada com sucesso'
     })
   }
 
@@ -80,7 +98,25 @@ export class AdicionarCategoriaComponent implements OnInit {
     console.log("produto " + JSON.stringify(this.produtos))
     this.produtoService.postProduto(this.produtos).subscribe((resp: Produtos) => {
       this.produtos = resp
-      alert('Produto adicionado com sucesso')
+      // alert('Produto adicionado com sucesso')
     })
+
+    const Toast = Swal.mixin({
+      toast: true,
+      position: 'top-end',
+      showConfirmButton: false,
+      timer: 3000,
+      timerProgressBar: true,
+      didOpen: (toast) => {
+        toast.addEventListener('mouseenter', Swal.stopTimer)
+        toast.addEventListener('mouseleave', Swal.resumeTimer)
+      }
+    })
+    
+    Toast.fire({
+      icon: 'success',
+      title: 'Produto adicionado com sucesso'
+    })
+    
   }
 }
