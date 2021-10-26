@@ -14,20 +14,17 @@
     font-family: 'Exo', sans-serif;
     font-weight: 600;
     color: #222222;
-    font-size: 30px;
-    background-color: #fff;
-    
-    border-radius: 15px;
+    font-size: 1.4em;    
     margin-left: 5px;
     margin-right: 5px;
 }
 
 .uil-user-circle {
-  font-size: 55px !important;
+  font-size: 50px !important;
 }
 
 .uil-shopping-cart{
-  font-size: 55px !important;
+  font-size: 50px !important;
 }
 
 
@@ -67,9 +64,9 @@ label{
   margin-left: 5px;
 }
 
-label.dark-mode {
+/* label.dark-mode {
   color: rgb(193, 215, 213);
-}
+} */
 
 .lb{
   margin-top: 1.2em;
@@ -103,9 +100,9 @@ input {
 }
 
 
-input.dark-mode {
+/* input.dark-mode {
   background-color: rgb(16, 24, 24);
-}
+} */
 
 
 .bgimg{
@@ -137,13 +134,13 @@ input.dark-mode {
   text-align: center;
 }
 
-.page-title.dark-mode {
+/* .page-title.dark-mode {
   background-color: rgb(7, 32, 34);
 }
 
 .button.dark-mode{
 color: white;
-}
+} */
 
 .btn-input {
   position: absolute;
@@ -270,5 +267,5 @@ font-size: 23px;
 }
 
 .nav__bg {
-  background-color: rgba(255, 255, 255, 0.404);
+  background-color: transparent;
 }

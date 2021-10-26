@@ -9,7 +9,7 @@
     <div class=" collapse navbar-collapse d-flex justify-content-between align-items-center"
       id="navbarSupportedContent">
 
-      <ul class="navbar-nav  d-flex align-items-center">
+      <ul class="navbar-nav d-flex align-items-center">
         <li class="nav-item mt-1">
           <a routerLink="/home">
             <img src="https://cdn.discordapp.com/attachments/892048100582109274/898737626750783498/logo_gaia.png"
@@ -18,7 +18,7 @@
         </li>
       </ul>
 
-      <ul class="navbar-nav mt-3 mb-0 d-flex align-items-center">
+      <ul class="navbar-nav mt-3 mb-0 d-flex align-items-center ">
 
         <!-- <lord-icon trigger="hover" src="/my-icon.json"></lord-icon> -->
 
@@ -48,7 +48,7 @@
         <div class="d-flex jse">
           <!-- Carrinho -->
 
-          <button class="mr-3 btn navbtn button1 ">
+          <button class="mr-3 btn navbtn button1" *ngIf="isLogged">
             <i class="uil uil-user-circle"></i>
           </button>
 
@@ -66,7 +66,7 @@
             data-bs-target="#cadastro">CADASTRO</button>
         </div>
 
-        <app-teste></app-teste>
+        <!-- <app-teste></app-teste> -->
       </ul>
     </div>
 
