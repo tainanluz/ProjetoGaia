@@ -9,6 +9,9 @@ import { AuthService } from '../service/auth.service';
 import { CarrinhoService } from '../service/carrinho.service';
 import { CategoriasService } from '../service/categorias.service';
 import { ProdutosService } from '../service/produtos.service';
+import Swal from 'sweetalert2'
+
+
 
 @Component({
   selector: 'app-home',
@@ -77,6 +80,23 @@ export class HomeComponent implements OnInit {
   adicionarCarrinho(produtos: Produtos, quantidade:number):void{
     this.itemCarrinho={produtos, quantidade}
     this.carrinhoService.adicionarItem(this.itemCarrinho)
+
+    const Toast = Swal.mixin({
+      toast: true,
+      position: 'top-end',
+      showConfirmButton: false,
+      timer: 3000,
+      timerProgressBar: true,
+      didOpen: (toast) => {
+        toast.addEventListener('mouseenter', Swal.stopTimer)
+        toast.addEventListener('mouseleave', Swal.resumeTimer)
+      }
+    })
+    
+    Toast.fire({
+      icon: 'success',
+      title: 'Produto adicionado'
+    })
   }
 
   // removerProduto(productId:number,quantidade:number):void{
