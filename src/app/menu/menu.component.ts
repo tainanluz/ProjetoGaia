@@ -90,11 +90,12 @@ export class MenuComponent implements OnInit {
       localStorage.setItem('token', this.usuarioLogin.token)
       environment.nome = this.usuarioLogin.nome
       environment.idUsuario = this.usuarioLogin.idUsuario
-
+      
+      window.location.reload();
       this.router.navigate(['/home'])
       this.findAllCategorias()
       this.findAllProduto()
-      window.location.reload();
+      
 
     }, erro => {
       if (erro.status == 400) {
@@ -105,8 +106,8 @@ export class MenuComponent implements OnInit {
 
   logout(): void {
     this.authService.logout()
-    this.router.navigate(['/home']);
     window.location.reload();
+    this.router.navigate(['/home']);
   }
 
   findAllCarrinho() {
