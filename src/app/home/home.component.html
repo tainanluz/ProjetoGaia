@@ -91,13 +91,13 @@
                                 <!-- <p class="card-text mt-2 tbold">{{produtos.idProduto}}</p> -->
                                 <p class="card-text mt-0 mb-0 tnormal card__categ">
                                     {{produtos.categoriaRelacionada.nomeDaCategoria}}</p>
-                                <p class="card-text mt-2 tlight card__desc">{{produtos.descricao}}</p>
+                                <!-- <p class="card-text mt-2 tlight card__desc">{{produtos.descricao}}</p> -->
                             </div>
                         </div>
 
 
 
-                        <div class="EndButton col-12 d-flex mt-10 hh">
+                        <div class="EndButton col-12 d-flex hh">
                             <div class="d-flex btn btn__preco prec mt-0 EndButton" routerLink="/{{produtos.nome}}">
                                 {{(produtos.preco*0.7).toFixed(2) | currency}}
                                 <div class="desc btn mb-0 prec">
