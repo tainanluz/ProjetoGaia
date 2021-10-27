@@ -95,6 +95,7 @@ export class MenuComponent implements OnInit {
       this.findAllCategorias()
       this.findAllProduto()
       window.location.reload();
+
     }, erro => {
       if (erro.status == 400) {
         alert('Usuário ou senha estão incorretos!');
@@ -105,7 +106,7 @@ export class MenuComponent implements OnInit {
   logout(): void {
     this.authService.logout()
     this.router.navigate(['/home']);
-    this.ngOnInit();
+    window.location.reload();
   }
 
   findAllCarrinho() {
