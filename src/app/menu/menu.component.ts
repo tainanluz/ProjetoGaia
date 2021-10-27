@@ -92,10 +92,9 @@ export class MenuComponent implements OnInit {
       environment.idUsuario = this.usuarioLogin.idUsuario
 
       this.router.navigate(['/home'])
-      this.ngOnInit()
       this.findAllCategorias()
       this.findAllProduto()
-      
+      window.location.reload();
     }, erro => {
       if (erro.status == 400) {
         alert('Usuário ou senha estão incorretos!');
