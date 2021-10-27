@@ -18,7 +18,6 @@ import { ProdutosDeleteComponent } from './delete/produtos-delete/produtos-delet
 import { ProdutosPutComponent } from './edit/produtos-put/produtos-put.component';
 import { Cadastrov2Component } from './cadastrov2/cadastrov2.component';
 import { Loginv2Component } from './loginv2/loginv2.component';
-import { CarrinhoComponent } from './carrinho/carrinho.component';
 import { ProdutoComponent } from './produto/produto.component';
 import { registerLocaleData } from '@angular/common';
 import localePt from '@angular/common/locales/pt';
@@ -51,7 +50,6 @@ registerLocaleData(localePt);
     ProdutosPutComponent,
     Cadastrov2Component,
     Loginv2Component,
-    CarrinhoComponent,
     ProdutoComponent,
     Aboutus2Component,
     TesteComponent,

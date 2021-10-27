@@ -233,23 +233,23 @@
                       <table class="table table-hover">
                         <thead>
                           <tr>
-                            <th scope="col">Produto:</th>
+                            <th scope="col-md-3">Produto:</th>
 
-                            <th scope="col" class="text-right">Quantidade:</th>
+                            <th scope="col-md-3" class="text-right">Quantidade:</th>
 
-                            <th scope="col" class="text-right">Preço:</th>
+                            <th scope="col-md-3" class="text-right">Preço:</th>
                           </tr>
                         </thead>
                         <tbody>
                           <tr>
                             <td class="text-start">{{items.produtos.nome}}</td>
-                            <td class="text-start">
-                              <button class="btn-primary circle-button" (click)="diminuirqtd(items)"><i class=" uil uil-minus-circle"></i></button>
+                            <td class="text-start col-md-3">
+                              <button class=" btn-primary circle-button" (click)="diminuirqtd(items)"><i class=" uil uil-minus-circle"></i></button>
                               x{{items.quantidade}}
                               <button class="btn-primary circle-button text-start" (click)="adicionarItem(items)"><i class="text-center uil uil-plus-circle"></i></button>
                             </td>
-                            <td id="total" class="text-start">R${{(items.produtos.preco)*(items.quantidade)}}</td>
-                            <td class="justify-content-end">
+                            <td id="total" class="text-start col-md-3">R${{(items.produtos.preco)*(items.quantidade)}}</td>
+                            <td class="justify-content-end col-md-3">
                               <Button class="btn btn-danger mrButton"
                                 (click)="removerAll(items.produtos)">Remover</Button>
                             </td>
@@ -292,7 +292,7 @@
             Conta</button>
           <button class="btn mrButton btn-submit mrb" *ngIf="!isLogged" data-bs-toggle="modal"
             data-bs-target="#login">Entrar</button>
-          <button class="btn btn-submit mrButton w-50 h-90" *ngIf="isLogged" onclick='finalizar()' id="confirmar-compra"><i class="uil uil-coins"></i>Finalizar Pedido <i class="uil uil-coins"></i>
+          <button class="btn btn-submit mrButton w-50 h-90" data-bs-dismiss="modal" *ngIf="isLogged" (click)='finalizar()' id="confirmar-compra"><i class="uil uil-coins"></i>Finalizar Pedido <i class="uil uil-coins"></i>
             <!-- < href="index.html">>Finalizar Pedido</> -->
           </button>
         </div>
