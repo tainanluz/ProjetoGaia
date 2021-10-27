@@ -68,6 +68,7 @@ export class CategoriaDeleteComponent implements OnInit {
       if (result.isConfirmed) {
         this.categoriaService.deleteCategoria(this.idCategoria).subscribe(() => {
           console.log("Categoria: " + JSON.stringify(this.categorias))
+          window.location.reload();
           // alert('Tema apagado com sucesso!')
          
         })

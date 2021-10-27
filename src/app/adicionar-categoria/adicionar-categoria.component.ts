@@ -71,6 +71,7 @@ export class AdicionarCategoriaComponent implements OnInit {
       this.categorias = resp
       // this.router.navigate(['/home'])
       // alert('Categoria adicionada com sucesso')
+      this.findAllCategorias();
     })
     const Toast = Swal.mixin({
       toast: true,
@@ -88,7 +89,7 @@ export class AdicionarCategoriaComponent implements OnInit {
       icon: 'success',
       title: 'Categoria adicionada com sucesso'
     })
-
+  
   }
 
   AdicionarProduto() {
@@ -98,7 +99,8 @@ export class AdicionarCategoriaComponent implements OnInit {
     this.produtos.categoriaRelacionada = this.categorias
     console.log("produto " + JSON.stringify(this.produtos))
     this.produtoService.postProduto(this.produtos).subscribe((resp: Produtos) => {
-      this.produtos = resp
+      this.produtos = resp;
+      this.findAllProduto()
       // alert('Produto adicionado com sucesso')
     })
 
