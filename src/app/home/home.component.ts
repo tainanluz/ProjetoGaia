@@ -72,11 +72,13 @@ export class HomeComponent implements OnInit {
       this.categorias = resp
     })
   }
+  
   findAllProduto() {
     this.produtosService.getAllProduto().subscribe((resp: Produtos[]) => {
       this.listaProdutos = resp
     })
   }
+
   adicionarCarrinho(produtos: Produtos, quantidade: number): void {
     this.itemCarrinho = { produtos, quantidade }
     this.carrinhoService.adicionarItem(this.itemCarrinho)

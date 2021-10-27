@@ -90,7 +90,7 @@ margin-top: 65px;
   z-index: 999;
   opacity: 0.5;
   bottom: 10px;
-  animation: animate 4s linear infinite !important;/*Animação das ondas*/
+  animation: animatePos 4s linear infinite !important;/*Animação das ondas*/
 }
 
 .wave#wave3 {
@@ -104,7 +104,7 @@ margin-top: 65px;
   z-index: 999;
   opacity: 0.7;
   bottom: 20px;
-  animation: animate 3s linear infinite;/*Animação das ondas*/
+  animation: animatePos 3s linear infinite;/*Animação das ondas*/
 }
 
 @keyframes animateWaves { /*Posição da animação*/

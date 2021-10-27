@@ -42,7 +42,7 @@
                         </div>
                     </div>
 
-                    <div class="faixa ">
+                    <div class="faixa" *ngFor="let item of listaProdutos">
                         <i>
                             <div class="prod_nome tbold text-center">{{produtos.nome}}</div>
                             <p class="prod_cat tbold text-center">{{produtos.categoriaRelacionada.nomeDaCategoria}}
@@ -217,6 +217,4 @@
         </div>
     </div>
 </div>
-
-
 <app-footer></app-footer>

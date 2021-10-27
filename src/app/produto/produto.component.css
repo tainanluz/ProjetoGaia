@@ -225,7 +225,7 @@ del{
               0 1px rgba(255,255,255,0.8);
   transform: scaleX(0);
   transform-origin: left;
-  animation: animate 1s cubic-bezier(1,0,0.5,1) forwards;
+  animation: ecobar 1s cubic-bezier(1,0,0.5,1) forwards;
 }
 @keyframes ecobar {
     100% {
@@ -241,7 +241,7 @@ del{
   /* opacity: 0; */
   /* animation: showText2 0.5s 1.5s linear forwards; */
   transform-origin: left;
-  animation: animate 1s 1s cubic-bezier(1,0,0.5,1) forwards;
+  animation: ecobar 1s 1s cubic-bezier(1,0,0.5,1) forwards;
 }
 
 

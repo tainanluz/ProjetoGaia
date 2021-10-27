@@ -35,7 +35,14 @@ export class ProdutoComponent implements OnInit {
     params.subscribe(urlParams => {
       this.findByIdProduto(urlParams.id);
       console.log(urlParams.id);
+      this.findAllProduto();
     });
+  }
+
+  findAllProduto() {
+    this.produtosService.getAllProduto().subscribe((resp: Produtos[]) => {
+      this.listaProdutos = resp
+    })
   }
 
   findAllCarrinho() {
