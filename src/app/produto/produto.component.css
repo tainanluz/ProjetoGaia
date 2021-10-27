@@ -217,17 +217,17 @@ del{
   width: 100%;
   background: #f0f0f0;
   position: relative;
-  opacity: 0;
+  /* opacity: 0; */
     animation: showText 0.5s 1s linear forwards;
   
   border-radius: 10px;
   box-shadow: inset 0 1px 1px rgba(0,0,0,0.05),
               0 1px rgba(255,255,255,0.8);
-  /* transform: scaleX(0);
+  transform: scaleX(0);
   transform-origin: left;
-  animation: animate 1s cubic-bezier(1,0,0.5,1) forwards; */
+  animation: animate 1s cubic-bezier(1,0,0.5,1) forwards;
 }
-@keyframes animate {
+@keyframes ecobar {
     100% {
         transform: scaleX(1);
     }
@@ -236,11 +236,12 @@ del{
     height: 100%;
   position: absolute;
   border-radius: 10px;
-  
-  opacity: 0;
-  animation: showText2 0.5s 1.5s linear forwards;
-  /* transform-origin: left;
-  animation: animate 1s 1s cubic-bezier(1,0,0.5,1) forwards; */
+  transform: scaleX(0);
+
+  /* opacity: 0; */
+  /* animation: showText2 0.5s 1.5s linear forwards; */
+  transform-origin: left;
+  animation: animate 1s 1s cubic-bezier(1,0,0.5,1) forwards;
 }
 
 
