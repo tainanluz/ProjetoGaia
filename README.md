@@ -29,7 +29,7 @@
 
 - <h5> <a href="https://projetogaia.netlify.app/home" target="_blank">Site do Gaia</a></h5>
 
-- <h5> <a href="https://github.com/leo-nardow/ProjetoGaia-BackEnd" target="_blank">Repositorio com o BackEnd e
+- <h5> <a href="https://github.com/leo-nardow/ProjetoGaia-BackEnd" target="_blank">Repositorio com o Back-end e
                 Arquivos extras</a></h5>
 
 <br>
