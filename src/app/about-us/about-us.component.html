@@ -1,0 +1,141 @@
+<div class="bg-geral">
+    <app-menu></app-menu>
+    <!--Off Canvas-->
+    <div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1"
+        id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasScrollingLabel">Categorias de produtos:</h5>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+
+        <div class="offcanvas-body">
+            <div>
+                <div class="row mt-3 mb-5 d-flex justify-content-center">
+                    <div class="col-md-12">
+                        <table class="table table-hover">
+                            <tbody>
+                                <tr *ngFor='let categorias of listaCategorias'>
+                                    <a routerLink="/{{categorias.nomeDaCategoria}}">
+                                        <td class="btn">{{categorias.nomeDaCategoria}}</td>
+                                    </a>
+                                </tr>
+                                <tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="mt-20">
+                        <p class="btn btn-primary" routerLink="/adicionarCategoria">Configurações</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Off Canvas-->
+    <div class="container-fluid p-o">
+        <div class="row">
+            <div class="col-12 jumbotron jumbotron-fluid color2">
+                <div class="container">
+                    <h1 class="display-4 stlh1">Conheça aqui o projeto Gaia</h1>
+                    <p class="lead">Um projeto de e-commerce com a ideia de trazer a dinâmica da ecologia para o
+                        cliente, e também
+                        oferecer créditos bônus para compras com nossos parceiros. </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row d-flex justify-content-center">
+            <div class="col-12 jumbotron jumbotron-fluid color2">
+                <div class="container">
+                    <h3 class="display-4">Nosso time de desenvolvedores</h3>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <!--Card1-->
+        <div class="about-us">
+            <div class="card mrButton">
+                <div class="content">
+                    <div class="imgText">
+                        <div class="imgBx">
+                            <img
+                                src="https://cdn.discordapp.com/attachments/892048100582109274/892829487971061780/Doug4k_Circle.png">
+                        </div>
+                        <h3>Douglas Lopes </h3>
+                        <h4>Full-stack Java Junior</h4>
+                    </div>
+                    <ul class="sci">
+                        <li><a href="#"><i class="fab fa-facebook-square" aria-hidden="true"></i></a></li>
+                        <li><a href="#"><i class="fab fa-instagram" aria-hidden="true"></i></a></li>
+                        <li><a href="#"><i class="fab fa-linkedin-square" aria-hidden="true"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <!--Card1-->
+
+            <!--Card2-->
+            <div class="card mrButton">
+                <div class="content">
+                    <div class="imgText">
+                        <div class="imgBx">
+                            <img
+                                src="https://cdn.discordapp.com/attachments/892048100582109274/892795187502383155/Ju_circle.png">
+                        </div>
+                        <h3>Julianna Caravetto</h3>
+                        <h4>Full-stack Java Junior</h4>
+                    </div>
+                    <ul class="sci">
+                        <li><a href="#"><i class="fab fa-facebook-square" aria-hidden="true"></i></a></li>
+                        <li><a href="#"><i class="fab fa-instagram" aria-hidden="true"></i></a></li>
+                        <li><a href="#"><i class="fab fa-linkedin-square" aria-hidden="true"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <!--Card2-->
+
+            <!--Card3-->
+            <div class="card mrButton">
+                <div class="content">
+                    <div class="imgText">
+                        <div class="imgBx">
+                            <img
+                                src="https://cdn.discordapp.com/attachments/892048100582109274/892795189603749928/Leo_circle.png">
+                        </div>
+                        <h3>Leonardo Almeida</h3>
+                        <h4>Full-stack Java Junior</h4>
+                    </div>
+                    <ul class="sci">
+                        <li><a href="#"><i class="fab fa-facebook-square" aria-hidden="true"></i></a></li>
+                        <li><a href="#"><i class="fab fa-instagram" aria-hidden="true"></i></a></li>
+                        <li><a href="#"><i class="fab fa-linkedin-square" aria-hidden="true"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <!--Card3-->
+
+            <!--Card4-->
+            <div class="card mrButton">
+                <div class="content">
+                    <div class="imgText">
+                        <div class="imgBx">
+                            <img
+                                src="https://cdn.discordapp.com/attachments/892048100582109274/892795193387008000/Tai_circle.png">
+                        </div>
+                        <h3>Tainan Luz</h3>
+                        <h4>Full-stack Java Junior</h4>
+                    </div>
+                    <ul class="sci">
+                        <li><a href="#"><i class="fab fa-facebook-square" aria-hidden="true"></i></a></li>
+                        <li><a href="#"><i class="fab fa-instagram" aria-hidden="true"></i></a></li>
+                        <li><a href="#"><i class="fab fa-linkedin-square" aria-hidden="true"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            <!--Card4-->
+        </div>
+    </div>
+    <div class="margin10">
+        <app-footer></app-footer>
+    </div>
+</div>

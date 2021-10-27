@@ -1,0 +1,180 @@
+@import url('https://fonts.googleapis.com/css2?family=Laila:wght@300;400;500;600&display=swap');
+
+@font-face {
+  font-family: 'Trueno-Round-Bold';
+  src:url('../../assets/fonts/Trueno-Round-Bold.ttf.woff') format('woff'),
+      url('../../assets/fonts/Trueno-Round-Bold.ttf.svg') format('svg'),
+      url('../../assets/fonts/Trueno-Round-Bold.ttf.eot'),
+      url('../../assets/fonts/Trueno-Round-Bold.ttf.eot?#iefix') format('embedded-opentype'); 
+  font-weight: normal;
+  font-style: normal;
+}
+h1 { 
+  font-family: 'Trueno-Round-Bold';
+} 
+
+label{
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 700;
+  color: #2b2828c4;
+  margin-left: 5px;
+}
+
+label.dark {
+  color: rgb(193, 215, 213);
+}
+
+.lb{
+  margin-top: 1.2em;
+}
+
+.container-create-account {
+  padding: 16px;
+  background-color: whitesmoke;
+  font-size: 14px;
+  color: #979797;
+}
+
+.container-create-account.dark {
+    background-color: rgb(109, 42, 34);
+    color: rgb(160, 55, 44);
+}
+
+.bttn{
+  justify-content: center;
+}
+
+.form-create-account {
+  background-color: #fff;
+  padding: 16px;
+  max-width: 500px;
+  margin: 0 auto;
+  border-radius: 15px;
+}
+
+
+.form-create-account.dark {
+  background-color: rgb(195, 142, 111);
+}
+
+
+input {
+  border-radius: 8px;
+  background-color: #F4F8F7;
+}
+
+
+input.dark {
+  background-color: rgb(160, 55, 44);
+}
+
+.bgimg{
+  background-image: url('https://cdn.discordapp.com/attachments/892048100582109274/894645545132519454/img3.jpg');
+  height: 100vh;
+  background-repeat: round;
+    
+}
+
+
+.icon-input {
+  position: absolute;
+  top: 41px;
+  left: 23px;
+}
+.fa-arrow-left{
+  font-size: 16px;
+}
+
+.mrb{
+  margin-top: 5px;
+}
+.page-title {
+  font-weight: 700;
+  font-size: 45px;
+  color: #3AADA5;
+  text-align: center;
+}
+
+
+.page-title.dark {
+  color: rgb(7, 32, 34);
+}
+
+.btn-submit {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 700;
+  width: calc(100% - 50px);
+  border-radius: 20px;
+  background-color: #3aada5ea;
+  border: #3AADA5;
+  font-size: 16px;
+  padding: 10px 6px;
+  text-transform: uppercase;
+  transition: 0.3s;
+}
+
+.btn-submit.dark {
+  background-color: rgb(7, 32, 34);
+  border: rgb(16, 24, 24);
+}
+
+.btn-submit:hover{
+  background-color:#3AADA5;
+}
+
+.btn-submit:hover.dark {
+  background-color: rgb(16, 24, 24);
+  border: rgb(7, 32, 34);
+}
+
+.btn-input {
+  position: absolute;
+  color: #979797;
+  border-radius: 50%;
+  font-size: 16px;
+  height: 20px;
+  width: 20px;
+  padding: 0;
+  top: 38px;
+  right: 20px;
+}
+
+.btn-input.dark {
+  color: rgb(109, 42, 34);
+}
+
+.btn-back-page {
+  border-radius: 50px;
+  font-size: 16px;
+  padding: 9px 13px;
+}
+
+
+@media (min-width: 576px) {
+
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  .container-create-account {
+    padding: 32px 16px 80px;
+  }
+
+  .form-create-account {
+    padding: 32px;
+  }
+
+  .btn-submit {
+    width: 200px;
+  }
+}
+
+ /* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+
+}
+
+ /* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+
+}

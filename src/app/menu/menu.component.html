@@ -1,0 +1,302 @@
+<nav class="navbar navbar-expand-lg navbar-dark nav__bg">
+  <div class="container-fluid">
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class=" collapse navbar-collapse d-flex justify-content-between align-items-center"
+      id="navbarSupportedContent">
+
+      <ul class="navbar-nav d-flex align-items-center">
+        <li class="nav-item mt-1">
+          <a routerLink="/home">
+            <img src="https://cdn.discordapp.com/attachments/892048100582109274/898737626750783498/logo_gaia.png"
+              alt="Logo do site" width="200px" height="100px" class="img-fluid">
+          </a>
+        </li>
+      </ul>
+
+      <ul class="navbar-nav mt-3 mb-0 d-flex align-items-center ">
+
+        <!-- <lord-icon trigger="hover" src="/my-icon.json"></lord-icon> -->
+
+        <div>
+          <button class="mr-3 btn navbtn button1 d-flex align-items-center" routerLink="/home"><i
+              class="uil uil-estate"></i>HOME</button>
+        </div>
+        <div>
+          <button class="mr-3 btn navbtn button1 d-flex align-items-center" type="button"
+            data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling"><i
+              class="uil uil-list-ul"></i>CATEGORIAS</button>
+        </div>
+        <div>
+          <button class="mr-3 btn navbtn button1" routerLink="/aboutus2"><i
+              class="uil uil-trees"></i>SOBRE NÓS</button>
+        </div>
+        <!-- <div>
+            <button class="mr-3 btn bg-transparent tbold button1" routerLink="/aboutUs">SOBRE</button>
+          </div> -->
+        <div>
+          <button class="mr-3 btn navbtn button1" routerLink="/contact"><i class="uil uil-envelope"></i>CONTATO</button>
+        </div> 
+
+        <div>
+          <button class="mr-3 btn navbtn button1" routerLink="/searchProduto"><i class="uil uil-shovel"></i>PRODUTOS</button>
+        </div> 
+
+      </ul>
+
+      <ul class="navbar-nav mt-3 mb-0 d-flex align-items-center">
+        <div class="d-flex jse">
+          <!-- Carrinho -->
+
+          <!-- <button class="mr-3 btn navbtn button1" *ngIf="isLogged">
+            <i class="uil uil-user-circle"></i>
+          </button> -->
+
+          <button class="mr-3 btn navbtn button1 " data-bs-toggle="modal" data-bs-target="#carrinho"
+            (click)='teste()'><i class="uil uil-shopping-cart"></i></button>
+
+
+          <button class="mr-3 btn navbtn button1" *ngIf="!isLogged" data-bs-toggle="modal"
+            data-bs-target="#login">LOGIN</button>
+
+          <button class="mr-3 btn navbtn button1 d-flex align-items-center" *ngIf="isLogged"
+            (click)="logout()">SAIR <i class="uil uil-signout"></i></button>
+
+          <button class="mr-3 btn  navbtn button1" *ngIf="!isLogged" data-bs-toggle="modal"
+            data-bs-target="#cadastro">CADASTRO</button>
+        </div>
+
+        <!-- <app-teste></app-teste> -->
+      </ul>
+    </div>
+
+  </div>
+
+</nav>
+
+
+<div class="modal fade" id="cadastro" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered form-create-account">
+    <div class="modal-content ">
+      <h1 class="modal-title mt-4 page-title mb-5 op">Criar Conta</h1>
+      <div class="modal-body">
+        <div class="row op">
+          <div class=" col-12 col-md-6 ">
+            <label for="nome">NOME</label>
+            <input [(ngModel)]='usuario.nome' class="form-control" type="text" name="nome" id="nome" placeholder="">
+
+          </div>
+
+          <div class=" col-12 col-md-6">
+            <label for="sobrenome">SOBRENOME</label>
+            <input class="form-control" type="text" name="sobrenome" id="sobrenome" placeholder="">
+
+          </div>
+
+          <div class="lb input-create-account col-12 col-md-12 col-lg-6">
+            <label for="floatingEmail">EMAIL</label>
+            <input type="email" class="form-control" [(ngModel)]='usuario.email' id="floatingEmail" placeholder="">
+
+
+          </div>
+
+          <div class="form-group input-create-account password col-12 col-md-6 col-lg-3">
+            <label class="lb" for="senha">SENHA</label>
+            <input (input)='confirmarSenha($event)' class="form-control" type="password" name="senha" id="senha"
+              placeholder="">
+
+          </div>
+
+          <div class="form-group input-create-account password col-12 col-md-6 col-lg-3">
+            <label class="lb" for="confirmarSenha">REPETIR SENHA</label>
+            <input [(ngModel)]='usuario.senha' class="form-control" type="password" name="confirmarSenha"
+              id="confirmarSenha" placeholder="">
+          </div>
+
+          <div class="form-group col-md-4">
+            <label class="lb" for="cpf">CPF</label>
+            <input type="text" class="form-control" id="cpf" mask="000.000.000-00" aria-describedby="field-cpf" required
+              placeholder="___.___.___-___">
+          </div>
+
+          <div class="form-group col-md-4">
+            <label class="lb" for="cpf">TELEFONE</label>
+            <input type="text" class="form-control" id="tel" aria-describedby="field-tel" placeholder="(__)_____-___">
+          </div>
+
+          <div class="form-group col-md-4">
+            <label class="lb" for="cpf">DATA DE NASCIMENTO</label>
+            <input type="date" class="form-control" id="date" aria-describedby="" placeholder="dd/mm/aaaa">
+          </div>
+
+          <fieldset class="form-group col-md-6">
+            <label class="col-form-label col-12 p-0 mb-2 lb">GÊNERO</label>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="gender" id="masculino" value="MALE">
+              <label class="form-check-label" for="masculino">MASCULINO</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="gender" id="feminino" value="FEMALE">
+              <label class="form-check-label" for="feminino">FEMININO</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="gender" id="outro" value="OUTRO">
+              <label class="form-check-label" for="outro">OUTRO</label>
+            </div>
+          </fieldset>
+
+
+
+        </div>
+
+        <div class="modal-footer">
+          <div class="col-md-6 text-right mt-3 d-flex bttn">
+            <button type="submit" data-bs-dismiss="modal" class="btn btn-secondary btn-back-page mrButton "
+              routerLink='/home'><i class="fas fa-arrow-left"></i></button>
+            <button type="submit" data-bs-dismiss="modal" class="btn btn-primary btn-submit mrb"
+              (click)='cadastrar()'>Criar Conta</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="modal fade" id="login" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered form-create-account">
+    <div class="modal-content ">
+      <h1 class="modal-title mt-4 page-title mb-5 op">Login</h1>
+      <div class="modal-body">
+        <div class="row op d-flex justify-content-center">
+
+          <div class="col-md-9">
+            <div class="form-floating input-create-account">
+              <input type="email" class="form-control" [(ngModel)]='usuarioLogin.email' id="floatingEmail"
+                placeholder=" ">
+              <label for="floatingEmail">EMAIL</label>
+            </div>
+
+            <div class="lb form-floating input-create-account">
+              <input [(ngModel)]='usuarioLogin.senha' class="form-control" type="password" name="senha"
+                id="floatingPassword" placeholder=" ">
+              <label for="floatingPassword">SENHA</label>
+            </div>
+
+
+          </div>
+
+        </div>
+
+
+
+      </div>
+
+      <div class="modal-footer">
+        <div class="col-md-6 text-right mt-3 d-flex bttn">
+          <button type="submit" data-bs-dismiss="modal" class="btn btn-secondary btn-back-page mrButton "
+            routerLink='/home'><i class="fas fa-arrow-left"></i></button>
+          <button type="submit" data-bs-dismiss="modal" class="btn mrButton btn-primary btn-submit mrb"
+            data-bs-toggle="modal" data-bs-target="#cadastro">Criar Conta</button>
+          <button type="submit" data-bs-dismiss="modal" class="btn btn-primary btn-submit mrb"
+            (click)='login()'>Entrar</button>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="modal" id="carrinho" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered form-create-account">
+    <div class="modal-content ">
+      <h1 class="modal-title mt-4 page-title mb-5 op">Carrinho</h1>
+      <div class="modal-body">
+        <div class="row op d-flex justify-content-center">
+
+          <div class="col-md-12">
+            <div id="lista-detalhes">
+
+              <div id="lista-carrinho">
+                <!-- {{listaCarrinho[0] | json}} -->
+                <div *ngFor="let items of listaCarrinho" id="titulo">
+                  <div class="row mt-5 mb-5">
+                    <div class="col-md-2 card tamanho">
+                      <img src="{{items.produtos.link}}" class="imgProd" alt="{{items.produtos.nome}}">
+                    </div>
+                    <div class="col-md-10">
+                      <table class="table table-hover">
+                        <thead>
+                          <tr>
+                            <th scope="col">Produto:</th>
+
+                            <th scope="col" class="text-right">Quantidade:</th>
+
+                            <th scope="col" class="text-right">Preço:</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td class="text-start">{{items.produtos.nome}}</td>
+                            <td class="text-start">
+                              <button class="btn-primary circle-button" (click)="diminuirqtd(items)"><i class=" uil uil-minus-circle"></i></button>
+                              x{{items.quantidade}}
+                              <button class="btn-primary circle-button text-start" (click)="adicionarItem(items)"><i class="text-center uil uil-plus-circle"></i></button>
+                            </td>
+                            <td id="total" class="text-start">R${{(items.produtos.preco)*(items.quantidade)}}</td>
+                            <td class="justify-content-end">
+                              <Button class="btn btn-danger mrButton"
+                                (click)="removerAll(items.produtos)">Remover</Button>
+                            </td>
+                          </tr>
+                          <tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                  <!--Não consegui alinhar o texto da composteira-->
+                  <!-- <p class="card-text mt-2 tbold">{{produtos.idProduto}}</p> -->
+
+
+                  <!-- <div class="btn btn-success" (click)='teste()'>Preço</div>
+                  <div>Quantidade</div>
+                  <div>Subtotal</div>
+                  <div></div> -->
+                </div>
+              </div>
+
+              <div id="finalizacao-compra">
+                <div id="tela-total">
+                  <div id="valor-total">
+                    <span id="texto-total" class="navbtn">Total:</span>
+                    <span id="total" class="txt-total"> R${{getTotal().toFixed(2)}} </span>
+                  </div>
+                  <!-- <div class="btn btn-danger" (click)='teste2()'>Mostrar produto</div> -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <div class="col-md-8 text-right mt-3 d-flex bttn">
+          <button class="btn btn-secondary btn-back-page mrButton w-10" data-bs-dismiss="modal"> <i class="fas fa-arrow-left"> </i></button>
+          <button *ngIf="!isLogged" type="submit" data-bs-dismiss="modal" class="btn mrButton btn-submit mrb"
+            data-bs-toggle="modal" data-bs-target="#cadastro">Criar
+            Conta</button>
+          <button class="btn mrButton btn-submit mrb" *ngIf="!isLogged" data-bs-toggle="modal"
+            data-bs-target="#login">Entrar</button>
+          <button class="btn btn-submit mrButton w-50 h-90" *ngIf="isLogged" onclick='finalizar()' id="confirmar-compra"><i class="uil uil-coins"></i>Finalizar Pedido <i class="uil uil-coins"></i>
+            <!-- < href="index.html">>Finalizar Pedido</> -->
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

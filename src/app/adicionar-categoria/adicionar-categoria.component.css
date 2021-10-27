@@ -1,0 +1,192 @@
+.quebra{
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+
+.imgProd{
+    position: relative;
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 10%;
+    margin-bottom: 15px;
+}
+
+.EndButton{
+    align-content: center; /*Alinhando o botão de preço*/
+    justify-content: center;
+}
+
+.EndButton{
+    align-content: center; /*Alinhando o botão de preço*/
+    justify-content: center;
+}
+
+
+.p .card-text{ 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+}
+
+.edit{
+    background:rgb(red)!important ; 
+}
+
+.edit.dark {
+    color: 0px -15px 3em rgb(160, 55, 44);
+}
+
+.card{ /*Produtos individualmente*/
+    background: rgba(233, 205, 163, 0.733);
+    display: flex;  
+    flex-direction: row;
+    flex-wrap: wrap;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.25);
+    border-radius: 16px;
+    align-content: center; /*alinhando os cards*/
+    justify-content: center;
+    margin: 15px; /*Margem para não colar os cards internos no card que os contém*/
+    transition: 0.5s;
+}
+
+.card.dark {
+    background: rgb(109, 42, 34);
+    box-shadow: 0 15px 25px rgb(195, 142, 111);
+}
+
+.card:hover{ /*Produtos individualmente*/
+    background: rgba(233, 197, 163, 0.897);
+    display: flex;  
+    flex-direction: row;
+    flex-wrap: wrap;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.25);
+    border-radius: 16px;
+    align-content: center; /*alinhando os cards*/
+    justify-content: center;
+    margin: 15px; /*Margem para não colar os cards internos no card que os contém*/
+}
+
+.card.dark:hover {
+    background: rgba(109, 42, 34, 0.733);
+}
+
+.tdTamanho{
+    height: inherit;
+}
+
+td > p {
+    font-size: 18px;
+}
+
+.adc_cat{
+    color: #555555;
+}
+
+.uil{
+    font-size: 24px;
+}
+
+th{
+    font-size: 24px;
+}
+
+.btn__delete{
+    border: solid;
+    border-color: #E63F31;
+    background-color: #fff;
+    border-radius: 50%;
+    color: #E63F31;
+}
+
+.btn__delete:hover{
+    transition: 0.5s !important;
+    background-color: #E63F31;
+    color: #fff;
+}
+
+.btn__edit{
+    border: solid;
+    border-color: #005A70;
+    background-color: #fff;
+    border-radius: 50%;
+    color: #005A70;
+}
+
+.btn__edit:hover{
+    transition: 0.5s !important;
+    background-color: #005A70;
+    color: #fff;
+}
+
+
+.btn__delete2{
+    border: solid;
+    border-color: #E63F31;
+    background-color: #E63F31;
+    border-radius: 50%;
+    color: #fff;
+}
+
+.btn__delete2:hover{
+    transition: 0.5s !important;
+    background-color: #fff;
+    color: #E63F31;
+}
+
+.btn__edit2{
+    border: solid;
+    border-color: #005A70;
+    background-color: #005A70;
+    border-radius: 50%;
+    color: #fff;
+}
+
+.btn__edit2:hover{
+    transition: 0.5s !important;
+    background-color: #fff;
+    color: #005A70;
+}
+
+.btn__preco{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    background-color: #32794f;
+    color: whitesmoke !important;
+}
+
+.btn__preco:active{
+    border: none;
+}
+
+.desc{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    color: whitesmoke;
+    background-color: #32794f;
+    padding: 0;
+    /* background-color: #87B474; */
+    text-decoration: none;
+    /* cursor: default !important; */
+}
+.desc:hover{
+    color: whitesmoke !important;
+}
+
+.prec{
+    cursor: default;
+}
+
+.card-title{
+    font-size: 22px;
+}
+.card__categ{
+    font-size: 14px;
+}
+
+.card__desc{
+    font-size: 16px;
+}

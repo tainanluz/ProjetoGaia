@@ -1,0 +1,37 @@
+<div class="container-fluid container-create-account body bgimg">
+    <div class="form-create-account shadow">
+        <h1 class="page-title mb-5 op">Login</h1>
+
+        <div class="row op d-flex justify-content-center">
+
+            <div class="col-md-9">
+                <div class="form-floating input-create-account">
+                    <input type="email" class="form-control" [(ngModel)]='usuarioLogin.email' id="floatingInput"
+                        placeholder=" ">
+                    <label for="floatingInput">EMAIL</label>
+                </div>
+    
+                <div class="lb form-floating input-create-account">
+                    <input [(ngModel)]='usuarioLogin.senha' class="form-control" type="password" name="senha" id="floatingPassword"
+                        placeholder=" ">
+                    <label for="floatingPassword">SENHA</label>
+                </div>
+    
+                <div class="text-right mt-5 d-flex bttn">
+                    <button type="submit" class="btn btn-secondary btn-back-page mrButton " routerLink='/home'><i
+                        class="fas fa-arrow-left"></i></button>
+                    <button type="submit" class="btn btn-primary btn-submit mrb" (click)='login()'>Entrar</button>
+                </div>
+
+                <hr class="mt-5 mb-5">
+
+                    <p class="text-center">
+                        Não tem uma conta? <a routerLink='/cadastrov2'>Crie uma aqui</a>
+                    </p>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

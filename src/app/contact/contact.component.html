@@ -1,0 +1,87 @@
+<div class="bg-geral">
+    <app-menu></app-menu>
+    <div class="row limiter">
+        <div class="container-cad wrap p-0 shadow">
+            <!-- Imagem lateral -->
+            <div class="col-7 p-0">
+                <div class="planta"
+                    style="background-image: url('https://cdn.discordapp.com/attachments/892048100582109274/892492505902383134/bg-01.jpg');">
+                </div>
+            </div>
+            <!-- Imagem lateral -->
+
+            <!-- Formulario de Contato -->
+            <div class="col-5">
+                <form class="row formulario needs-validation" novalidate>
+                    <span class="title fs-1 bg-transparent">Contato</span>
+
+                    <!-- Campo name -->
+                    <div class="row">
+                        <div class="col-12 mb-3">
+
+                            <label for="nameInput" class="form-label fs-4">Nome</label>
+
+                            <div class="form-floating mb-3">
+
+                                <input type="text" class="form-control bg-transparent" id="nameInput" placeholder="Name"
+                                    required>
+
+
+
+                                <div class="invalid-feedback">
+                                    Por favor digite seu nome
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Campo e-mail -->
+                    <div class="row">
+                        <div class="col-12 mb-3">
+                            <label for="emailAdressInput" class="form-label fs-4">E-mail</label>
+
+                            <div class="form-floating mb-3 ">
+
+                                <input type="email" class="form-control bg-transparent" id="floatingInput"
+                                    placeholder="name@example.com" required>
+
+
+
+                                <div class="invalid-feedback">
+                                    Digite seu e-mail
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Campo assunto -->
+                    <div class="row">
+                        <div class="col-12 mb-3">
+
+                            <label for="about" class="form-label fs-4">Mensagem</label>
+                            <textarea id="assunto" type="text" class="form-control bg-transparent" rows="8"
+                                required></textarea>
+                            <div class="invalid-feedback">
+                                Digite o assunto
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- BotÃ£o -->
+                    <div class="row d-flex justify-content-center">
+                        <div class="col-6 mb-3 bg-transparent ">
+
+                            <button type="submit" class="cadastro d-flex align-items-center shadow">Enviar</button>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+            <!-- Formulario de Contato -->
+        </div>
+    </div>
+    <app-footer></app-footer>
+</div>

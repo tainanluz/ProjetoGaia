@@ -1,0 +1,16 @@
+#img-bg{
+    background-image: url('https://cdn.discordapp.com/attachments/892048100582109274/894615206452412467/img2.jpg');
+
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+body{
+    background-color: #f7f7f7;
+}
+
+body.dark {
+    color: rgb(16, 24, 24);
+}

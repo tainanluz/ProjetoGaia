@@ -1,0 +1,271 @@
+@import url('https://fonts.googleapis.com/css2?family=Exo:wght@300;400;600&display=swap');
+
+.bg{
+    background-image: url('https://cdn.discordapp.com/attachments/892048100582109274/894645545132519454/img3.jpg');
+}
+
+/* .navbar{
+    display: flex !important; 
+    justify-content: center !important;
+} */
+
+
+.navbtn {
+    font-family: 'Exo', sans-serif;
+    font-weight: 600;
+    color: #222222;
+    font-size: 1.4em;    
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.uil-user-circle {
+  font-size: 50px !important;
+}
+
+.uil-shopping-cart{
+  font-size: 50px !important;
+}
+
+
+.tbold.dark-mode {
+  color: rgb(193, 215, 213);
+}
+
+
+
+.button1:hover{
+    color: rgb(236, 93, 39);
+  }
+
+.button1:hover.dark-mode {
+  color: rgb(160, 55, 44);
+}
+
+
+
+@font-face {
+  font-family: 'Trueno-Round-Bold';
+  src:url('../../assets/fonts/Trueno-Round-Bold.ttf.woff') format('woff'),
+      url('../../assets/fonts/Trueno-Round-Bold.ttf.svg') format('svg'),
+      url('../../assets/fonts/Trueno-Round-Bold.ttf.eot'),
+      url('../../assets/fonts/Trueno-Round-Bold.ttf.eot?#iefix') format('embedded-opentype'); 
+  font-weight: normal;
+  font-style: normal;
+}
+h1 { 
+  font-family: 'Trueno-Round-Bold';
+} 
+
+label{
+  font-family: 'Laila', sans-serif;
+  font-weight: 500;
+  color: #2b2828c4;
+  margin-left: 5px;
+}
+
+/* label.dark-mode {
+  color: rgb(193, 215, 213);
+} */
+
+.lb{
+  margin-top: 1.2em;
+}
+
+.container-create-account {
+  padding: 16px;
+  background-color: whitesmoke;
+  font-size: 14px;
+  color: #979797;
+}
+
+.container-create-account.dark-mode {
+  background-color: rgb(109, 42, 34);
+  color: rgb(160, 55, 44);
+}
+
+.bttn{
+  justify-content: end;
+}
+
+.form-create-account {
+  max-width: 864px;
+  margin: 0 auto;
+  border-radius: 15px;
+}
+
+input {
+  border-radius: 8px;
+  background-color: #F4F8F7;
+}
+
+
+/* input.dark-mode {
+  background-color: rgb(16, 24, 24);
+} */
+
+
+.bgimg{
+  background-image: url('https://media.discordapp.net/attachments/892048100582109274/900117258897088542/photo-1447752875215-b2761acb3c5d.jpg?width=1014&height=676');
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+
+.icon-input {
+  position: absolute;
+  top: 41px;
+  left: 23px;
+}
+.fa-arrow-left{
+  font-size: 16px;
+}
+
+
+.mrb{
+  margin-top: 5px;
+}
+.page-title {
+  font-weight: 700;
+  font-size: 45px;
+  color: #39BB8D;
+  text-align: center;
+}
+
+/* .page-title.dark-mode {
+  background-color: rgb(7, 32, 34);
+}
+
+.button.dark-mode{
+color: white;
+} */
+
+.btn-input {
+  position: absolute;
+  color: #979797;
+  border-radius: 50%;
+  font-size: 16px;
+  height: 20px;
+  width: 20px;
+  padding: 0;
+  top: 38px;
+  right: 20px;
+}
+
+.btn-input.dark-mode {
+  color: rgb(16, 24, 24);
+}
+
+.btn-back-page {
+  border-radius: 50px;
+  font-size: 16px;
+  padding: 9px 13px;
+}
+
+.password input {
+  padding-right: 25px;
+}
+
+.tamanho{
+  display: grid;
+  grid-template-rows: 40px 50px;
+}
+
+.imgProd{
+  position: inherit;
+  width: 100px;
+  height: 100px;
+  overflow: hidden;
+  border-radius: 10%;
+  margin-bottom: 15px;
+}
+
+.txt-total{
+font-size: 23px;
+}
+
+
+.btn-submit {
+  width: auto;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 700;
+  width: calc(100% - 50px);
+  border-radius: 20px;
+  background-color: #429e68d5;
+  border: #429E69;
+  font-size: 16px;
+  padding: 10px 6px;
+  text-transform: uppercase;
+  transition: 0.3s;
+  color: #f7f7f7;
+}
+
+
+.btn-submit.dark-mode {
+  background-color: rgb(7, 32, 34);
+  border: rgb(16, 24, 24);
+}
+
+.btn-submit:hover{
+  background-color:#429E69;
+}
+
+.btn-submit:hover.dark-mode {
+  background-color: rgb(16, 24, 24);
+  border: rgb(7, 32, 34);
+}
+
+.uil-plus-circle{
+  margin-left: 3px;
+  border-radius: 30px !important;
+  font-size: 20px !important;
+  color: black;
+}
+
+.uil-minus-circle{
+  margin-left: 3px;
+  border-radius: 30px !important;
+  font-size: 20px !important;
+  color: black;
+}
+
+.circle-button{
+  background-color: transparent;
+  border-color: transparent;
+}
+
+.circle-button:hover{
+  border-radius: 18px !important;
+  background-color: gray;
+}
+
+.uil-coins{
+  font-size: 23px !important
+}
+
+.uil{
+  font-size: 35px;
+  padding-right: 5px;
+}
+
+.uil-signout{
+  font-size: 35px;
+}
+
+.jsc{
+  justify-self: center;
+}
+
+.jse{
+  justify-self: end;
+}
+
+.bg-teste.dark-mode {
+  background: rgb(16, 24, 24);
+}
+
+.nav__bg {
+  background-color: transparent;
+}
