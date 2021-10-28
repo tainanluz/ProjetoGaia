@@ -29,14 +29,14 @@ export class HomeComponent implements OnInit {
   itemCarrinho: ItemCarrinho
   isLogged = false;
   listaCarrinho: ItemCarrinho[];
-  isDark:boolean = false;
+  isDark: boolean = false;
 
   constructor(
     private router: Router,
     private authService: AuthService,
     private categoriaService: CategoriasService,
     private produtosService: ProdutosService,
-    private carrinhoService: CarrinhoService   
+    private carrinhoService: CarrinhoService
 
   ) {
 
@@ -65,20 +65,22 @@ export class HomeComponent implements OnInit {
 
   getDarkMode(): boolean {
     return this.isDark = this.carrinhoService.getDarkMode();
-   }
+  }
 
   findByIdCategoria() {
     this.categoriaService.getByIdCategoria(this.idCategoria).subscribe((resp: Categorias) => {
       this.categorias = resp
     })
   }
+  
   findAllProduto() {
     this.produtosService.getAllProduto().subscribe((resp: Produtos[]) => {
       this.listaProdutos = resp
     })
   }
-  adicionarCarrinho(produtos: Produtos, quantidade:number):void{
-    this.itemCarrinho={produtos, quantidade}
+
+  adicionarCarrinho(produtos: Produtos, quantidade: number): void {
+    this.itemCarrinho = { produtos, quantidade }
     this.carrinhoService.adicionarItem(this.itemCarrinho)
 
     const Toast = Swal.mixin({
@@ -92,7 +94,7 @@ export class HomeComponent implements OnInit {
         toast.addEventListener('mouseleave', Swal.resumeTimer)
       }
     })
-    
+
     Toast.fire({
       icon: 'success',
       title: 'Produto adicionado'

@@ -150,7 +150,7 @@ align-content: space-between;
 }
 
 .card-title{
-    font-size: 22px;
+    font-size: 20px;
 }
 .card__categ{
     font-size: 14px;
@@ -162,12 +162,12 @@ align-content: space-between;
 
 .tamanho{
     display: grid;
-    grid-template-rows: 40px 100px;
+    grid-template-rows: 40px 70px;
 }
 
 .imgProd{
-    width: 200px;
-    height: 200px;
+    width: 240px;
+    height: 240px;
     border-radius: 10%;
 }
 

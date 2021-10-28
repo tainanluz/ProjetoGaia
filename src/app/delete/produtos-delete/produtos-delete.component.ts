@@ -64,6 +64,7 @@ export class ProdutosDeleteComponent implements OnInit {
       if (result.isConfirmed) {
         this.produtosService.deleteProduto(this.idProduto).subscribe(() => {
           console.log("Produto: " + JSON.stringify(this.produtos))
+          window.location.reload();
           // alert('Tema apagado com sucesso!')
          
         })

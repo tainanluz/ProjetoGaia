@@ -1,113 +1,126 @@
-<!-- <div class="container-fluid">
-    <div class="row d-flex justify-content-center">
-        <div class="col-md-10 bg-danger d-flex justify-content-center">
-            <div class="col-md-6 prod-img">
-                <img src="../../assets/imgs/composteira_plastica_60l_89508741_0001_600x600.jpg" alt="">
-            </div>
-            <div class="col-md-6 prod-info">
-                <div class="d-flex col-md-2 justify-content-around rating">
-                    <i class="fas fa-tree"></i>
-                    <i class="fas fa-tree"></i>
-                    <i class="fas fa-tree"></i>
-                    <i class="fas fa-tree"></i>
-                    <i class="fas fa-tree"></i>
-                </div>
-                <h1 class="mt-3">Escova de Bambu</h1>
-                <p class="">Higiene</p>
-                    <h3>R$ 115 <sup><del>R$ 330</del></sup></h3>
-                <div>30% OFF</div>
+<app-menu></app-menu>
 
-                <div>
-                    <p>Descrição do produto</p>
+<div class="container pad bg-geral">
+    <div class="row">
+        <div class="col-12 bg-prod">
+
+            <div class="row d-flex justify-content-center pt-4 pb-4">
+                <div class="col-6 img">
+                    <!--  -->
+                    <img class="w-100 h-100"
+                        src="{{produtos.link}}">
                 </div>
 
-                <button class="btn btn-success">Adicionar ao Carrinho</button>
-            </div>
-        </div>
-    </div>
-</div> -->
-
-
-<div class="ps-product--detail pt-60">
-    <div class="ps-container">
-        <div class="row">
-            <div class="col-lg-10 col-md-12 col-lg-offset-1">
-
-                <div class="ps-product__thumbnail">
-                    <div class="ps-product__image">
-                        <div class="item"><img class="zoom" src="{{produtos.link}}" alt=""
-                                data-zoom-image="../../assets/imgs/1.jpg"></div>
-                        <!-- <div class="item"><img class="zoom" src="../../assets/imgs/2.jpg" alt=""
-                  data-zoom-image="../../assets/imgs/2.jpg"></div>
-              <div class="item"><img class="zoom" src="../../assets/imgs/3.jpg" alt=""
-                  data-zoom-image="../../assets/imgs/3.jpg"></div> -->
-                    </div>
-                </div>
-                <div class="ps-product__thumbnail--mobile">
-                    <div class="ps-product__main-img"><img src="../../assets/imgs/1.jpg" alt=""></div>
-                    <div class="ps-product__preview owl-slider" data-owl-auto="true" data-owl-loop="true"
-                        data-owl-speed="5000" data-owl-gap="20" data-owl-nav="true" data-owl-dots="false"
-                        data-owl-item="3" data-owl-item-xs="3" data-owl-item-sm="3" data-owl-item-md="3"
-                        data-owl-item-lg="3" data-owl-duration="1000" data-owl-mousedrag="on"><img
-                            src="../../assets/imgs/1.jpg" alt=""><img src="images/shoe-detail/2.jpg" alt=""><img
-                            src="images/shoe-detail/3.jpg" alt=""></div>
-                </div>
-                <div class="ps-product__info ">
+                <div class="col-5">
                     <!-- <div class="ps-product__rating">
-                        <select class="ps-rating">
-                            <option value="1">1</option>
-                            <option value="1">2</option>
-                            <option value="1">3</option>
-                            <option value="1">4</option>
-                            <option value="2">5</option>
-                        </select><a href="#">(Ler Reviews)</a>
-                    </div> -->
-                    <h1 class="tbolder">{{produtos.nome}}</h1>
-                    <p class="ps-product__category tbolder">{{produtos.categoriaRelacionada.nomeDaCategoria}}
-                    </p>
-                    <h3 class="ps-product__price tbolder">{{(produtos.preco)*0.7  | currency}} <sup><del class="tbolder">{{produtos.preco | currency}}</del></sup></h3>
-                    <div class="ps-product__block ps-product__quickview">
-                        <!-- <h4>REVIEW</h4> -->
-                        <p>{{produtos.descricao}}</p>
+                            <select class="ps-rating">
+                                <option value="1">1</option>
+                                <option value="1">2</option>
+                                <option value="1">3</option>
+                                <option value="1">4</option>
+                                <option value="2">5</option>
+                            </select><a href="#">(Ler Reviews)</a>
+                        </div> -->
+
+                    <div class="container1 margb">
+
+                        <div class="star-widget">
+                            <input type="radio" name="rate" id="rate-5">
+                            <label id="rate-5" for="rate-5" class="fa fa-tree"></label>
+
+                            <input type="radio" name="rate" id="rate-4">
+                            <label id="rate-4" for="rate-4" class="fa fa-tree"></label>
+
+                            <input type="radio" name="rate" id="rate-3">
+                            <label id="rate-3" for="rate-3" class="fa fa-tree"></label>
+
+                            <input type="radio" name="rate" id="rate-2">
+                            <label id="rate-2" for="rate-2" class="fa fa-tree"></label>
+
+                            <input type="radio" name="rate" id="rate-1">
+                            <label id="rate-1" for="rate-1" class="fa fa-tree"></label>
+                        </div>
                     </div>
-                    <!-- <div class="ps-product__block ps-product__style">
-              <h4> ESCOLHA SEU ESTILO </h4>
-              <ul>
-                <li><a href="product-detail.html"><img src="images/shoe/sidebar/1.jpg" alt=""></a></li>
-                <li><a href="product-detail.html"><img src="images/shoe/sidebar/2.jpg" alt=""></a></li>
-                <li><a href="product-detail.html"><img src="images/shoe/sidebar/3.jpg" alt=""></a></li>
-                <li><a href="product-detail.html"><img src="images/shoe/sidebar/2.jpg" alt=""></a></li>
-              </ul>
-            </div> -->
-                    <!-- <div class="ps-product__block ps-product__size">
-              <h4>Escolha o tamanho <a href="#">Tamanho</a></h4>
-              <select class="ps-select selectpicker">
-                <option value="1">Quantidade</option>
-                <option value="2">4</option>
-                <option value="3">4.5</option>
-                <option value="3">5</option>
-                <option value="3">6</option>
-                <option value="3">6.5</option>
-                <option value="3">7</option>
-                <option value="3">7.5</option>
-                <option value="3">8</option>
-                <option value="3">8.5</option>
-                <option value="3">9</option>
-                <option value="3">9.5</option>
-                <option value="3">10</option>
-              </select>
-              <div class="form-group">
-                <input class="form-control" type="number" value="1">
-              </div>
-            </div> -->
-                    <div class="ps-product__shopping"><a class="ps-btn mb-10" href="cart.html">Adicionar ao carrinho<i
-                                class="ps-icon-next"></i></a>
-                        <!-- <div class="ps-product__actions"><a class="mr-10" href="whishlist.html"><i
-                                    class="ps-icon-heart"></i></a><a href="compare.html"><i
-                                    class="ps-icon-share"></i></a></div> -->
+
+                    <div class="faixa">
+                        <i>
+                            <div class="prod_nome tbold text-center">{{produtos.nome}}</div>
+                            <p class="prod_cat tbold text-center">{{produtos.categoriaRelacionada.nomeDaCategoria}}
+                            </p>
+                        </i>
+                    </div>
+
+
+
+
+
+
+                    <div class="prod_preco tbold mb-3 margt">
+                        {{(produtos.preco)*0.7 | currency}} <sup><del class="bold">{{produtos.preco |
+                                currency}}</del></sup>
+                    </div>
+                    <!-- <div class="desconto">
+                            30%
+                        </div> -->
+
+
+                    <hr>
+
+                    <div class="prod_desc tlight mb-3">
+                        {{produtos.descricao}}
+                    </div>
+
+                    <hr>
+
+                    <div class="pnt__eco">
+                        <div class="eco-bar">
+                            <div class="bar">
+                                <div class="info">
+                                    <span>Agua</span>
+                                </div>
+                                <div class="progress-line agua"><span></span></div>
+                            </div>
+
+                            <div class="bar">
+                                <div class="info">
+                                    <span>Energia</span>
+                                </div>
+                                <div class="progress-line energia"><span></span></div>
+                            </div>
+
+                            <div class="bar">
+                                <div class="info">
+                                    <span>Reciclavel</span>
+                                </div>
+                                <div class="progress-line reci"><span></span></div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="row ms-1 mt-3 d-flex justify-content-center align-items-center">
+
+                        <div class="btn add__cart" (click)='adicionarCarrinho(produtos, 1)'>
+                            <i class="uil uil-plus-circle me-1"></i>
+                            Adicionar no Carrinho
+                        </div>
+                        <div class="fav  ms-3">
+                            <i class="uil uil-heart"></i>
+                        </div>
+
+                        <div class="share  ms-3">
+                            <i class="uil uil-share-alt"></i>
+                        </div>
+                    </div>
+                    <div class="row ms mt-1 d-flex justify-content-center">
+
                     </div>
                 </div>
-                <!-- <div class="clearfix"></div>
+            </div>
+
+
+
+            <!-- <div class="clearfix"></div>
                 <div class="ps-product__content mt-50">
                     <ul class="tab-list" role="tablist">
                         <li class="active"><a href="#tab_01" aria-controls="tab_01" role="tab"
@@ -201,7 +214,7 @@
                         </div>
                     </div>
                 </div> -->
-            </div>
         </div>
     </div>
 </div>
+<app-footer></app-footer>

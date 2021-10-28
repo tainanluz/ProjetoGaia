@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
+import Swal from 'sweetalert2';
 import { Categorias } from '../model/Categorias';
 import { ItemCarrinho } from '../model/ItemCarrinho';
 import { Produtos } from '../model/Produtos';
@@ -60,6 +61,27 @@ export class MenuComponent implements OnInit {
     }
 
   }
+
+  finalizar(): void {
+    const Toast = Swal.mixin({
+      toast: true,
+      position: 'top-end',
+      showConfirmButton: false,
+      timer: 3000,
+      timerProgressBar: true,
+      didOpen: (toast) => {
+        toast.addEventListener('mouseenter', Swal.stopTimer)
+        toast.addEventListener('mouseleave', Swal.resumeTimer)
+      }
+    })
+    
+    Toast.fire({
+      icon: 'success',
+      title: 'Página em construção'
+    })
+  }
+
+  
   login() {
     this.authService.login(this.usuarioLogin).subscribe((resp: UsuarioLogin) => {
       this.usuarioLogin = resp;
@@ -68,12 +90,13 @@ export class MenuComponent implements OnInit {
       localStorage.setItem('token', this.usuarioLogin.token)
       environment.nome = this.usuarioLogin.nome
       environment.idUsuario = this.usuarioLogin.idUsuario
-
+      
+      window.location.reload();
       this.router.navigate(['/home'])
-      this.ngOnInit()
       this.findAllCategorias()
       this.findAllProduto()
       
+
     }, erro => {
       if (erro.status == 400) {
         alert('Usuário ou senha estão incorretos!');
@@ -83,8 +106,8 @@ export class MenuComponent implements OnInit {
 
   logout(): void {
     this.authService.logout()
+    window.location.reload();
     this.router.navigate(['/home']);
-    this.ngOnInit();
   }
 
   findAllCarrinho() {

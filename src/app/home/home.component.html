@@ -78,26 +78,26 @@
                 <div class="card mt-5 mb-5 ms-2 me-2" style="width: 300px;" *ngFor='let produtos of listaProdutos'>
                     <div class="card-body text-center d-flex flex-wrap justify-content-center">
 
-                        <div>
+                        <div >
                             <!--Classe imgProd faz as definições da imagem-->
                             <a routerLink="/produto/{{produtos.idProduto}}"><img src="{{produtos.link}}"
                                     alt="{{produtos.nome}}" class="imgProd"></a>
                         </div>
 
-                        <div class="tamanho">
+                        <div class="tamanho w-100">
                             <div class="col-md-12">
                                 <h5 class="card-title mt-3 tbold">{{produtos.nome}}</h5>
                                 <!--Não consegui alinhar o texto da composteira-->
                                 <!-- <p class="card-text mt-2 tbold">{{produtos.idProduto}}</p> -->
                                 <p class="card-text mt-0 mb-0 tnormal card__categ">
                                     {{produtos.categoriaRelacionada.nomeDaCategoria}}</p>
-                                <p class="card-text mt-2 tlight card__desc">{{produtos.descricao}}</p>
+                                <!-- <p class="card-text mt-2 tlight card__desc">{{produtos.descricao}}</p> -->
                             </div>
                         </div>
 
 
 
-                        <div class="EndButton col-12 d-flex mt-10 hh">
+                        <div class="EndButton col-12 d-flex hh">
                             <div class="d-flex btn btn__preco prec mt-0 EndButton" routerLink="/{{produtos.nome}}">
                                 {{(produtos.preco*0.7).toFixed(2) | currency}}
                                 <div class="desc btn mb-0 prec">
