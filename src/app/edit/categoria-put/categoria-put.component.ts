@@ -7,6 +7,7 @@ import { AuthService } from 'src/app/service/auth.service';
 import { CategoriasService } from 'src/app/service/categorias.service';
 import { ProdutosService } from 'src/app/service/produtos.service';
 import { environment } from 'src/environments/environment.prod';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-categoria-put',
@@ -49,10 +50,47 @@ export class CategoriaPutComponent implements OnInit {
   }
 
   atualizar(){
-    this.categoriaService.putCategoria(this.categorias).subscribe((resp: Categorias)=>{this.categorias=resp
-    alert('Categoria atualizada com sucesso!')
-    this.router.navigate(['adicionarCategoria'])
+    const swalWithBootstrapButtons = Swal.mixin({
+      customClass: {
+        confirmButton: 'btn btn-success ms-2',
+        cancelButton: 'btn btn-danger me-2'
+      },
+      buttonsStyling: false
     })
+    swalWithBootstrapButtons.fire({
+      title: 'Você tem certeza?',
+      text: "Você realmente deseja atualizar esta categoria?",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonText: 'Sim, Atualize!',
+      cancelButtonText: 'Não, cancele!',
+      reverseButtons: true
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this.categoriaService.putCategoria(this.categorias).subscribe((resp: Categorias)=>{this.categorias=resp
+          // alert('Categoria atualizada com sucesso!')
+          window.location.reload();
+        this.router.navigate(['adicionarCategoria'])
+        })
+        swalWithBootstrapButtons.fire(
+          'Atualizada!',
+          'A categoria foi atualizada.',
+          'success'
+        )
+        this.router.navigate(['/adicionarCategoria'])
+      }else if (
+        /* Read more about handling dismissals below */
+        result.dismiss === Swal.DismissReason.cancel
+      ) {
+        swalWithBootstrapButtons.fire(
+          'Cancelado',
+          'A categoria está segura',
+          'error'
+        )
+        this.router.navigate(['/adicionarCategoria'])
+      }
+    })
+  
   }
 
 }

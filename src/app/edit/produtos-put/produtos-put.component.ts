@@ -7,6 +7,7 @@ import { AuthService } from 'src/app/service/auth.service';
 import { CategoriasService } from 'src/app/service/categorias.service';
 import { ProdutosService } from 'src/app/service/produtos.service';
 import { environment } from 'src/environments/environment.prod';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-produtos-put',
@@ -75,16 +76,54 @@ export class ProdutosPutComponent implements OnInit {
   //   })
   // }
 
+  
+
   atualizar() {
     this.categorias.idCategoria = this.idCategoria
     this.usuario.idUsuario = environment.idUsuario
-
     this.produtos.categoriaRelacionada = this.categorias
     console.log("produto " + JSON.stringify(this.produtos))
-    this.produtosService.putProduto(this.produtos).subscribe((resp: Produtos) => {
-      this.produtos = resp
-      alert('Produto adicionado com sucesso')
-      this.router.navigate(['/adicionarCategoria'])
+    const swalWithBootstrapButtons = Swal.mixin({
+      customClass: {
+        confirmButton: 'btn btn-success ms-2',
+        cancelButton: 'btn btn-danger me-2'
+      },
+      buttonsStyling: false
     })
+    swalWithBootstrapButtons.fire({
+      title: 'Você tem certeza?',
+      text: "Você realmente deseja atualizar este produto?",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonText: 'Sim, Atualize!',
+      cancelButtonText: 'Não, cancele!',
+      reverseButtons: true
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this.produtosService.putProduto(this.produtos).subscribe((resp: Produtos) => {
+          this.produtos = resp
+          // alert('Categoria atualizada com sucesso!')
+          window.location.reload();
+          this.router.navigate(['adicionarCategoria'])
+        })
+        swalWithBootstrapButtons.fire(
+          'Atualizado!',
+          'O produto foi atualizado.',
+          'success'
+        )
+        this.router.navigate(['/adicionarCategoria'])
+      } else if (
+        /* Read more about handling dismissals below */
+        result.dismiss === Swal.DismissReason.cancel
+      ) {
+        swalWithBootstrapButtons.fire(
+          'Cancelado',
+          'O produto está seguro',
+          'error'
+        )
+        this.router.navigate(['/adicionarCategoria'])
+      }
+    })
+    this.findAllProduto();
   }
 }
