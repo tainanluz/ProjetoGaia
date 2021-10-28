@@ -1,153 +1,137 @@
-<div class="bg-geral2">
-    <div class="container-fluid p-o">
-
-        <section>
-            <h2 id="text44"><span>Seja bem-vindo ao </span><br>Gaia</h2>
-            <img src="https://media.discordapp.net/attachments/892048100582109274/900148263091580928/bird1.png?width=1202&height=676"
-                id="bird1">
-            <img src="https://media.discordapp.net/attachments/892048100582109274/900148269227855962/bird2.png?width=1202&height=676"
-                id="bird2">
-            <img src="https://media.discordapp.net/attachments/892048100582109274/900148248747049021/forest.png?width=1202&height=676"
-                id="forest">
-                
-            <button id="btn" class="circle" routerLink="/home"><i
-                class="uil uil-estate"></i></button>
-
-            <img src="https://cdn.discordapp.com/attachments/892048100582109274/900148288408408164/rocks.png"
-                id="rocks">
-            <img src="https://media.discordapp.net/attachments/892048100582109274/900148290421653504/water.png?width=1202&height=676"
-                id="water">
-        </section>
-        <div id="teste" class="sec">
-            <div class="row">
-                <div class="col-12 color2">
-                    <div class="container-fluid justify-content-center">
-                        <h1 class="display-4 title">Conheça aqui o projeto Gaia</h1>
-                        <p class="textp mt-3">Um projeto de e-commerce com a ideia de trazer a dinâmica da ecologia para o
-                            cliente, e também
-                            oferecer créditos bônus para compras com nossos parceiros. </p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row d-flex justify-content-center">
-                <div class="col-12 color2">
-                    <div class="container-fluid justify-content-center">
-                        <h3 class="display-4 title mt-3">Nosso time de desenvolvedores</h3>
-                    </div>
-                </div>
-            </div>
-
-            <!--Card1-->
-            <div class="about-us mt-5">
-                <div class="card">
-                    <div class="content">
-                        <div class="imgText">
-                            <div class="imgBx">
-                                <img
-                                    src="https://cdn.discordapp.com/attachments/892048100582109274/892829487971061780/Doug4k_Circle.png">
-                            </div>
-                            <h3>Douglas Lopes </h3>
-                            <h4>Full-stack Java Junior</h4>
-                        </div>
-                        <ul class="sci">
-                            <li><a href="#" target="_blank"><i class="uil uil-github"></i></a></li>
-                            <li><a href="#" target="_blank"><i class="uil uil-instagram-alt"></i></a></li>
-                            <li><a href="#" target="_blank"><i class="uil uil-linkedin"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-                <!--Card1-->
-
-                <!--Card2-->
-                <div class="card mrButton">
-                    <div class="content">
-                        <div class="imgText">
-                            <div class="imgBx">
-                                <img
-                                    src="https://cdn.discordapp.com/attachments/892048100582109274/892795187502383155/Ju_circle.png">
-                            </div>
-                            <h3>Julianna Caravetto</h3>
-                            <h4>Full-stack Java Junior</h4>
-                        </div>
-                        <ul class="sci">
-                            <li><a href="https://github.com/jucaravetto" target="_blank"><i class="uil uil-github"></i></a></li>
-                            <li><a href="https://www.instagram.com/jucaravetto/" target="_blank"><i class="uil uil-instagram-alt"></i></a></li>
-                            <li><a href="https://www.linkedin.com/in/julianna-caravetto/" target="_blank"><i class="uil uil-linkedin"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-                <!--Card2-->
-
-                <!--Card3-->
-                <div class="card mrButton">
-                    <div class="content">
-                        <div class="imgText">
-                            <div class="imgBx">
-                                <img
-                                    src="https://cdn.discordapp.com/attachments/892048100582109274/892795189603749928/Leo_circle.png">
-                            </div>
-                            <h3>Leonardo Almeida</h3>
-                            <h4>Full-stack Java Junior</h4>
-                        </div>
-                        <ul class="sci">
-                            <li><a href="https://github.com/leo-nardow" target="_blank"><i class="uil uil-github"></i></a></li>
-                            <li><a href="https://www.instagram.com/leo_nardow/" target="_blank"><i class="uil uil-instagram-alt"></i></a></li>
-                            <li><a href="https://www.linkedin.com/in/leo-nardow/" target="_blank"><i class="uil uil-linkedin"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-                <!--Card3-->
-
-                <!--Card4-->
-                <div class="card mrButton">
-                    <div class="content">
-                        <div class="imgText">
-                            <div class="imgBx">
-                                <img
-                                    src="https://cdn.discordapp.com/attachments/892048100582109274/892795193387008000/Tai_circle.png">
-                            </div>
-                            <h3>Tainan Luz</h3>
-                            <h4>Full-stack Java Junior</h4>
-                        </div>
-                        <ul class="sci">
-                            <li><a href="https://github.com/tainanluz" target="_blank"><i class="uil uil-github"></i></a></li>
-                            <li><a href="https://www.instagram.com/tainanluz/" target="_blank"><i class="uil uil-instagram-alt"></i></a></li>
-                            <li><a href="https://www.linkedin.com/in/tainan-luz-442694218/" target="_blank"><i class="uil uil-linkedin"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-                <hr>
-                <!--Card4-->
-            </div>
+<div class="bg-geral">
+    <app-menu></app-menu>
+    <!--Off Canvas-->
+    <div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1"
+        id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasScrollingLabel">Categorias de produtos:</h5>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
 
+        <div class="offcanvas-body">
+            <div>
+                <div class="row mt-3 mb-5 d-flex justify-content-center">
+                    <div class="col-md-12">
+                        <table class="table table-hover">
+                            <tbody>
+                                <tr *ngFor='let categorias of listaCategorias'>
+                                    <a routerLink="/{{categorias.nomeDaCategoria}}">
+                                        <td class="btn">{{categorias.nomeDaCategoria}}</td>
+                                    </a>
+                                </tr>
+                                <tr>
 
-
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="mt-20">
+                        <p class="btn btn-primary" routerLink="/adicionarCategoria">Configurações</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Off Canvas-->
+    <div  width="100%" cellspacing="0" cellpadding="0" border="0" style="color: #ffffff;">
+       
+            <div align="left" style="text-align: left; ">
+                <img src="https://cdn.discordapp.com/attachments/892048100582109274/903102658582302720/About.png" width="2560" height="2516"
+                    alt="" border="0" style=" max-width: 100%; height: auto; display: block;" class="g-img">
+            </div>
+        
     </div>
 
-</div>
-<script>
-    let text = document.getElementById('text');
-    let bird1 = document.getElementById('bird1');
-    let bird2 = document.getElementById('bird2');
-    let btn = document.getElementById('btn');
-    let rocks = document.getElementById('rocks');
-    let forest = document.getElementById('forest');
-    let water = document.getElementById('water');
-    // let header = document.getElementById('header');
 
-    window.addEventListener('scroll', function () {
-        let value = window.scrollY;
 
-        text.style.top = 35 + value * -0.12 + '%';
-        bird1.style.top = value * -0.15 + 'px';
-        bird1.style.left = value * 0.3 + 'px';
-        bird2.style.top = value * -0.2 + 'px';
-        bird2.style.left = value * -0.5 + 'px';
-        btn.style.marginTop = value * 1.5 + 'px';
-        rocks.style.top = value * -0.12 + 'px';
-        forest.style.top = value * 0.25 + 'px';
-        // header.style.top = value * 0.5 + 'px';
-    })
-</script>
+
+                  <!--Card1-->
+                  <div class="about-us mt-5">
+                    <div class="card">
+                        <div class="content">
+                            <div class="imgText">
+                                <div class="imgBx">
+                                    <img
+                                        src="https://cdn.discordapp.com/attachments/892048100582109274/892829487971061780/Doug4k_Circle.png">
+                                </div>
+                                <h3>Douglas Lopes </h3>
+                                <h4>Full-stack Java Junior</h4>
+                            </div>
+                            <ul class="sci">
+                                <li><a href="#" target="_blank"><i class="uil uil-github"></i></a></li>
+                                <li><a href="#" target="_blank"><i class="uil uil-instagram-alt"></i></a></li>
+                                <li><a href="#" target="_blank"><i class="uil uil-linkedin"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!--Card1-->
+    
+                    <!--Card2-->
+                    <div class="card mrButton">
+                        <div class="content">
+                            <div class="imgText">
+                                <div class="imgBx">
+                                    <img
+                                        src="https://cdn.discordapp.com/attachments/892048100582109274/892795187502383155/Ju_circle.png">
+                                </div>
+                                <h3>Julianna Caravetto</h3>
+                                <h4>Full-stack Java Junior</h4>
+                            </div>
+                            <ul class="sci">
+                                <li><a href="https://github.com/jucaravetto" target="_blank"><i class="uil uil-github"></i></a></li>
+                                <li><a href="https://www.instagram.com/jucaravetto/" target="_blank"><i class="uil uil-instagram-alt"></i></a></li>
+                                <li><a href="https://www.linkedin.com/in/julianna-caravetto/" target="_blank"><i class="uil uil-linkedin"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!--Card2-->
+    
+                    <!--Card3-->
+                    <div class="card mrButton">
+                        <div class="content">
+                            <div class="imgText">
+                                <div class="imgBx">
+                                    <img
+                                        src="https://cdn.discordapp.com/attachments/892048100582109274/892795189603749928/Leo_circle.png">
+                                </div>
+                                <h3>Leonardo Almeida</h3>
+                                <h4>Full-stack Java Junior</h4>
+                            </div>
+                            <ul class="sci">
+                                <li><a href="https://github.com/leo-nardow" target="_blank"><i class="uil uil-github"></i></a></li>
+                                <li><a href="https://www.instagram.com/leo_nardow/" target="_blank"><i class="uil uil-instagram-alt"></i></a></li>
+                                <li><a href="https://www.linkedin.com/in/leo-nardow/" target="_blank"><i class="uil uil-linkedin"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!--Card3-->
+    
+                    <!--Card4-->
+                    <div class="card mrButton">
+                        <div class="content">
+                            <div class="imgText">
+                                <div class="imgBx">
+                                    <img
+                                        src="https://cdn.discordapp.com/attachments/892048100582109274/892795193387008000/Tai_circle.png">
+                                </div>
+                                <h3>Tainan Luz</h3>
+                                <h4>Full-stack Java Junior</h4>
+                            </div>
+                            <ul class="sci">
+                                <li><a href="https://github.com/tainanluz" target="_blank"><i class="uil uil-github"></i></a></li>
+                                <li><a href="https://www.instagram.com/tainanluz/" target="_blank"><i class="uil uil-instagram-alt"></i></a></li>
+                                <li><a href="https://www.linkedin.com/in/tainan-luz-442694218/" target="_blank"><i class="uil uil-linkedin"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <hr>
+                    <!--Card4-->
+        </div>
+    </div>
+    <div class="margin10">
+        <app-footer></app-footer>
+    </div>
+
+
+
+
+  
